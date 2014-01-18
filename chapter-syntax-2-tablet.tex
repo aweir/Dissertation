@@ -1,0 +1,1037 @@
+\documentclass[11pt,letterpaper]{article}
+\addtolength{\textwidth}{3cm}
+\addtolength{\hoffset}{-2cm}
+\usepackage{url, xypic, qtree, arydshln, fancyhdr, tipa, bbding, natbib, times, linguex, stmaryrd}
+\usepackage[normalem]{ulem}
+\usepackage[small,compact]{titlesec}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Andrew Weir}
+\rhead{Dissertation chapter draft}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\hyphenpenalty=5000
+\tolerance=1000
+\linespread{1.2}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\ext}[1]{\ensuremath{\llbracket \textrm{{#1}} \rrbracket}} 
+\newcommand{\pred}[1]{\ensuremath{\mathrm{{#1}}}}
+\newcommand{\ty}[1]{\ensuremath{\mathrm{\langle #1 \rangle}}}
+\bibpunct[:]{(}{)}{,}{a}{}{,}
+\newcommand{\el}[1]{\sout{#1}}
+
+\begin{document}
+
+\renewcommand{\firstrefdash}{}
+
+We have seen in the preceding chapter/section %TODO link to what has gone before
+a number of arguments for the presence of covert clausal structure in sentence fragments. Having established the presence of clausal structure, I now turn to diagnosing the further syntactic properties of fragments.
+
+As discussed earlier, if fragments are the result of clausal ellipsis, then an account is needed of the fact that the ellipsis involved appears to target a string which is not a constituent. For example, in the dialogue below, the putative elided string {\it John ate} is not a constituent.
+
+\ex. 	\a. What did John eat? --- Cake.
+	\b. \sout{John ate} cake.
+	
+At least since \cite{Lo95}, ellipsis is a process which has been argued to apply only to constituents, and a lot of the technology which has been developed to account for the licensing of ellipsis (for example, Lobeck's licensing heads, or \cite{Me01, Me04}'s E-feature) have explicitly made ellipsis the property of certain heads, which elide their complements. As the complement of a head will always be a phrase, models such as these predict that only phrases will elide, a prediction that is borne out in the simplest cases of verb phrase ellipsis and noun phrase ellipsis:
+
+\ex. 	\a. John should [$_{\mathrm{VP}}$ eat more kimchi ], and Mary should \sout{[$_{\mathrm{VP}}$ eat more kimchi]} too.
+	\b. John saw three [$_{\mathrm{NP}}$ red cars], and Mary saw two \sout{[$_{\mathrm{NP}}$ red cars]}.
+	
+However, there are a number of cases which look on the surface like ellipsis but in which the deleted material is not a constituent. If fragments are to be analyzed as elliptical, then fragments fall into this category, as shown in \LLast above. A number of other such examples are given below.
+
+\ex.		\a. 	{\it Pseudogapping}
+			\a. John was editing his prospectus, and Mary was her dissertation. 
+			\b. John would eat natto for a bet, and I would durian. 
+			\b. I know more French than I do Spanish. 
+			\z. 
+		\b.	{\it Swiping}
+			\a.	He's traveling at the moment. -- Where to?
+			\b. He's traveling at the moment, but I don't know where to.
+			\b.	He's laughing, but I don't know what about.
+			\z.
+		\b.	{\it Gapping}
+			\a. John will eat sushi and Mary natto.
+			\b. Andrew studies syntax and Elizabeth semantics.
+			\z.
+		\b. 	{\it Why-stripping}
+			\a. John was eating natto. Why natto?
+			\b. Mary left. Why Mary?
+
+In order to account for such cases, a very common strategy in the literature has been to assume that ellipsis actually \emph{is} acting on a constituent in these cases. However, a focused subconstituent has undergone movement to a position above the c-command domain of the ellipsis-licensing head. In all of the above cases, a constituent is elided, but the movement operation that allows a subconstituent to evacuate the ellipsis makes it look as if the string which is eliding is not a constituent. Some examples of this shape of analysis for each of the cases given above are given below.\footnote{I provide representative examples of the strategy of movement-plus-ellipsis in each case. These are not the only possible analyses for these phenomena. Non-movement analyses have also been proposed for gapping (\cite{Joh09}) and swiping (REF %TODO non-movement account of swiping
+). While there seems to be a general consensus that movement is involved in the derivation of pseudogapping, %TODO check Levin
+there is debate about the precise nature of that movement; see e.g. \cite{Jay90} and \cite{Ta04}.}
+
+\ex. 	\a. John would eat natto for a bet, and I would [$_{\mathrm{XP}}$ durian$_1$ \sout{[$_{\mathrm{VP}}$ eat t$_1$]}]
+	\b. He's traveling at the moment. --- [$_{\mathrm{CP}}$ Where$_1$ [$_{\mathrm{FocP}}$ [$_{\mathrm{PP}}$ to t$_1$ ]$_2$ \sout{[$_{\mathrm{TP}}$ he is traveling t$_2$ ]}]]\\
+		(\cite{HarAi07})
+	\b. John will eat sushi and Mary natto %TODO what do movement accounts of gapping say?
+	\b. John was eating natto. Why [$_{\mathrm{FocP}}$ natto$_1$ \sout{[$_{\mathrm{TP}}$ John was eating t$_2$]}]\\
+		(\cite{NYO12, We12why})
+		
+%TODO non-constituent coordination? Sailor and Thoms?
+
+As discussed in section REF %TODO where was movement already discussed?
+, \cite{Me04} adopts this analysis also for fragments; a pronounced fragment is an instance of clausal ellipsis from which a focused constituent has moved. I believe that this is a correct analysis, but only up to a point. In this section, I will show that, while there is indeed evidence for movement being involved in the derivation of fragments, this evidence conflicts with a number of other diagnostics which appear to show that fragments are not movement structures. I propose to resolve this conflict by arguing that fragments do undergo movement, but only at the level of Phonological Form (PF); at Logical Form (LF), fragments are interpreted {\it in situ}. This division precisely cleaves to the conflicting evidence which movement diagnostics show.
+
+\section{Some challenges to the movement analysis of fragments}
+
+\cite{Me04} adduces a number of arguments for the presence of movement in fragment constructions, most of which have already been reviewed in section REF.%TODO refer back to movement discussion
+In general these arguments make a convincing case for a movement derivation; however, in this section, I review some evidence which appears to challenge Merchant's generalizations.
+
+\subsection{NPIs: licit fragments or not?}
+
+\cite{Me04} notes that negative polarity items (NPIs) do not front in English, but that certain NPIs can front in certain other languages, such as Irish. Merchant proposes that there is a correlation between the NPIs which can front (in various languages) and the NPIs which can be fragment answers.
+
+\ex. 	{\it NPIs cannot front in English} (Merchant's (106))
+	\a. Max didn't read anything.
+	\b. *Anything, Max didn't read.
+
+\ex. 	\label{ex-Merchant-NPI-fragment}{\it (Merchant's claim:) NPIs cannot be fragment answers in English} (Merchant's (105))\\
+	A: What didn't Max read?\\
+	B: *Anything.
+	
+\ex. 	{\it The Irish NPI} rud ar bith {\it `anything' can front} (Merchant's (111), data attributed to James McCloskey p.c.)
+	\ag. Rud {ar bith} n\'i-or cheannaigh m\'e.\\
+		thing any \textsc{neg-past} bought I\\
+		`I didn't buy anything.'
+		
+\ex. 	{\it The Irish NPI} rud ar bith {\it can be a fragment answer} (Merchant's (112), data again due to McCloskey p.c.) \marginpar{Where's the negation coming from in the answer, though?}\label{ex:irish-question}
+	\ag. Caid\'e (a) cheannaigh t\'u?\\
+		what C bought you\\
+		`What did you buy?'
+	\bg. Rud {ar bith}.\\
+		thing any\\
+		`Nothing.'
+		
+However, I believe that these data do not necessarily allow us to conclude that movement must be implicated in the generation of fragment answers. Firstly, the fact that NPI fronting in English is ungrammatical does not lead us to the prediction that NPIs should be ungrammatical fragments. In general, the type of fronting which Merchant proposes for the creation of fragments would be ungrammatical in non-elliptical contexts, as shown in \Next. While topicalization is licit in English, fragment answers are foci, not topics; and focus movement to the clausal left periphery in English is only licit in a very restricted set of cases REF%TODO focus movement in English, macadamia nuts
+
+\ex. 	What did you eat?
+	\a. Chips.
+	\b. *Chips, I ate t.
+	
+As such, the putative ungrammaticality of NPI fragments does not necessarily speak for or against the fronting analysis of fragments; there may be other reasons why NPIs like {\it anything} are bad fragments in English. And indeed, I would propose that NPIs other than {\it anything} are in fact licit fragments in English.
+
+\ex. 		\a. Q: (I know some of the books that Max did read, but) what DIDN'T he read?\\
+	A: Any books by Stephen King.
+		\b. Q: Which files shouldn't I delete?\\
+		A: Any of them!
+		
+I agree that Merchant's example with {\it anything}, given in \ref{ex-Merchant-NPI-fragment} above, is ungrammatical. However, I believe the source of this ungrammaticality is not to be attributed to an illicit fronting operation. Rather, the source of the problem is the fact that the question must contain a negator (in order to provide a licensor for the NPI in the ellipsis site in the answer); i.e. the question has to be of the form {\it What didn't Max read?}. To my ear, such a negative question is fairly infelicitous out of the blue, and rather has to be embedded in a context such as {\it I know some of the books that Max \emph{did} read, but what \emph{didn't} he read?}. That is, a contrast set of `things Max read' needs to be established in order to make the question felicitous in the first place. Given the existence of such a contrast set, the reason for the infelicity of the answer {\it anything} in this context is not because NPIs cannot be fragments, but rather because it would assert that the set of things Max read is empty, which conflicts with the requirements of the negative question.\footnote{I do not know why this should contrast with the Irish case. However, it is worth noting that there is no negation in the question in \ref{ex:irish-question}. How the negation is then construed in the ellipsis site in order to license the NPI is not clear; I won't try to address this issue here.} Giving an NPI fragment answer which does not assert that the contrast set is empty -- as in \Last[a], which allows for the possibility that Max did read some books -- is not ungrammatical.
+
+In addition, if we pick a question which does not seem to strongly force the requirement that such a contrast set exists, such as the question in \Last[b]\footnote{I do not know why this difference obtains -- it seems to have something to do with the NP restrictor in the {\it wh}-question -- but set this question aside for now, simply relying on the fact that the difference does obtain.}, then an NPI fragment is again licit.
+
+I conclude from this that NPIs are not in general illicit as fragments. Another piece of evidence for this conclusion is the fact that NPI fragments are very clearly licensed in utterances which are interpreted as questions:
+
+\ex. 	[A and B are at a party. A nods towards a figure whom he half-recognizes and asks B:]\\
+	Anyone you know? (= \sout{Is that} anyone you know?)
+	
+If NPIs can in general be fragments, this poses a problem for the movement analysis of fragments. The issue is not so much that NPIs do not move to a left-peripheral position in non-elliptical cases; as discussed above, if the movement analysis of fragments is to have any hope at all, we need to in some way loosen the constraints on focus movement to the left periphery in English, so we could imagine that whatever is doing that work for us in the general case also extends to allowing NPIs to front.\footnote{Plausibly, for example, the reason that NPIs do not front in English is that only topics front in English (in the non-elliptical case), and NPIs cannot be topics.} The issue is, rather, that NPIs must always be c-commanded by negation at surface structure REF %TODO NPI negation ref
+For example, subjects which move to [Spec, TP] cannot be NPIs unless there is a c-commanding negative element, while subjects which remain inside VP can be NPIs if they are c-commanded by negation. %TODO Make your point here a bit clearer.
+
+\ex. 	\a. *Anyone isn't singing.
+	\b. There isn't anyone singing.
+	\b. It isn't the case that anyone is singing.
+	
+If the surface structure of fragment answers are created by movement of NPIs to a left-peripheral position, as in \Next, then the NPI would not be c-commanded by a negative element, and so the answers should be ungrammatical.
+
+\ex. 	\a. What didn't he drink?
+	\b. [$_\mathrm{CP}$ Any of the soju \sout{[$_\mathrm{TP}$ he didn't drink t]}]
+	
+These facts would seem to suggest that the NPI fragment is, at least for the purposes of licensing, in a position below negation, and so appears to weigh against an analysis in which the fragment has moved.
+
+\subsection{Island (in)sensitivity of fragments}\label{sec:island-insensitivity}
+
+Merchant argues that fragments show island sensitivity. That is, if the correlate of a fragment in an antecedent sentence is inside an island, the fragment is ungrammatical. This is difficult to show directly, as the questions required as antecedents for such fragment answers would themselves involve movement of a {\it wh-} word out of an island, and would be ungrammatical.
+
+\ex. 	*Who does Abby speak the same Balkan language (that) t speaks?
+
+To circumvent this problem, Merchant uses a technique attributed to Morgan %TODO Ref Morgan 1973
+. A polar question can be understood as an implicit constituent question if a rising intonation is placed on the constituent being questioned, as \Next shows. (I show the rising intonation by placing a $\nearrow$ before the constituent where the rise is placed.)
+
+\ex. (Merchant's (84))
+	\a. Does Abby speak $\nearrow$[Greek] fluenty?
+	\b. No, she speaks \emph{Albanian} fluently.
+	\b. No, \emph{Albanian}.
+	
+If such a rise is placed on a constituent inside an island, as in \Next[a], the full clausal answer is acceptable. However, the fragment answer (Merchant claims) is not.
+
+\ex. 	(Merchant's (87), slightly adapted; his judgments)
+	\a. Does Abby speak the same Balkan language that $\nearrow$[Ben] speaks?
+	\b. No, she speaks the same Balkan language that \emph{Charlie} speaks.
+	\b. *No, {\it Charlie}.
+
+Similar examples can be adduced for other cases in which the correlate of the fragment answer is inside an island:
+
+\ex. 	(Merchant's (88, 89, 90); his judgments) \label{ex:merchant-island-sensitivity}
+	\a. Did Ben leave the party because $\nearrow$Abby wouldn't dance with him? \hfill (adjunct island)\\
+	{}*No, \emph{Beth}.
+	\b. Did Abby vote for a $\nearrow$Green Party candidate? \hfill (N-N compound)\\
+	{}*No, \emph{Reform Party}. 
+	\b. Did Abby get $\nearrow$`The Cat in the Hat' and `Goodnight Gorilla' for her nephew for his birthday? \hfill (coordinate structure)\\
+	{}*No, \emph{`The Lorax'}. (intended: `No, Abby got `The Lorax' and `Goodnight Gorilla' for her nephew for his birthday.')
+
+Merchant argues that the movement-plus-ellipsis account of fragment answers accounts for this contrast. In an elliptical sentence like \Next[a], the fragment has not moved from an island and so is licit. However, in an elliptical sentence like \Next[b], the fragment would have moved from an island; the resultant violation rules out the fragment.
+
+\ex. 	\a. Did Abby claim she speaks $\nearrow$Greek fluently?\\
+		No, Albanian \sout{[she claimed she speaks t fluently]}
+	\b.  Does Abby speak the same Balkan language that $\nearrow$Ben speaks?\\
+		{}*No, Charlie \sout{[she speaks the same Balkan language that t speaks]}
+		
+One issue Merchant has to tackle is that sluicing, which Merchant analyzes as the same form of TP ellipsis as fragment answers (\cite{Me01}), in fact does \emph{not} show the same sort of island sensitivity, as first noted by \cite{Ro69}. That is, sluicing versions of sentences similar to the above examples are grammatical, even though the putative elliptical sources contain island violations.\footnote{It would be possible to interpret the sluice in \TextNext[b] as `\ldots but I'm not sure who \sout{t wouldn't dance with him}', which would be island-respecting. To counter this reading, we could create an example like the below.
+	
+	\ex. I know all of the many people who spurned Ben's advances at the party, but only one of them offended him hugely. Ben in fact \emph{left} the party because someone wouldn't dance with him; I'm not sure who, though.
+	
+	Here, the speaker knows who refused to dance with Ben, but not who was responsible for the leaving; that is, the reading `I'm not sure who \sout{[Ben left the party because t wouldn't dance with him]}' is forced, and the sluice remains grammatical. On the possibility of a `short source', i.e. `I'm not sure who \sout{it was}', see below.}
+
+\ex. 	\a. Abby speaks the same Balkan language that someone (in this room) speaks, but I'm not sure who. \sout{[she speaks the same language that t speaks]}
+	\b. Ben left the party because someone wouldn't dance with him, but I'm not sure who. \sout{[Ben left the party because t wouldn't dance with him]}
+
+Merchant accounts for this by adopting a version of the PF theory of islands, and suggesting that the movements involved in generating sluices allow ellipsis to `void' island violations in a way that the movements involved in generating fragment answers do not. This analysis will be reviewed in more detail in section REF %TODO PF theory of islands and island mitigation
+	
+Here, however, I would like to discuss simply the status of the data involved in the judgment that fragment answers are island-sensitive. \cite{St06} has already pointed out that there appear to be certain techniques for circumventing the apparent island-sensitivity. One of these ways is to use a special register of English which leaves {\it wh-}words in situ; this is a register which is used in quiz show programs, for example.
+
+\ex. 	(Stainton's (EX), adapted) %TODO Stainton 'beer and what?'
+	Q: The Pope's favorite cocktail is made of beer and what other ingredient?\\
+	A: Tomato juice.
+	
+Note that the correlate of the fragment answer in the question, `what other ingredient', is here within a coordination structure and is so immobile. A variant of this question in which the {\it wh}-word is extracted would be ungrammatical: *{\it What ingredient is the Pope's favorite cocktail made of beer and t?} On the movement analysis of fragments, the answer {\it tomato juice} should therefore also be ungrammatical: the predicted structure would be [Tomato juice \el{[the Pope's favorite cocktail is made of beer and t]}, which contains an island violation. Similar amelioration by the use of {\it wh}-in-situ `quiz show English' can be shown for other islands:
+
+\ex. 	\a. Q: Abby speaks the same Balkan language that which other member of her family speaks?\footnote{For some reason, possibly related to the facts noted in Pesetsky REF %TODO Pesetsky, D-linking, in situ wh
+, leaving {\it wh}-words in situ in this register is rather easier for {\it which NP} constructions than `bare' {\it wh}-words such as {\it who} or {\it what}. I therefore change the foregoing examples to this extent.}\\
+	    A: Ben.
+	 \b. Q: Ben left the party because which member of the church council refused to dance with him?\\
+	 	A: Abby.
+	 
+%TODO Wh-in-situ DOESN'T seem to work for N-N compound extractions.
+% OTOH these are heads and so wouldn't be expected to move. Note that left-branch extractions ARE OK in general:
+% What kind of coffee does John like? -- Iced./Very strong. (see also Grove NELS)
+% You wanna marry a rich man, honey? --- Richer than you, certainly.
+
+And, in a similar vein, if the correlate of the fragment in the antecedent is an indefinite, the sentences are again grammatical with no hint of island violation:
+
+\ex. 	\a. A: The Pope's favorite cocktail is made of beer and something else.\\
+		B: Tomato juice.
+	\b. A: Abby speaks the same Balkan language that someone (in this room) speaks.\\
+		B: (Yes,) Ben.
+	\b. A: Ben left the party because someone refused to dance with him.\\
+		B: (Yes,) Abby.
+		
+I would add that there are some examples where the correlate of the fragment is inside an island and where fragment answers do not sound so bad even using the `implied constituent question' technique.\footnote{\cite{Te13} gives a very similar example to \TextNext[a] (her (8), here adapted to the notation used here), which she marks as ungrammatical.
+	    
+	    \ex. 	Do they want to hire someone who speaks $\nearrow$Greek?\\
+	    		{}(*)No, \emph{Albanian}.
+	    		
+	    However, both I and a number of English speakers I have consulted find this sentence, as well as the similar example I present in the main text, quite acceptable. It is possible that the context of presentation makes a considerable difference to acceptability here, as we will see shortly.}
+
+\ex. 	\label{ex:contextually-salient-QUDS-in-fragments-inside-islands}\a. Q: Do they reward students that study $\nearrow$Spanish? \hfill (relative clause)
+	    A: No, French.
+	 \b. Q: Do you take milk and $\nearrow$ honey in your tea? \hfill (coordinate structure)\\
+	 	A: No, sugar.
+
+How to make sense of this data? One possible course is to suggest that in \marginpar{Doubled `that'!} many of the acceptable cases of apparent island violations, that in fact the elided sentence is not the full antecedent, but rather an alternative source such as a cleft. Such an account has been recently proposed for the island-\emph{in}sensitivity of sluices. The proposal is that in `island-violating' cases, the ellipsis site actually contains a `short source', something like a cleft, rather than the antecedent sentence in its entirety. (\cite{vC10}, Barros REF %TODO More refs on short sources: Barros)
+Because there is no island violation involved in extraction from a cleft sentence, there is no island violation in the sluice.
+
+\ex.	\a. Abby speaks the same Balkan language that someone (in this room) speaks, but I'm not sure who. \sout{[it is]}
+	\b. Ben left the party because someone wouldn't dance with him, but I'm not sure who. \sout{[it was]}
+
+%TODO Use Barros, Thoms and his actual examples and discuss the point more.
+
+There are some cases of sluicing which appear to \emph{only} be analyzable on the assumption that such short sources are possible, as discussed by \cite{vC10} and Barros: %TODO Ref Barros 'else'
+
+\ex. 	John came to the party, and someone else did too, but I'm not sure who.
+	\a. \#\ldots but I'm not sure who came to the party.
+	\b. \ldots but I'm not sure who it was.
+	
+In this case, the source for the sluice can only be the cleft sentence, \Last[b], as the `full' sentence \Last[a] is inappropriate in the context.
+
+Given that such `short' sources are in general available in cases of TP ellipsis like sluicing, we predict that they should be available in fragment answers too, and should ameliorate islands to the same extent. This is a possible explanation for a number of the cases provided above.
+
+\ex. 	\a. Q: The Pope's favorite cocktail is made of beer and what other ingredient?\\
+	A: (It's) Tomato juice.
+	\b. Q: Abby speaks the same Balkan language that which other member of her family speaks?\\
+	    A: (It's) Ben.
+	 \b. Q: Ben left the party because which member of the church council refused to dance with him?\\
+	 	A: (It was) Abby.
+
+The availability of this possibility creates two problems for us. Firstly, it becomes quite hard to diagnose island-sensitivity in fragment answers; the number of cases in which the use of a short source can have a `rescuing' effect creates a considerable confound. The second problem is understanding why Merchant's original data concerning movement out of islands %TODO Ref the Merchant movement out of islands data
+are judged ungrammatical.
+
+I propose to address the first problem by using a technique noted by Chung, Ladusaw and McCloskey REF %TODO ChLaMc 1995
+and used also by Wang REF %TODO Wang NELS Ref
+. It is noted that so-called `sprouting' cases -- sluices in which there is no correlate to the {\it wh-}word remnant in the antecedent -- sluices \emph{do} show island-sensitivity. \marginpar{For what it's worth I find the sluice in (b) \emph{much} less grammatical than the full version with movement, i.e. it seems stronger than the mere island violation.}
+
+\ex. 	\a. Bill ate, but I'm not sure what \el{[Bill ate t]}
+	\b. John asked if Bill ate, *but I'm not sure what \el{[John asked if Bill ate t]}
+	
+This is expected on the Thoms et al. %TODO REF: Thoms et al might discuss sprouting/
+analysis of the island-(in)sensitivity of sluices. Note that arguments which have `sprouted' between clauses also cannot appear in cleft sentences.
+
+\ex. 	\a. Bill ate, ??but I don't know what it was.
+	\b. John asked if Bill ate, *but I don't know what it was.
+
+The ellipsis site in \LLast[b] can then contain neither a full copy of the antecedent (because this would contain an island violation), nor a `short-source' sluice, because this is independently ruled out, as \Last[b] shows.
+
+This provides a test for the island-sensitivity of fragment answers. In sprouting cases, we rule out the confound of possible `short sources'. If fragment answers can be sprouted, even in a configuration where their (implicit) antecedent would be within an island, then this implies that fragments are not island-sensitive. Constructing the examples requires some care, but interestingly it does indeed seem to be the case that fragments can be `sprouted' even if their implicit antecedents would be situated within islands.
+
+\ex. 	\a. *Which cuisine do you want to hire someone who can cook?
+	\b. Q: Do you want to hire someone who can cook?\\
+  	A: Yes. French cuisine, if possible.\\
+  	= French cuisine \el{[I want to hire someone who can cook t]}\\
+  	$\neq$ Yes. *It's French cuisine, if possible.
+  	
+ \ex. 	\a. *With what color hair does John wish to marry a Texan?\footnote{This is grammatical on the nonsensical instrumental reading, where John uses the hair to do the marrying, and possibly grammatical on a stage-level subject-modifying reading where John changes his hair color. The targeted reading, however -- enquiring about the Texan's hair color -- is not available.}
+	\b. Q: Does John want to marry a Texan?\\
+		Yes. With red hair, if possible.\\
+		= With red hair \el{[John wants to marry a Texan t]}\\
+		$\neq$ Yes. *It's/She's with red hair, if possible.
+		
+%TODO Include the examples that Thoms et al have, left-branch extraction. 
+%They should work with fragments. Merchant's `contrast sluices' do:
+%
+% \ex.	\a. She knows a guy who has five dogs, but I don't know how many cats.
+% 	\b. She knows a guy who has five dogs. Five cats, too.
+% 
+% It is at least possible to interpret \Last[b] as referring to a different guy (although it's a bit pragmatically hard). This is not possible with \Last[a].
+% (She knows a guy who speaks French. Spanish, too.)
+		
+These examples seem to indicate that fragment answers are in fact not generally sensitive to islands. This is in fact somewhat puzzling given that Thoms et al REF %TODO Thoms et al
+show that, contrary to what was previously believed, sluiced sentences \emph{do} show sensitivity to islands, that is, ellipsis does not generally void island violations (cases where ellipsis appeared to do this being attributed by Thoms et al %TODO ref Thoms et al
+to the presence of a `short'/cleft sentence in the ellipsis site). One way of explaining this difference is to note that in sluicing structures, the unelided constituent is a {\it wh-}word, which we independently know to move in English. The difference between sluicing (island-sensitive, once the availability of cleft sentences in the ellipsis site is controlled for) and fragment answers (apparently generally island-insensitive) would be explained if fragment answers did not move. To that extent, the fact of island-insensitivity of fragment answers (contra \cite{Me04} and \cite{Te13}'s claims for English) constitutes an argument against a movement-plus-ellipsis derivation for fragment answers. %TODO The reader probably needs a signpost here and before that you're not going to argue AGAINST movement exactly.
+
+If, however, fragment answers are generally island-insensitive, we need to explain the source of \cite{Me04}'s original judgments for adjunct islands and coordination structures.\footnote{The ungrammaticality of fragments which form parts of compounds, as in \Next, will be discussed in section REF %TODO moving out of a compound ref
+. As we will see, the ungrammaticality of such structures constitutes an argument for an account in which fragments do move, but only at PF.
+
+\ex.	A: Did she vote for a $\nearrow$[Reform Party] candidate?\\
+	B: *No, Green Party.
+	
+}
+
+\ex. 	Does Abby speak the same Balkan language that $\nearrow$Ben speaks?\hfill{relative clause}\\
+	{}*No, Charlie.
+\ex. 	(repeated from \ref{ex:merchant-island-sensitivity})
+	\a. Did Ben leave the party because $\nearrow$Abby wouldn't dance with him? \hfill (adjunct island)\\
+	{}*No, \emph{Beth}.
+	\b. Did Abby get $\nearrow$`The Cat in the Hat' and `Goodnight Gorilla' for her nephew for his birthday? \hfill (coordinate structure)\\
+	{}*No, \emph{`The Lorax'}. (intended: `No, Abby got `The Lorax' and `Goodnight Gorilla' for her nephew for his birthday.')
+
+My suggestion is that these cases are judged ungrammatical not because of the fact that the fragment would not be island-respecting, but because something is going wrong with the \emph{semantic} condition on ellipsis. Specifically, I suggest that these examples, if presented somewhat `out of the blue', presuppose Questions under Discussion which do not provide the correct antecedent for the ellipsis site, assuming the semantic condition on ellipsis discussed in chapter REF. %TODO Ref semantic condition
+For example, I would argue that in \LLast, even with the focus placed on \textit{Ben}, the most salient reading is one in which the speaker is interested in which languages Abby speaks. Wanting to know which languages a person speaks is a natural thing to want to know; it is somewhat less natural to be interested in which pairs of people speak the same language. I argue that the QUD in \LLast is therefore {\it Which languages does Abby speak?}. The ellipsis condition therefore does not license the fragment {\it Charlie} on its own, as shown below.
+
+\ex. 	\a. Ellipsis condition: $\bigcup$QUD $\Leftrightarrow$ F-clo(E)
+	\b. QUD: Which languages does Abby speak?\\
+	    $\bigcup$QUD$= \exists x \in \pred{language}. $ Abby speaks $x$
+	\b. E = Abby speaks the same Balkan language that [$_F$ Charlie ] speaks.\\
+	    F-clo(E) = $\exists x. $ Abby speaks the same Balkan language that $x$ speaks\\
+	    No mutual entailment, therefore ellipsis not licensed.
+	    
+Note that a fragment answer which does specify a language \emph{is} licit in this context, even if the focus in the question is on {\it Ben} (and not the full phrase {\it the same Balkan language that Ben speaks}), further suggesting that the QUD in this context concerns the languages that Abby speaks, rather than who she speaks the same language as.
+
+\ex. 	\a. Does Abby speak the same Balkan language that $\nearrow$Ben speaks?
+	\b. No, Slovenian. (Ben speaks Macedonian.) %TODO Check that Macedonian is correctly called a Balkan language!
+	
+\ex. 	\a. QUD: Which languages does Abby speak?\\
+	    $\bigcup$QUD$= \exists x \in \pred{language}. $ Abby speaks $x$
+	\b. E = Abby speaks [$_F$ Slovenian].\\
+	    F-clo(E) = $\exists x. $ Abby speaks $x$\\
+	    Mutual entailment satisfied, so ellipsis licensed.\footnote{Strictly speaking, the elided sentence does not contain the restriction to languages for the existentially closed variable; I suppose that this is easily presupposed on the assumption that the only things that are spoken are languages, however.}
+	    
+Note further that if the context is extended to make it clear that the Question under Discussion \emph{is} about pairs of people that speak the same language, rather than just which languages Abby speaks, then the island-violating fragment answer improves:
+
+\ex. 	Context: We have before us lots of people. We know that these people are made up of lots of pairs of people who speak the same language as each other and who do not speak the same language as anyone else. (I.e. John and Mary both speak English and nothing else, Jan and Peter both speak Dutch and nothing else, etc.) A and B are playing a game where A is trying to guess which people belong to which pair. A's just trying to guess the right pairings, though; the actual languages they speak is irrelevant to him, all that's relevant is that the people in the pair speak the same language. B knows the pairings and will answer A's questions. A had already worked out that Abby and Charlie were a pair a while ago, but had forgotten this.
+	\a. Does Abby speak the same language that $\nearrow$[Ben] speaks?
+	\b. No, Charlie. (You'd already worked that pairing out, remember?)
+
+The context in \Last is an attempt to make clear that the Question under Discussion has to do with the people that Abby speaks the same language as, rather than the actual language Abby speaks. As such, the fragment answer passes the QUD-based semantic condition:
+
+\ex. 	\a. QUD $\approx$ Which person $x$ is such that Abby speaks the same language that $x$ speaks?\\
+	    $\bigcup$QUD $= \exists x. $Abby speaks the same language that $x$ speaks
+	\b. E = Abby speaks the same language that [$_F$ Charlie] speaks.\\
+	   F-clo(E) $= \exists x.$ Abby speaks the same language that $x$ speaks.\\
+	   Mutual entailment satisfied, so ellipsis licensed.
+	   
+As can be seen from the lengthy context provided in \LLast, it takes a lot of work to make the appropriate QUD salient in these cases. This difficulty, I suggest, is why Merchant's original example is degraded; there is no particular connection with island-sensitivity. I believe Merchant's other examples, such as adjunct islands or coordinate structures, can receive a similar explanation.
+
+\ex. 	\a. Did Ben leave the party because $\nearrow$Abby wouldn't dance with him? \hfill (adjunct island)\\
+	{}*No, \emph{Beth}.
+	\b. QUD: Why did John leave the party?\\
+		$\bigcup$QUD $ \approx \exists x.$ John left the party for reason $x$\footnote{I set aside here the question of the semantic type of reasons.}
+	\b. E: Ben left the party because [$_F$ Beth] wouldn't dance with him.\\
+		F-clo(E) $= \exists x. $ Ben left the party because $x$ wouldn't dance with him.\\
+	No mutual entailment, so ellipsis not licensed.
+
+Note that the idea that the QUD here is {\it Why did John leave the party?} is supported by the fact that a fragment which answers that question is licensed:
+
+\ex. 	Did Ben leave the party because $\nearrow$Abby wouldn't dance with him?\\
+	No -- just to feed his dog.
+	
+Note also that if the context is manipulated to make the relevant QUD more salient, the island-violating fragment becomes more acceptable:
+
+\ex. 	I know that many people who spurned Ben's advances at the party, but only one of them offended him hugely. Ben in fact \emph{left} the party because someone wouldn't dance with him; I'm not sure who, though.\\
+	\a. Did Ben leave the party because $\nearrow$Abby wouldn't dance with him?
+	\b. No, Beth.
+
+\ex. 	QUD $\approx$ For which person $x$ did John leave the party because $x$ wouldn't dance with him?\\
+		$\bigcup$QUD $ = \exists x.$ John left the party because $x$ wouldn't dance with him
+	\b. E: Ben left the party because [$_F$ Beth] wouldn't dance with him.\\
+		F-clo(E) $= \exists x. $ Ben left the party because $x$ wouldn't dance with him\\
+	Mutual entailment satisfied, so ellipsis licensed.	
+
+The same is true of the case involving coordination:
+
+\ex. \a. Did Abby get $\nearrow$[`The Cat in the Hat'] and `Goodnight Gorilla' for her nephew for his birthday? \hfill (coordinate structure)\\
+	{}*No, \emph{`The Lorax'}. (intended: `No, Abby got `The Lorax' and `Goodnight Gorilla' for her nephew for his birthday.')
+	\b. QUD: What did Abby get for her nephew's birthday?\\
+		$\bigcup$QUD $= \exists x. $ Abby got $x$ for her nephew's birthday
+	\b. E: Abby got [$_F$ `The Lorax'] and `Goodnight Gorilla' for her nephew's birthday.\\
+		F-clo(E) $ = \exists x. $ Abby got $x$ and `Goodnight Gorilla' for her nephew's birthday\\
+	No mutual entailment, so ellipsis not licensed.
+	
+Note that in this case, the fragment is only ungrammatical on the reading where Abby got `The Lorax' and `Goodnight Gorilla'. The fragment is grammatical on the reading where `The Lorax' was \emph{all} that Abby got (i.e. \el{Abby got} `The Lorax' \el{for her nephew's birthday}), which is expected if the above is the QUD in this situation. Again, if the context is manipulated, the fragment becomes more acceptable:
+
+\ex. 	\a. I know that Abby got something in addition to `Goodnight Gorilla'\ldots did she get $\nearrow$[`The Cat in the Hat'] and `Goodnight Gorilla'?\\
+	No, \emph{`The Lorax'}.
+	QUD $\approx$ What $x$ is such that Abby got $x$ and `Goodnight Gorilla'?\\
+		$\bigcup$QUD $= \exists x. $ Abby got $x$ and `Goodnight Gorilla' for her nephew's birthday
+	\b. E: Abby got [$_F$ `The Lorax'] and `Goodnight Gorilla' for her nephew's birthday.\\
+		F-clo(E) $ = \exists x. $ Abby got $x$ and `Goodnight Gorilla' for her nephew's birthday\\
+	Mutual entailment satisfied, so ellipsis licensed.
+	
+The conclusion that the QUD is the culprit for the ungrammaticality of Merchant's original examples is bolstered further by the fact that in some examples where the appropriate QUD is more contextually salient from the start, the fragment answer is appropriate, as in these examples repeated from \ref{ex:contextually-salient-QUDS-in-fragments-inside-islands}.
+
+\ex. 	\a. Q: Do they reward students that study $\nearrow$Spanish? \hfill (relative clause)\\
+	    A: No, French \el{they reward students that study t}.\\
+	    (QUD: which language is such that they reward students that study it?)
+	 \b. Q: Do you take milk and $\nearrow$ honey in your tea? \hfill (coordinate structure)\\
+	 	A: No, sugar.\\
+	 	(QUD: what is it, in addition to milk, that you take in your tea?)\footnote{This example may be more acceptable to English speakers from cultures where tea almost always contains milk (the U.K., for example), and so {\it milk} can be presupposed/destressed in the question.}
+	 	
+Furthermore, Noah Constant (p.c.) has pointed out to me that there are contexts in which fragments are \emph{not inside islands} in the source, but the fragment answer is still degraded.
+
+\ex. 	(example due to Constant)\\
+	A: Did Sue successfully convince most of her classmates
+     $\nearrow$the sun would implode during the next meteor shower if they
+     didn't give her their lunch money?\\
+B: ??No, the moon.
+
+Here the QUD is presumably something about what Sue convinced her classmates of. It is not obviously about which celestial bodies Sue talked about. I suggest that this is the reason for the degradation of the fragment answer in \Last. Notice that this is fragment is not within an island:
+
+\ex. 	What did Sue convince most of her classmates t would implode during the next meteor shower if they didn't give her their lunch money?
+
+On the basis of the data provided in this section, I conclude that in fact fragments are not in general island-sensitive, even after the availability of `short'/cleft sources is controlled for. The data adduced by \cite{Me04} which suggested that fragments were island-sensitive are actually artifacts of an independent confound, that of finding the appropriate QUD to serve as the antecedent for the purposes of the ellipsis condition. The fact that fragments seem to generally be island-insensitive (in contrast to sluicing, if we adopt the view taken in Thoms et al %TODO REF Barros
+) seems to suggest that, contra \cite{Me04}, fragments do not in fact move (while the {\it wh}-words in sluices do, as we would expect given the syntax of {\it wh}-words in the non-elliptical case.)
+
+\subsection{Lack of anti-connectivity effects}
+
+Another piece of evidence which casts the movement analysis into doubt is the fact that certain anti-connectivity effects which obtain in overt movement structures do not obtain in fragments. One example of this is Lebeaux effects REF %TODO Lebeaux effects ref
+; the fact that relative clauses in construction with moved NPs do not prompt the binding theory violations that they would if they were interpreted in the base position of the NP. That is, \Next[a] is ungrammatical on the coreference reading between {\it he} and John, and obligatorily prompt a disjoint reference effect between the R-expression and the pronoun; but the movement examples in \Next[b, c] are not ungrammatical on the coreferent reading and do not obligatorily prompt a disjoint reference effect.
+
+\ex. 	\a. *He$_1$ likes the book that John$_1$ wrote.
+	\b. Which book that John$_1$ wrote does he$_1$ like t?
+	\b. The book that John$_1$ wrote, he$_1$ likes t.
+	
+On the surface, the pronoun {\it he} does not c-command the R-expression {\it John} in \Last[b, c], while it does in \Last[a]. However, if the moved expressions are interpreted in their base positions, this c-command relation should hold, and should prompt a violation of Condition C of the Binding Theory, which states that R-expressions must always be free. Furthermore, it is standardly claimed in the literature\footnote{I use this hedge only because, to my ear and in my own experience asking informants, this contrast is not as robust as is sometimes claimed; to my ear, fronted complements of nouns containing R-expressions are not hugely degraded. However, at least the general direction of the judgments I have collected is consistent with the standard claim in the literature and I don't intend to challenge that claim here.} that when the R-expression is contained within the complement of a noun, as in \Next[a], the coreference reading is degraded with respect to the case where the R-expression is contained within a relative clause or adjunct modifying that noun, as in \Next[b, c].
+
+\ex. 	\a. *[Which [report [that John$_1$ is an idiot]]] did he$_1$ deny?
+	\b. [Which [report [that John$_1$ leaked]]] did he$_1$ deny?
+	\b. [Which [report [from John$_1$'s organization]]] did he$_1$ deny? 
+
+The standard explanation of these facts, proposed in Lebeaux REF %TODO Lebeaux reference
+, Chomsky REF, %TODO Chomsky late-merge
+\cite{Fox99}, %TODO Check this is the right ref
+ is to analyze adjuncts such as relative clauses or prepositional phrases as being merged very late in the derivation, after the movement of the DP to a left-peripheral position. No Condition C violation obtains in \Last[b, c], because the copy of the DP which is left in object position does not contain the R-expression; that R-expression is therefore not c-commanded by the pronoun, and no Condition C effect obtains.
+
+\ex. 	[Which [report [that John$_1$ leaked]]] did he $_1$ deny \sout{which report}
+
+By contrast, complements of nouns are assumed to be merged before {\it wh-}movement takes place. As such, the copy which is left behind by {\it wh-}movement \emph{does} contain the R-expression, which is c-commanded by the pronoun; this prompts a Condition C effect (i.e. disjoint reference is obligatory).
+
+\ex. 	*[Which [report [that John$_1$ is an idiot]]] did he$_1$ deny \sout{which report that John$_1$ is an idiot}
+
+The important fact here for our purposes is that movement of an NP containing a relative clause, which itself contains an R-expression, voids a disjoint reference effect which is obligatory if that movement does not take place.
+
+\ex. 	\a. *He$_1$ likes the book that John$_1$ wrote.
+	\b. The book that John$_1$ wrote, he$_1$ likes t.
+	
+However, in fragment answers, Condition C is \emph{not} bled. Disjoint reference effects \emph{do} obtain.
+
+\ex. 	What does he$_1$ like?\\
+	{}*The book that John$_1$ wrote.
+	
+It might be objected that this is not a very natural discourse to begin with, but note that non-elliptical answers to this question -- if the answer undergoes movement, as in a cleft structure, for example -- are fairly natural, and certainly do not prompt the strong disjoint reference effect that \Last does.
+
+\ex. 	What does he$_1$ like?\\
+	{}?It's [the book that John$_1$ wrote] that he likes t.
+	
+This is not expected on the movement-plus-ellipsis view of fragments. If the structure of the fragment answer in \LLast is as in \Next, then the relative clause should have late-merged after the movement has taken place, and no Condition C effect should obtain.
+
+\ex. 	[The book [that John$_1$ wrote]] \el{he$_1$ likes the book}
+
+This implies, rather, that the fragment has not in fact moved, but is interpreted for the purposes of the binding theory in its base position.
+
+%TODO Given that it's not clear that the C-command obviating adjuncts do in fact move, it's not clear how convincing this argument is.
+
+% Another such piece of evidence comes from similar binding effects in fragments which are adjuncts.\footnote{The examples which show this are due to Jeremy Hartman, whom I thank for putting me on to this.} Adjuncts which appear in the left periphery in English bleed Condition C, as shown below.
+% 
+% \ex. 	\a. *He$_1$ will leave after John$_1$ showers.
+% 	\b. After John$_1$ showers, he$_1$ will leave.
+% 	
+% If the adjunct in \Last[b] is analysed as having moved from a VP-internal position, then it should reconstruct and prompt the disjoint reference effect which is obligatory in \Last[a]. The reason why this does not happen is not clear\marginpar{Maybe the reason for this is well known?}. One proposal might be that in cases like \Last[b], no movement is involved, and the adjunct is base-generated in the left periphery REFS. %TODO Base-generation of adjuncts in the left periphery
+% 
+% After John showered, I said that he left.
+% After he showered, I said that John left.
+
+\subsection{Bare quantifier phrase answers}
+
+\cite{Me04} notes an objection to the movement-plus-ellipsis account of fragments, attributing it to Chris Potts p.c. Postal 1993 %TODO REF Postal 1993
+notes that `bare' quantifier phrases do not undergo left-dislocation in English. However, they are perfectly acceptable as fragment answers.
+
+\ex. 	\a. ??\{Everyone/Someone\}, they interviewed t.
+	\b. A: Who did you interview?\\
+		B: Everyone/Someone.\footnote{Obviously the answer {\it someone} here is very uncooperative, but it is clearly not ungrammatical in the way that the fronting example is.}
+		
+It is possible that the source of the ungrammaticality of the fronting examples in \Last[a] has to do with information structure rather than restrictions on movement {\it per se}; only contrastive topics front in English (at least outside of putative elliptical contexts such as the movement-plus-ellipsis approach to fragments), and perhaps bare quantifiers just don't make good contrastive topics. However, these bare quantifiers continue to be degraded even when placed in focus-movement structures such as clefts.
+
+\ex. 	??It was \{everyone/someone\} that they interviewed t.
+
+Given this resistance of bare quantifiers to movement, the grammaticality of the fragments in \Last[b] presents the movement-plus-ellipsis approach to fragments with a problem.\footnote{Merchant also notes, again crediting Chris Potts p.c., that Postal 1993 %TODO REF Postal 1993
+claims that names cannot be fronted; however, they can be perfectly good fragments:
+
+\ex. 	\a. ??Maria, they named her.
+	\b. A: What did they name her?\\
+		B: Maria.
+		
+However, Merchant notes that the judgments of \Last[a] are rather variable, and in fact I think that \Last[a] is one of the rare cases (noted in REF %TODO REF Focus movement OK in English
+) in which focus movement \emph{is} licit in English; that is, I believe that \Last[a] is grammatical with focal stress (falling pitch) on {\it Maria} and de-accenting on the rest of the sentence.
+As such, I don't think that this example constitutes an argument against the movement-plus-ellipsis analysis of fragments.}
+
+
+\subsection{Challenges to movement: summary}
+
+We have seen that there are a number of challenges to \cite{Me04}'s arguments that movement is involved in the derivation of fragments.
+
+\begin{itemize}
+\item Merchant claims that NPIs cannot be fragment answers (in English), and links this to the fact that they cannot front (in English). However, certain NPIs \emph{can} in fact be fragment answers in English, although they are generally immobile.
+\item Merchant argues that fragment answers are island-sensitive, suggesting that movement is involved in their derivation. However, there are many cases in which it appears that the presence of an island does not in fact rule out a fragment answer, even if the possibility of a `short source'/cleft sentence in the ellipsis site is controlled for.
+\item There are certain examples in English which show that movement of a DP containing a relative clause can bleed Condition C effects (so-called Lebeaux effects). However, Condition C effects are not bled in fragments, suggesting that movement is not involved in their derivation.
+\item Bare quantifiers cannot move in English, but can be fragments.
+\end{itemize}
+
+However, there is also a lot of evidence that movement \emph{is} involved in  the derivation of fragments. I review this evidence in the next section, and then investigate how this apparent paradox might be resolved.
+
+\section{Evidence for movement in fragments}
+
+\textbf{I have already written most of this in my first chapter. I may move that discussion to this point, or I might recap it here.}
+
+%TODO Write this.
+% Note also!:
+%TODO the fact that non-constituent strings cannot be fragment answers is a good argument for movement being implicated.
+% Also mention the fact that parts of compounds cannot be extracted.
+
+% 
+% \cite{Me04} provides a number of arguments for the presence of movement in fragment structures, which I review below.
+% 
+% \subsection{The P-stranding generalization}
+% 
+% This argument has been reviewed already in detail in section REF. %TODO ref to P-stranding discussion
+% I will only recap it briefly here. In short, languages such as English, which allow DPs which are complements of prepositions to move to the exclusion of that preposition (P-stranding), also do not require prepositions in fragment answers \Next. Languages such as German, however, which require prepositions to be pied-piped along with DPs, disallow `bare' DPs in fragment answers if the full structure would contain a preposition. \cite{Me04} carries out a broad typological survey of languages and establishes this as a secure generalization (and \cite{Me01} contains a similar survey to establish this fact for sluicing, also analyzed by Merchant as clausal ellipsis). These facts are obviously explained if movement is implicated in creating fragment structures; the requirement to express a preposition in pied-piping languages is simply an outcome of the fact that prepositions have to move along with their DPs in these languages.
+% 
+% \ex. 	. %TODO P-stranding example, copied
+% 
+
+\section{Solving the paradox: do fragments move?}
+
+\subsection{In what respects do fragments move?}
+
+We have seen that by some diagnostics, fragments appear to move, while by other diagnostics, they do not.
+I propose below what I believe to be the key generalizations to take out of these diagnostics.
+
+\ex.	If a constituent is \textsc{categorially} incapable of (phrasal) movement, it \emph{cannot} appear as a fragment.
+
+This generalization covers the cases of, for example, tensed IPs being unable to appear as fragments in English.
+It also covers the fact that non-constituents cannot be fragments, and the fact that heads (such as parts of compound words) cannot either.
+This generalization is a strong argument for a form of movement being implicated in the derivation of fragment answers in some way.
+
+\ex. 	If a constituent is generally capable of movement, but is contextually prevented from moving in a given structure by dint of being inside an \textsc{island}, it \emph{can} appear as a fragment.
+
+The ability of fragments to apparently appear in islands unproblematically was discussed in section \ref{sec:island-insensitivity}.
+This ability casts doubt on the movement analysis. 
+One way in which this could be understood is to say that fragments do move, but the island violation which is thereby created is voided by ellipsis; this was the approach to the island-insensitivity of sluices in REF %TODO island insensitivity in sluices
+, for example.
+However, recent work REF %TODO ref barros et al
+has shown that sluices \emph{are} in fact island-sensitive, their supposed island-insensitivity being an illusion created by the availability of `short sources'.
+A `repair by ellipsis' approach to the island-insensitivity of fragments therefore looks less tenable.
+Rather, this generalization is one that seems to point to movement not being present in fragment answer structures.
+
+\ex. 	If a constituent is generally capable of movement, but is contextually prevented moving in a given structure by dint of a structural configuration \textsc{other than an island} (such as, for example, being the complement of a P in non-P-stranding languages), it \emph{cannot} appear as a fragment.
+
+The inability to extract the complement of a P in non-P-stranding languages does not appear to be due to an island effect as such; the PP is not an island for extraction generally.\marginpar{I'd better check this.}%TODO PPs not islands generally?
+Rather, this is an effect that can be considered under the rubric of `locality effects'.
+For example, \cite{Ab03} argues that complements of P cannot be extracted in non-P-stranding languages because P is a phase head in these languages; extraction of P's complement would have to proceed through [Spec, P] (to respect the `escape hatch' property of phase heads), but this movement is too `short', and is ruled out in these languages.
+Effects like this seem to block the availability of fragments. 
+This generalization seems to suggest that movement \emph{is} implicated in the derivation of fragments.
+
+\ex.	For certain \textsc{interpretive} purposes such as binding (i.e. the lack of Lebeaux effects) and NPI licensing, fragments behave as if they are in their base position.
+
+Movement bleeds condition C and NPI licensing.
+However, in fragments, these bleeding effects do not obtain. 
+In other words, fragments are generally \emph{interpreted} in their base position, even in cases where overt movement prompts them (or certain parts of them) to be interpreted in the position they are moved to. 
+That is, overt movement disrupts the interpretation of NPIs, but fragments do not; and overt movement allows a relative clause to be understood in an `upstairs' position and not interpreted in a `downstairs' position, while in fragments, the relative clause apparently must always be interpreted in a `downstairs' position.
+This suggests that -- at least for purposes of interpretation -- fragments do not move.
+
+\subsection{The solution: fragments move at PF, but stay in situ at LF}
+
+The last generalization just discussed provides, I believe, the key to the puzzle. 
+As far as interpretation is concerned, fragments do not move.
+However, the restrictions on what can and cannot appear as fragments suggest that movement is indeed implicated.
+I suggest that this pattern tells us that fragments do undergo movement, but that this movement only takes place on the PF branch of the derivation.
+At LF, fragments stay {\it in situ}.
+
+There are a number of ways of implementing this basic idea.
+One idea, consistent with recent `single-output' models of syntax, would hold that two copies are made of a moved fragment, but that different choices are made about how to interpret these two copies; the higher copy is interpreted at PF (only), and the lower copy is interpreted at LF (only).\footnote{In fact one could not tell if the lower copy was interpreted at PF, as it would be within an elided constituent and therefore plausibly deleted at PF for independent reasons.}
+
+\ex. 	\a. What did John eat? --- Chips \el{John ate}.
+	\b. \Tree[.CP \qroof{Chips}.DP [.CP C [.TP \qroof{John}.DP [.TP T [.vP \qroof{John}.DP [.vP v [.VP [.V ate ] \qroof{chips}.DP ] ] ] ] ] ] ]\\
+	Higher copy of {\it chips} interpreted at PF; lower copy of {\it chips} interpreted at LF
+	
+I choose not to adopt this formulation here, however.
+One reason for this is that on such a view, it would essentially be a stipulation that the higher copy of the fragment is not interpreted at LF.
+On recent `single-output' proposals for modeling movement, every part of a structure is input to interpretation.\footnote{Further constraints are needed in order to ensure that only one copy (in the usual case) is interpreted at PF.
+See REFS %TODO: Only one copy at PF
+for discussion.} 
+The fact that certain elements, such as DPs which have undergone quantifier raising or {\it wh-}words, do not seem to be interpreted low, is handled via a mechanism which alters the interpretation of the lower copy(/ies) in a chain, such as Fox's Trace Conversion mechanism REF. %TODO Trace Conversion ref
+This is illustrated briefly in the examples below (the reader is referred to Fox for the full details of the Trace Conversion procedure).
+
+\ex. 	\a. Which book did John read?\\
+		\a. PF: Which book did John read \sout{which book}\\
+		\b. LF after Trace Conversion of the lower copy:\\
+			Which book $\lambda x$ [John read the book that is $x$]
+		\z. 
+	\b. John read every book.\\
+		\a. PF: \sout{every book} John read every book\\
+		(Higher, QR'd copy of the DP not interpreted at PF)
+		\b. LF after Trace Conversion of the lower copy:\\
+			Every book $\lambda x$ [John read the book that is $x$]
+
+Given this general view of how the process of movement works in a single-output model, saying that high copies of fragments (and only fragments) are not interpreted at LF would be a stipulation.
+Note that it wouldn't suffice to say that in the case of fragments, the higher copy undergoes Trace Conversion.
+This would not create a meaning difference, at least for the case of definite DP fragments, as \Next shows.
+The process of Trace Conversion would essentially duplicate the meaning of the definite DP.
+
+\ex. 	What did John read? --- The book \el{John read the book}.\\
+	LF after Trace Conversion: [The book $\lambda x$ [John read the book $x$]]\\
+	interpretation: the book is such that John read that book.
+
+The problem with this setup is that it would allow the late merger of a relative clause with the moved fragment DP.
+Even if we stipulate that the moved copy of a fragment DP is trace-converted in the high position, there is no plausible mechanism which could stop the meaning of a late-merged (not copied) relative clause being interpreted at LF, as shown in \Next.
+
+\ex.	What did Mary read? --- The book that John wrote \el{Mary read the book}.\\
+	LF after Trace Conversion of the higher copy of {\it the book}:\\
+		{}[The book that John wrote $\lambda x$ [Mary read the book that is $x$]]{}\\
+	interpretation: the book that John wrote is such that Mary read that book.
+	
+However, we must not allow late merger of relative clauses in the fragment cases, as demonstrated by the fact that the fragment behaves as if the relative clause is merged in a low position (below the subject) for the purposes of Condition C.
+This is in contrast to the overt movement case, as shown below.
+
+\ex. 	\a. *He$_1$ likes the book that John$_1$ wrote.
+	\b. The book that John$_1$ wrote, he$_1$ likes.
+	
+\ex. 	What does he$_1$ like? --- *The book that John$_1$ wrote.
+
+The ungrammaticality of \Last suggests that the below is not a possible LF for the elliptical sentence.
+
+\ex. 	[The book that John wrote $\lambda x$ [he likes the book $x$]]
+
+In this LF, Trace Conversion of the higher copy of {\it the book} (which would be essentially vacuous) would not stop the interpretation of the relative clause containing {\it John} in the high position.
+However, the binding facts shown in \LLast suggest that this relative clause is interpreted in the lower position, where it is c-commanded by the pronoun {\it he}.
+Nothing in the single-output model can ensure this, without a stipulation that late merger of relative clauses is forbidden just in the case of fragments.
+
+I propose an alternative formulation which derives the low interpretation of fragments without stipulation.\footnote{I do not mean to suggest that \emph{no possible} version of the single-output model can derive the binding facts presented here.
+It is possible that further research and development of a single-output model of syntax will discover a principled reason why late merger of relative clauses would be barred in fragment movement, but not in {\it wh-}movement or topicalization.
+However, pending discovery of such a reason, I adopt the Y-model formulation given here.}
+This approach returns to a more derivational, `Y-model' theory of syntactic structure; a model in which operations in the `narrow syntax' take place before a branching point, at which the derivation is sent off to PF and LF.
+Further syntactic operations can take place along both the PF and LF branches of the tree, but these two levels of PF and LF do not `communicate' with each other after the branching point, and operations that are performed along one `branch' have no effect on the interpretation given to the syntactic structure on the other `branch'.
+
+\ex. 	\Tree[.Input [.{Narrow syntax/`surface structure'} {Phonological interpretation} {Logical interpretation} ] ]
+
+I assume that the movement operations which are available along each branch (PF/LF) are fundamentally the same operations which are available at narrow syntax. 
+For LF this is not controversial.
+It is somewhat more controversial for the PF branch, but precedent can be found, for example, in REFS. %TODO PF movement being movement
+In particular, I assume that the set of things which movement operates over remains the same -- that is, essentially, movement continues to target syntactically defined constituents rather than, say, linearly continuous substrings, or syllable sequences, or things of that sort.\footnote{There may be displacement procedures which take place phonologically and derivationally `after' the PF movement I envisage here; see e.g. REFS. %TODO Phonological movement refs
+All I rely on here is the availability of a certain stage in the derivation where syntactically defined operations have an effect, but only at PF.}
+Given this, I propose that the syntax of a fragment answer structure at the point at which the derivation branches into PF and LF resembles the below.
+(I simplify slightly by collapsing vP and VP into a single phrase.)
+
+\ex. 	\a. What did John eat? --- Chips.
+	\b. \Tree[.CP C$_[E]$ [.TP \qroof{John}.DP [.TP T [.VP [.V ate ] \qroof{chips}.DP$_[F]$ ] ] ] ]
+	
+At this point, the DP {\it chips} is {\it in situ} and is endowed with a [F(ocus)] feature REF. %TODO Focus features
+The complementizer\footnote{I defer discussion of the precise nature of the head that bears the [E]-feature until section REF %TODO left periph section ref
+.} bears the [E]-feature.
+At this point neither of these features is doing any syntactic work.
+However, after the structure is sent off to LF and PF, these features start to interact.
+I propose that no further transformations take place along the LF branch.\footnote{At least, not ones necessary for the derivation of the ellipsis in the structure.
+Other transformations which occur at LF, such as quantifier raising, may still take place.}
+That is, the LF of a fragment structure looks just like \Last[b].
+The [E]-feature is interpreted at LF as placing a felicity presupposition on the utterance: it is only grammatical if the focus-closure of the TP which is its sister mutually entails the union of the Question under Discussion, as discussed in chapter REF. %TODO Semantics chapter reference
+If this presupposition is not met, the utterance is semantically infelicitous.
+This essentially delivers for us the results discussed in chapter REF. %TODO Semantics chapter reference
+
+However, at PF, I propose that the [F]-marked DP does move.
+Specifically, I follow a suggestion made by \cite{NYO12} for {\it why}-stripping cases (such as {\it John ate natto. Why natto?}).
+Their proposal builds on the notion of a Recoverability condition of the sort proposed by \cite{Pe97}.
+The essence of the condition is this.
+The [E] feature instructs the phonology to delete/fail to realize all the material that should be linearized in its TP complement.
+However, part of that material -- the DP {\it chips}, in this case -- is marked with a [F]-feature.
+The phonological interpretation of this feature is a pitch accent and stress.
+However, the requirement to stress the DP is at odds with the requirement that the material within TP not be pronounced.
+I propose that the way the grammar resolves this conundrum is to allow PF to carry out a `last resort' movement of an [F]-marked constituent to a position outside of the ellipsis, the specifier position of the head bearing the [E]-feature.
+
+\ex.		\Tree[.CP \qroof{Chips}.DP [.CP C$_{[E]}$ [.TP \qroof{John}.DP [.TP T [.VP [.V ate ] \qroof{chips}.DP ] ] ] ] ]
+
+Note that, while this movement takes place in (the PF branch of) syntax, it is not feature-driven.
+ It is driven entirely by the need of PF to reconcile the instruction to elide TP with the instruction to stress anything marked with [F].
+The last-resort nature of this process has the effect of restricting the movement to co-occurring with ellipsis only.
+ The movement of focused material to the left periphery is ungrammatical in English outside of the clausal ellipsis context, so we can suppose that there is not a general process of attraction of a constituent bearing an [F] feature to the left periphery.
+ 
+ This view is at odds with the analysis proposed in \cite{Me04}, in which the [E]-feature itself can attract and check the [F]-feature on the focused constituent to escape the ellipsis.
+ It is also at odds with the analysis  proposed in Richards %TODO Richards features
+ and \cite{Te13}, in which an [F]-feature is weak in English. 
+ On Richards' and Temmerman's analyses, %TODO Richards: understand
+ 
+ Analyses in which the movement is feature-driven have the advantage that no `extra' technology is needed. 
+ Merchant's analysis, in which the [E]-feature checks the focus feature on the moved constituent, also has the advantage of linking focus fronting in English with ellipsis, and ensuring that one is not seen without the other.
+ However, such analyses face the problem that this sort of feature-driven movement, if it takes place at the narrow syntax, should allow for late merger of relative clauses with the moved element -- that is, Lebeaux effects (bleeding Condition C) should be possible.
+ We have seen, however, that this sort of effect does not obtain in fragment answers.
+ In order to avoid this possibility, it would have to be stipulated that the relevant feature-checking takes place only at PF.
+ %TODO do you get this sort of mvt atPF?
+ 
+ An analysis in which the movement of a fragment takes place at PF, entirely to satisfy a PF-level condition of Recoverability, does not face these problems.
+ On the assumption that PF is unable to merge anything with semantic content\footnote{I remain neutral about whether things without semantic content, such as expletives, are merged at PF.} -- as such material would not be interpretable if it was merged only at PF and not at LF -- we predict that late merger of a relative clause is impossible in a constituent which has moved only at PF.
+ Any relative clause in a fragment (e.g. {\it What did John read? --- The book that he wrote}) is merged at the narrow syntax, and is left {\it in situ} at LF.
+ 
+ %TODO Talk about Boone
+ 
+ \subsection{A movement analysis accounts for the restrictions on fragments}
+ 
+ A theory in which fragments move only at PF, but not at LF, explains the generalization that for interpretive purposes -- e.g. for the purposes of evaluating the requirements of the Binding Theory, or for the licensing of negative polarity items -- fragments do not look like they have moved.
+ A question which then arises is, why analyze fragments as having moved at all?
+ One could imagine an implementation of ellipsis in which focused elements remain {\it in situ}, and escape ellipsis just by dint of being focused (see e.g. Goto %TODO REF Goto
+ for a phase-based implementation along these lines).
+ 
+ I argue that fragments should be given a movement analysis because of the fact that a number of restrictions of what can and cannot be a fragment seem to reduce to restrictions on movement, as argued above.
+ For example, we see that the only objects which can be fragments are objects which can be targeted by a phrasal movement operation.
+ Heads cannot be fragments, while phrases can.
+ We can see this from the below contrast %TODO add Julian's stuff
+ 
+ We can also see that subparts of compound nouns cannot move.
+ 
+ \ex.	\a.	( \\ %TODO Merchant ref
+ 		Did she vote for a [$_N \nearrow$[Green Party] candidate]?\\
+ 		{}*No, {\it Reform Party}./No, a {\it Reform Party} candidate.
+ 			\b. What kind of sausage would you like?\\
+ 				{}*Blood./A blood sausage.
+ 			\b. Should the government raise $\nearrow$income tax?\\
+ 				{}*No, sales./No, sales tax.
+ 	
+ 	Note that care is needed here. There are some apparent counterexamples:
+ 	
+ 	\ex.		\a. Is Gorbachev pro- or anti-communist these days?\\
+ 		Pro-. %TODO Stainton ref
+ 			\b. Is he a $\nearrow$French teacher?\\
+ 			No, history.
+ 			
+ 		However, as Merchant %TODO ref Merchant 3kinds
+ 		notes, such examples can be explained as insertion of different material in the ellipsis site, as in \Next.
+ 		The examples in \LLast have been constructed to make such readings less plausible.
+ 
+ \ex.	\a. \el{He is} pro-.
+ 		\b. \el{He teaches} history.
+ 		
+ 		Note that the ungrammaticality of such examples cannot be attributed to the absence of a suitable QUD, as was proposed earlier for putative cases of island violations.
+ 		 In these cases, the questions under discussion seems to be quite clear, and even an attempt to make them completely explicit does not rescue the ungrammaticality of the fragments.
+ 		
+ 		\ex.		\a. I know John's making an unusual type of sausage\ldots is he making  $\nearrow$fish sausage?\\
+ 			{}*No, blood.
+ 				\b. The local government has the power to raise sales tax and income tax. Should it raise $\nearrow$sales tax?\\
+ 				{}*No, income.
+ 				
+ The inability of parts of compounds to be fragments is derived if phrasal movement is involved in their derivation. 
+ Parts of compound nouns are heads.
+ As such, they cannot be targeted by the phrasal movement processes of syntax.
+ 
+ \subsection{Islands are violable, locality violations are not}
+ 
+ Another reason to give fragments movement analyses stems from the fact that certain phrases -- ones which cannot move -- cannot be fragments.
+ For example, finite TPs cannot move, and cannot be fragments, and complements of P in non-P-stranding languages cannot move, and cannot be fragments (the P-stranding generalization, discussed in section REF %TODO P-stranding sec ref 
+ and at length in \cite{Me01, Me04}).
+ However, some care is needed here.
+ The inability of DP complements of P to move in non-P-stranding languages is a configurational property -- that is, DPs can generally move in these languages; it is only when they find themselves in the complement position of Ps that they cannot move.
+ However, I have gone to some lengths in section REF %TODO ref where you discuss island-sensitivity
+ to argue that fragments \emph{can} move out of islands.
+ But if a constituent finds itself in an island, this too is a \emph{configurational} reason for immobility.
+ We would then want to know why ellipsis can apparently amnesty the conditions which prohibit movement out of an island, but has no such power to amnesty violations of the ban on P-stranding in languages where such a ban is operative.
+ To the best of my knowledge, this issue has not been addressed in the literature on ellipsis, although Klaus Abels in his dissertation on locality effects and adposition stranding does address these facts (\cite[sec. 4.5.2]{Ab03}).
+ 
+ I propose the following analysis of the difference.
+ Consider a schematic example such as \Next, in which a particular movement configuration is ungrammatical.
+ 
+ \ex. 	*\Tree[.XP YP$_1$ [.XP X [.ZP Z [.WP Spec [.WP W {\sout{YP$_1$}} ] ] ] ] ]
+ 
+ There are (at least) two reasons for which a grammar might rule out a configuration like \Last.
+ On an analysis in which movement is driven by the operation Agree, consisting of a feature Probing to find a co-valued Goal, and displacing that Goal to the Probe's Specifier position (REFS %TODO Agree-based Movement
+ ), the movement of YP in \Last is a property of the features which X bears, establishing an Agree relation with features borne by YP.
+ I show such a feature here as [F].
+ 
+ \ex. 	\Tree[.XP YP$_1$ [.XP X$_{[iF]}$ [.ZP Z [.WP Spec [.WP W {\sout{YP$[uF]$}} ] ] ] ] ] %TODO movement arrow
+ 
+ It has been commonly assumed (since the formulation of Rizzi's Relativized Minimality, REF %TODO Rizzi RM ref
+ ) that considerations of locality place certain restrictions on the establishment of this sort of relation.
+ Specifically, an Agree relation cannot be established between two co-valued features on syntactic objects $\langle$X, Y$\rangle$ if there is a syntactic object Z which is structurally closer to the target Y than X is.
+ So in the example in \Last, movement to the Specifier position of XP would be ruled out if Z bore the same feature [F] as X and YP do; the feature [F] on Z would be more local to YP than the feature [F] on X, and so establishing an Agree relation between X and YP would be a locality violation.
+ 
+  \ex. 	\Tree[.XP YP$_1$ [.XP X$_{[iF]}$ [.ZP Z$_{[iF]}$ [.WP Spec [.WP W {\sout{YP$[uF]$}} ] ] ] ] ] %TODO movement arrow, blocked
+  
+  This reason for the immobility of YP is configurational in the sense that it is the Z intervening between X and YP which blocks the movement.
+  YP might in general terms be a possible target for movement, but in this configuration, the Agree relation is blocked, and no movement is possible.
+  
+  Another way in which the movement of a phrase YP may be blocked is if YP finds itself in an island.
+  If ZP is an island for movement, then movement (of any constituent) out of ZP will be ungrammatical.
+  
+  \ex. 	*\Tree[.XP YP$_1$ [.XP X [.ZP Z [.WP Spec [.WP W {\sout{YP$_1$}} ] ] ] ] ] %TODO movement arrow
+  
+  Here, it is not the featural composition of Z which causes the ungrammaticality of extraction.
+  Rather, some other fact about the architecture of movement rules out extraction.
+ 
+ I will argue here that we can and should draw a crucial distinction between these two configurational restrictions on movement.
+ In the case of a locality violation, the architecture of syntax, and in particular what it means to have a probe-goal relation between features, makes it impossible for the syntax to ever establish an Agree relation between the attracting head and the constituent to be moved.
+ In a sense, movement which would be barred for reasons of locality `never gets off the ground'; the syntactic derivation that would be required to move something past an intervener is just never generated, and sentences which would result from such a configuration are ungrammatical for that reason.
+ 
+ By contrast, it is possible to think of island-violating movement as being potentially generable by the narrow syntax.
+ That is, even if ZP is an island, the below configuration is in principle licit, at least at narrow syntax.
+ 
+ \ex.	\Tree[.XP YP$_1$ [.XP X [.ZP Z [.WP Spec [.WP W {\sout{YP$_1$}} ] ] ] ] ] %TODO movement arrow
+
+ We could imagine, rather, that what rules configurations like \Last out is not any problem at the narrow syntax, but rather a problem at the interfaces, and specifically, a problem with the interpretation of such structures at PF.
+ One implementation of this is what has been called the `PF theory of islands'. REFS %TODO REFS PF theory of islands
+ On this theory, extraction of phrases out of islands results in a trace marked with a particular diacritic *.
+ This diacritic is uninterpretable at PF, and as such, structures which contain traces marked with this diacritic are ungrammatical, causing a crash at the PF interface.
+ 
+ \ex.	\Tree[.XP YP$_1$ [.XP X [.ZP Z [.WP Spec [.WP W [.YP t$_1$* ] ] ] ] ] ] %TODO movement arrow
+ 
+ Such a theory of islands, where the ungrammaticality of movement is a property of the PF interface level rather than a property of the narrow syntax, allows us to draw a crucial distinction between two reasons for the ungrammaticality of movement.
+ Island-violating configurations are ones in which movement is ruled out by PF.
+ Locality-violating configurations are ones in which the Agree operation relevant for movement simply cannot be established at narrow syntax in the first place.
+ My contention will now be: being in an island does not bar a constituent from being a fragment, but being in a locality-violating configuration does.
+ This analysis, I argue, cleaves the correct distinction between configurations like adjuncts, subjects, coordinations -- islands -- from which fragments can be extracted; and configurations like extraction of the complement of P in a non-P-stranding language, which is as impossible in ellipsis/fragment structures as it is anywhere else in such a language.
+ The basic logic of the claim will be the same as that presented in \cite{Me01, Me04}.
+ Ellipsis, because it erases *-marked traces, amnesties island violations; as such, constituents can be extracted from islands just in case those islands undergo ellipsis.
+ However, attempting to extract constituents in a configuration where considerations of locality ban it is ungrammatical.
+ I will argue, following \cite{Ab03}'s analysis of anti-locality effects in adposition stranding and TP movement, that the configurational bar on some fragments (e.g. complements of P in non-P-stranding languages) is due to the fact that these movement relations can never be established even at the narrow syntax.
+ Ellipsis cannot `amnesty' these configurations, as they can never be established at narrow syntax in the first place.
+ Firstly, I will review \cite{Ab03}'s analysis of locality violations.
+ 
+ \subsection{\cite{Ab03} and locality restrictions}
+ 
+ \cite{Ab03}'s aim is to defend the following generalization, and provide an explanation for it.
+ 
+ \ex. 	{\it Abels' generalization} \marginpar{Maybe other people noticed this first.}\\
+ 	The complement of a phase head is immobile (although constituents within this complement may themselves be extracted).
+ 	
+ One example of this is the immobility of TPs which are complements of C$^0$ heads.
+ Abels points out that TPs are mobile in principle, as shown by the below examples of raising infinitivals (Abels' (119)).
+ 
+ \ex. 	\a. How likely to win the race is John?
+ 	\b. How likely is John to win the race?
+ 	
+ On the assumption that {\it to win the race} has here been generated as complement of {\it likely}, the surface constituency of \Last[b] indicates that the TP {\it to win the race} has been displaced before the {\it wh-}movement of {\it how likely}.
+ (Note that {\it how likely} could not be moved unless {\it to win the race} had already been extracted, as {\it how likely} is not a constituent of its own, as \Last[a] indicates.)
+ 
+ However, TPs which are complements of C$^0$ heads cannot front, as shown by the below data (Abels' (106); English examples are given here, but Abels also provides data from French and Icelandic showing the same fact, that complementizers cannot be `stranded' under TP movement.)
+ 
+ \ex. 	\a. Nobody believes that anything will happen.
+ 	\b. That anything will happen, nobody believes.
+ 	\b. *Anything will happen, nobody believes.
+ 	
+ Abels argues that the immobility of TPs which are complements of C$^0$ comes from the fact that C$^0$ is a phase head, which immobilizes its complement.
+ Given that v is generally also argued to be a phase head REFS %TODO v phase refs
+ , we might expect to see similar immobility effects for the complement of v, i.e. VP.
+ Abels demonstrates that this is indeed the case.
+ Abels first shows that VPs are generally mobile, arguing that as unaccusatives and passives have often been argued to lack v,
+ \footnote{Abels acknowledges that this was a controversial assumption even at the time of his writing, and more recent work REFS %TODO phasehood of unacc v
+ has tended to the conclusion that unaccusative and passive verb phrases may well indeed contain a phasal v.
+ To bolster the case that VPs are in principle mobile, Abels also adduces a more complicated set of data from German restructuring infinitivals.
+ I do not discuss this here, referring the reader to Abels (section 3.2.1) for discussion.}
+ the possibility of moving the unaccusative and passive verb phrases below demonstrates the mobility of VP.
+ 
+ \ex. 	(Abels' (149--151), slightly adapted)
+ 	\a. [$_{VP}$ Arrested], John certainly was t$_{VP}$.
+ 	\b. [$_{VP}$ Read easily], the book certainly does t$_{VP}$.
+ 	\b. [$_{VP}$ Freeze solid], the river did t$_{VP}$.
+ 	
+ Of course, transitive verb phrases (which uncontroversially do include v) can also front, as shown in \Next.
+ This looks like a VP has fronted even in construction with a v$^0$, suggesting that VPs which are complements of v$^0$ phase heads can in fact front.
+ 
+ \ex. 	Eat the natto, I certainly will.
+ 
+ But, given the standard assumption that v$^0$ is silent in English, we cannot tell if \Last is a counterexample to the generalization that phase heads immobilize their complements, or if what has fronted \emph{includes} v$^0$ (and not just its VP complement),
+ 
+ \ex. 	[$_{vP}$ v$^0$ eat the natto ] I certainly will t$_{vP}$.
+ 
+ Abels adduces some evidence that, indeed, VPs cannot move while stranding their v heads; that is, the generalization that complements of phase heads (here the VP complement of v) cannot be extracted.
+ The argument is based on one in Huang 1993 REF. %TODO Huang 1993 ref
+ Huang notes that, in cases of embedded DP topicalization, an anaphor can take a matrix subject as antecedent (while this is not possible if the object DP remains in situ).
+ 
+ \ex. (Abels' (168))
+ 	\a. John$_i$ said that Bill$_j$ likes pictures of himself$_{j/*i}$.
+ 	\b. John$_i$ said that pictures of himself$_{j/i}$, Bill$_j$ likes.
+ 	
+ However, Huang notes that under verb phrase topicalization, the pattern is different; here, only local control of the anaphor is possible, and the ability of the matrix subject to control the anaphor disappears.
+ 
+ \ex. 	(Abels' (169))
+ 	\a. John$_i$ said that Bill$_j$ would certainly wash himself$_{j/*i}$.
+ 	\b. John$_i$ said that wash himself$_{j/*i}$, Bill$_j$ certainly would.
+ 	
+ \ex. 	(Abels' (170))
+ 	\a. *John$_i$ said that Mary would like pictures of himself$_i$.
+ 	\b. ?*John$_i$ said that like pictures of himself$_i$, Mary certainly would.
+ 	
+ Huang's explanation of these facts is that the topicalized verb phrase here contains a trace of the subject, following the VP-internal subject hypothesis (\cite{KS91} among much other work).
+ This trace obligatorily governs the anaphor:
+ 
+ \ex. 	John said that [t$_{Bill}$ wash himself] Bill certainly would.
+ 
+ However, Abels points out that the recent consensus is that subjects are actually first merged, not within VP, but in the specifier position of vP (see e.g. \cite{Kr96}). %TODO vP subjects refs
+ Given that assumption, we are forced to conclude that it is vP which has fronted in cases like \Last, and moreover, that it is impossible for VP to front in this configuration.
+ If VP could front to the exclusion of vP, giving the configuration in \Next, there would be no trace of the subject in the fronted constituent, and Huang's argument for the unavailability of the matrix subject-bound reading of the anaphor would not go through.
+ 
+ \exi. (Abels' (172))\\
+ 	John said that [ [VP wash himself] [Bill certainly would [vP t$_{Bill}$ t$_{VP}$ ]]]
+ 	
+ Abels acknowledges that it is possible that main verbs move to v in English, in which case the above constituency would not be possible in any case.
+ However, if main verbs do move to v in English, Abels points out that this reasoning would allow us to account for the immobility of other constituents which are plausibly VPs, as in the below examples.
+ 
+ \ex. (Abels' (174--178))
+ 	\a. 	\a. John looked up Mary's phone number.
+ 		\b. *Up Mary's phone number, John looked.
+ 		\z. 
+ 	\b.	\a. John gave Mary a pencil.
+ 		\b. *Mary a pencil, John gave.
+ 		\z.
+ 	\b.	\a. The D.A. accused the defendants during the trials.
+ 		\b. *The defendants during the trials, the D.A. accused.
+ 		\z.
+ 	\b. 	\a. John told Mary that she should leave.
+ 		\b. *Mary that she should leave, John told.
+ 		
+ Abels argues that the immobility of these constituents can be understood in terms of anti-locality and the ban on moving the complements of phase heads; if each of the unfrontable constituents in \Last are VP complements of v heads, the reason they cannot move is because they would violate this ban.
+ 
+ Finally, Abels proposes that -- in many languages -- P is a phase head.
+ This, Abels argues, explains the ban on preposition stranding in many languages; the complement of P cannot be extracted. 
+ In languages such as English, in which prepositions can be stranded, P is not a phase head, and its complement can be extracted.
+ 
+ Abels demonstrates that the ban on P-stranding is to be understood as a ban on the extraction of P's complement -- rather than, say, being understood as islandhood of PP in the relevant languages -- by showing that even in non-P-stranding languages, it is in principle possible to subextract from the complement of P.
+ Only extraction of the entire complement is barred.
+ This argument is given in detail in Abels' section 4.1. I present just one argument here, from Russian.
+ Russian is a non-P-stranding language, as \Next shows.
+ 
+ \ex. (Abels' (194, 195))
+ 	\ag. Ot \v{c}ego sleduet otkazat'sja?\\
+ 		of what follows {give up-self}\\
+ 		`What should one give up?'
+ 	\bg.	*\v{C}ego sleduet otkazat'sja ot?\\
+ 		what follows {give up-self} of\\
+ 		
+ However, subextraction of a part of the complement of {\it ot} `of' is grammatical, as \Next shows.
+ 
+ \ex. 	(from Abels' (196, 197))
+ 	\ag.  Sleduet otkazat'sja [ot vsja\v{c}eskih pretenzij [na monopoliju istori\v{c}eskogo znanija.]]\\
+ 		follows {give up-self} of whatsoever hopes on monopoly historical knowledge\\
+ 		`One has to give up all hopes on a monopoly on historical knowledge.'
+ 	\bg.	?Na \v{c}to sleduet otkazat'sja [ot vsja\v{c}eskih pretenzij t$_{na \v{c}to}$]\\
+ 		on what follows {give up-self} of whatsoever hopes {}\\
+ 		`What should one give up all hopes for?'
+ 		
+ Abels argues on the basis of this that complements of P are immobilized, although subextraction from those complements are possible.
+ 
+ \subsection{The implementation of Abels' theory}
+ 
+ Abels' account of these facts has three ingredients.
+ The first is the familiar Attract Closest principle already discussed above under the name of Relativized Minimality: if two objects X, Z wish to enter into an Agree relationship w.r.t a feature [F], they cannot if there is another object Y which also bears [F] and which is closer to the goal Z than the probe X is.
+ The second ingredient is the proposal that movement is a Last Resort operation which can only take place in order to satisfy feature checking requirements.
+ Making movement a Last Resort operation derives the familiar locality restriction which bars the movement of complements to their own specifiers, i.e. the configuration in \Next.
+ Abels argues that this is ruled out because the head X could already locally check any features which YP might need to be checked, leaving YP in complement position, and so movement would not be necessary; and if movement is a Last Resort operation, then if movement is not necessary, it is not possible.
+ 
+ \ex. 	*\Tree[.XP {} [.XP X YP ] ] %TODO Movement arrow
+ 
+ The last ingredient of Abels' proposal is that phase heads are merged into the derivation bearing all possible features that can enter into attraction relations, i.e. they are `universal interveners'.\footnote{Abels notes that in many cases these features are not checked (i.e. failure to attract a phrase to a phase head does not result in a crash because of unchecked features); and in fact often these features don't seem to play a role in the derivation at all. Abels motivates a theory of default feature values (sec.~2.2.2.2) to avoid these problems. I won't discuss this theory here, referring the reader to Abels for discussion.}
+ This property of phase heads ensures that no phrase can move past a phase head unless it first moves to the Spec of that phase head (the `escape hatch' property of phases).
+ No constituent could establish an Agree relation `past' the phase head, as this would result in a violation of Attract Closest, as shown in \Next[a].
+ However, if the constituent first moves to the Spec of the phase head, as shown in \Next[b], the higher head can then enter into an attraction relation with it.
+ 
+ \ex. 	\a. *\Tree[.XP Spec [.XP X$_{[F]}$ [.$\phi$P Spec [.$\phi$P $\phi_{[F]}$ [.YP Y ZP$_{[F]}$ ] ] ] ] ] %TODO Movement arrow
+ 	\b. \Tree[.XP Spec [.XP X$_{[F]}$ [.$\phi$P Spec [.$\phi$P $\phi_{[F]}$ [.YP Y ZP$_{[F]}$ ] ] ] ] ] %TODO Movement arrow
+ 
+ This combination of assumptions derives the ban on the movement of the complement of a phase head.
+ Recall that no complement of a head X may move to [Spec, XP].
+ However, to escape a phase, constituents \emph{must} move to the Spec of that phase.
+ This combination of factors rules out the movement of the complement of a phase head; they cannot raise to the Spec of that phase head, but they also cannot raise any higher, as the phase head is a `universal intervener'.
+ 
+ \subsection{The relevance for ellipsis}
+ 
+ Abels' theory of locality derives the fact that complements of phase heads cannot be extracted.
+ Note now that complements of phase heads also cannot be fragments.
+ T he contrast between raising infinitivals and TPs which are complements of C^$0$ heads was discussed in \cite{Me04}, and noted above\ldots %TODO ref section raising infs
+
+ 
+ \ex. 	{\it Raising infinitivals are good fragments}\\
+ 	What is John likely to do?\\
+ 	To win the race.\footnote{An answer which corresponds to a smaller verbal constituent, i.e. {\it win the race}, is somewhat preferred here, presumably on general considerations of brevity. The infinitival answer is not ungrammatical, however.}
+ 	
+ \ex. 	{\it TP complements of C$^0$ are not good as fragments}\\
+ 	What does nobody believe?
+ 	\a. That anything will happen.
+ 	\b. *Anything will happen.
+ 	
+ The ban on complements of P being fragments is the famous P-stranding generalization.
+ 
+ \ex. 	P-stranding examples %TODO P-stranding examples
+ 
+ And the VPs which Abels discusses as being immobile are also bad fragments, although verbal constituents (ones which plausibly include v) are good as fragments in general.
+ 
+ \ex. 	{\it vPs are good fragments}\\
+ 	What will he do then?\\
+ 	Leave the country./Give Jane her money./Tell Mary that she should leave.
+ 	
+ \ex. 	{\it Verbal constituents smaller than VP are not good fragments}\footnote{One apparent counterexample is an object plus an adjunct, which cannot be fronted, but sounds quite good as a fragment;
+ 
+ \ex.	\a. *The defendants during the trials, the D.A. accused.
+ 	\b. Who did the D.A. accuse?\\
+ 		?The defendants during the trials.
+ 
+ I think in this case, however, this is difficult to distinguish from two separate utterances and two cases of fragment ellipsis (the latter being a case of `sprouting').
+ 
+ \ex.	Who did the D.A. accuse?\\
+ 	The defendants \sout{the D.A. accused}. During the trials \sout{the D.A. accused them}.
+ 	
+ {}
+ 
+ }\\
+ 	\a. 	\a. *Up Mary's phone number, John looked.
+ 		\b. What did John look up?\\
+ 			Mary's phone number./*Up Mary's phone number.
+ 		\z.
+ 	\b.	\a. *Mary a pencil, John gave.
+ 		\b. What did John give Mary?\\
+ 			A pencil./*Mary a pencil./*Her a pencil.
+ 		\z.
+
+ 	\b. 	\a. *Mary that she should leave, John told.
+ 		\b. What did John tell Mary?\\
+ 			That she should leave./*Mary that she should leave./*Her that she should leave.
+ 
+ It might be objected that in these cases, the ungrammatical fragments correspond to a constituent which is `larger' than that being asked for in the question.
+ However, I think this objection is without force; it is in general possible to have a fragment which is larger than the {\it wh-}word in the corresponding constituent question.
+ 
+ 
+ \end{document}
