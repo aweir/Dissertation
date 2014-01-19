@@ -790,7 +790,7 @@ The last-resort nature of this process has the effect of restricting the movemen
  Specifically, an Agree relation cannot be established between two co-valued features on syntactic objects $\langle$X, Y$\rangle$ if there is a syntactic object Z which is structurally closer to the target Y than X is.
  So in the example in \Last, movement to the Specifier position of XP would be ruled out if Z bore the same feature [F] as X and YP do; the feature [F] on Z would be more local to YP than the feature [F] on X, and so establishing an Agree relation between X and YP would be a locality violation.
  
-  \ex. 	\Tree[.XP YP$_1$ [.XP X$_{[iF]}$ [.ZP Z$_{[iF]}$ [.WP Spec [.WP W {\sout{YP$[uF]$}} ] ] ] ] ] %TODO movement arrow, blocked
+  \ex. \label{ex-locality-violation}\Tree[.XP YP$_1$ [.XP X$_{[iF]}$ [.ZP Z$_{[iF]}$ [.WP Spec [.WP W {\sout{YP$[uF]$}} ] ] ] ] ] %TODO movement arrow, blocked
   
   This reason for the immobility of YP is configurational in the sense that it is the Z intervening between X and YP which blocks the movement.
   YP might in general terms be a possible target for movement, but in this configuration, the Agree relation is blocked, and no movement is possible.
@@ -1032,6 +1032,44 @@ The last-resort nature of this process has the effect of restricting the movemen
  
  It might be objected that in these cases, the ungrammatical fragments correspond to a constituent which is `larger' than that being asked for in the question.
  However, I think this objection is without force; it is in general possible to have a fragment which is larger than the {\it wh-}word in the corresponding constituent question.
- test test test test test
+ This seems to correspond to the possibility of `pied-piping' material along with the focused constituent.
+ Such answers are somewhat degraded, as `unnecessary' pied-piping generally is (REF) %TODO ref Cable & Harris pied-piping
+ , but clearly not to the extent that the ungrammatical fragments in \Last are.
+ 
+ \ex. 	\a. 	What did John say that Mary should eat?\\
+ 		Fruit./?That Mary should eat fruit.\footnote{For some reason, fronting a vP here is still not good as a fragment: {\it What did John say that Mary should eat?} -- ?*{\it Eat fruit}.
+ 		That is true of similar topicalization structures ([$_{CT}$ pears] indicates a contrastive topic/rise-fall-rise accent on {\it pears}):
+ 		
+ 		\ex. 	I knew that he liked {\it apples}\ldots
+ 			\a. \ldots but [$_{CT}$ pears], I didn't know that he liked.
+ 			\b. \ldots but that he liked [$_{CT}$ pears], I didn't know.
+ 			\b. *\ldots but like [$_{CT}$ pears], I didn't know that he did.
+ 			
+ 		I don't know why this should be the case (it has been noted, e.g. REFS %TODO vp fronting refs
+ 		, that verb phrase fronting is very restricted in its distribution in English).
+ 		However, the parallel between cases in which overt movement/pied-piping is good and the good fragment cases is further evidence suggesting that movement is implicated in the creation of fragments.}
+ 	\b. 	What did John tell Mary that she should do?\\
+ 		Eat fruit./That she should eat fruit.
+ 		
+ What the ungrammaticality of the examples in \LLast seem to tell us, then, is that there is a general ban on the complement of a phase head (C, v, and P in non-P-stranding languages) being a fragment.
+ These are, of course, precisely the categories which Abels shows cannot move, and for which Abels gives the argument that they are frozen in place because they cannot move beyond the `universal attractor' which is their selecting phase head.
+ 
+ Having established this generalization, we are now in a position to understand why fragments are licit even if they originate within islands, but are not licit if they are the complements of phase heads.
+ The reason that complements of phase heads cannot move is because an intervener -- here the phase head itself -- blocks the establishment of an Agree relation between the attracting head and the constituent to be moved.
+ That is, we have the below configuration.
+ 
+ \ex. 	(repeated from (\ref{ex-locality-violation}))\\
+ 	\Tree[.XP YP$_1$ [.XP X$_{[iF]}$ [.ZP Z$_{[iF]}$ [.WP Spec [.WP W {\sout{YP$[uF]$}} ] ] ] ] ] %TODO movement arrow, blocked
+ 
+ In a configuration like \Last, the targeted constituent simply cannot move.
+ It is not a matter of a problem at the interfaces; on the assumption that a principle like Attract Closest/Relativized Minimality constrains the movement operation at every `level' of syntax (i.e. narrow syntax, PF movement, and LF movement are all subject to it), the movement relation in \Last just can't be established.
+ Ellipsis cannot do anything to `amnesty' this fact.
+ An account of fragments in which they move to escape ellipsis predicts that elements which are `immobilized' by dint of being the complement of a phase head cannot be fragments.
+ This is indeed what we see.
+ 
+ How, then, to understand that some constituents which seem immobile (by dint of being inside islands) can be good fragments?
+ The answer comes from the PF theory of islands, in which islands are a problem at the interfaces.
+ If island violations are fundamentally PF-level violations, then ellipsis can amnesty them, by ensuring that the `defective' structure is not interpreted at PF.
+ 
  
  \end{document}
