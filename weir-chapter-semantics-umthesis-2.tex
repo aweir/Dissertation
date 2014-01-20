@@ -1444,9 +1444,10 @@ However, it clearly would be necessary in a context like \Next.
 	Which students were dancing?
 	
 Here, {\it which students} clearly has to be restricted to `students in the quad', even though `in the quad' is not explicit in the utterance containing {\it which students.}}
+I notate the contextual domain variable in the question as C$'$, to distinguish it from the variable in the reply, which (as we will see) has a possibly different denotation.
 Therefore, we have the below denotation for \it{Which students were dancing in the quad}.
 
-\ex. 	\ext{[[Which C] students] were dancing in the quad}\\
+\ex. 	\ext{[[Which C$'$] students] were dancing in the quad}\\
 	$\approx$ \ext{[Which students in the quad] were dancing in the quad}\\
 	= \{Mary was dancing in the quad, John was dancing in the quad, Sue was dancing in the quad, \ldots\}
 	
@@ -1479,7 +1480,63 @@ The left-to-right entailment, i.e.  $\bigcup$QUD $\Rightarrow$ F-clo(E), is met;
 However, the right-to-left entailment, i.e. F-clo(E) $\Rightarrow \bigcup$QUD, is not met.
 The existence of a property $P$ which is such that the bearer of $P$ was dancing in the quad does not entail that a \emph{student} was necessarily dancing in the quad.
 
+The failure of the ellipsis condition to go through in this example is what rules out the `corrective' use of a fragment answer.
+Simply put, the ellipsis condition requires that the answer range over students if the QUD does.
+A `corrective' answer does not do this, and so is ruled out by \textsc{QUD-given}ness.
+
+However, is the `non-corrective' answer ruled in? The answer is yes, if we assume that in such an answer, C can take a denotation like `students in the quad', rather than just `in the quad'.
+That is, C has the effect of restricting the domain of the DP {\it The Germans} down only to the students in the quad, rather than all the people in the quad.
+We have already seen above that C can in general have this effect, that is, that {\it The Germans} can be understood as `the German students'.
+What is the effect of this choice of C in the elliptical case?
+We calculate this below.
+
+\ex. 	Which students were dancing in the quad? -- [[The C] [$_F$ Germans]] \el{were dancing in the quad}.
+	\a. $\bigcup$QUD $= \exists x. \pred{student}(x) $ \& $\pred{inQuad}(x)$ \&$ \pred{dancingInQuad}(x)$
+	\b. $\ext{C} = \lambda x. \pred{student}(x) $ \& $\pred{inTheQuad}(x)$
+	\b. \ext{[[The C] [$_F$ Germans]] were dancing in the quad} $= \pred{dancingInQuad}(\iota x. \pred{student}(x) $ \& $ \pred{inQuad}(x) $ \& $ \pred{german}(x)$
+	\b. F-clo(E) $=\exists P. \pred{dancingInQuad}(\iota x. \pred{student}(x) $ \& $\pred{inQuad}(x) $ \& $ P(x)$\\
+
+Here, the ellipsis condition \emph{is} met; that is, $\bigcup$QUD $ \Leftrightarrow$ F-clo(E).
+The left-to-right entailment, i.e.  $\bigcup$QUD $\Rightarrow$ F-clo(E), is met; the existence of a student who was dancing in the quad entails that there exists a property $P$ which is such that the bearer of $P$ was a student that was dancing in the quad (i.e. $P$ is the property of being the students who were dancing in the quad).
+But now, the right-to-left entailment is \emph{also} met, i.e. i.e. F-clo(E) $\Rightarrow \bigcup$QUD.
+The existence of a property $P$ which is such that the bearer of $P$ was a student who was dancing in the quad does entail that a student was dancing in the quad.
+(Again, set $P$ as being the property of being the students who were dancing in the quad.)
+
+We therefore achieve the effect of `presupposition inheritance' by ensuring that the choice of contextual domain restriction variable C is one which makes the ellipsis condition go through.
+This has the effect of only allowing answers where the denotation of definite DPs (like {\it the Germans}) are restricted to the domains specified in the question; that is, in answer to a question like {\it Which students were dancing in the quad?}, the answer {\it the Germans} is interpreted only as ranging over students, not over everyone who happened to be in the quad.
+Domain restriction is independently necessary, and in section REF %TODO section ref
+we have seem the advantages of making the ellipsis condition dependent on the Question under Discussion.
+Uniting these two ingredients has led to an account of the obligatory nature of `presupposition inheritance' in clausal ellipsis; the requirement to be \textsc{QUD-given} forces a restriction in the domain of DP fragments used as short answers, while no such restriction is required in full clausal answers.
+
+A loose end to wrap up here is the status of examples like the below.
+
+\ex. 	Which linguistics student left the party early?\\
+	John \el{left the party early}.
 	
+Here, John must be a linguistics student.
+I argue that this comes about via domain restriction in exactly the same way as the above cases.
+I assume, following REFS %TODO Name refs
+, that proper names are actually covertly definite descriptions.\footnote{This is supported, for example, by the fact that some languages (e.g. colloquial German) overtly use definite determiners in names, e.g. {\it der Hans} `the Hans'.}
+That is, {\it John} is something like [$_{\mathrm{DP}}$ THE [$_{\mathrm{NP}}$ John]], where THE is a covert definite determiner.
+As such, such structures can contain contextual restrictors.
+This is a natural enough move to make; if we say {\it John}, we cannot mean every bearer of the name `John' in the world, but rather must mean something like `the John that is known to us both'.
+So we have a structure and interpretation like \Next.
+
+\ex. 	\a.	\Tree[.DP [.D THE C ] \qroof{John}.NP ]
+	\b. 	\a. \ext{THE} = \ext{the} $= \lambda C. \lambda P. \iota x. P(x) $ \& $C(x)$
+		\b. \ext{C} $\approx \lambda x. x$ is known to the interlocutors
+		\b. \ext{John} $ = \lambda x. x$ is called John
+		\b. \ext{[[THE C] John]} $\approx \iota x. x$ is known to the interlocutors and $x$ is called John
+		
+Now, if matters were left here, then the ellipsis condition in \LLast would not go through.
+
+% `John' wouldn't only be a student.
+% But if you introduce the domain restriction over students as well as people we know, then we're laughing.
+% Note that if you make this move, you're then forbidden from asserting that John isn't a student -- you'd contradict yourself.
+
+% Jacobson's account doesn't quite make the right predictions here.
+
+
 \bibliographystyle{$HOME/Documents/Linguistics/unified.bst}
 \bibliography{$HOME/Documents/Linguistics/linguistics2.bib}
 
