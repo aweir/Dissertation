@@ -1,0 +1,1289 @@
+\documentclass[doublespace]{umthesis}
+% \addtolength{\textwidth}{3cm}
+% \addtolength{\hoffset}{-2cm}
+\usepackage{url, xypic, qtree, natbib, linguex, stmaryrd, times}
+\usepackage[normalem]{ulem}
+% \usepackage[small,compact]{titlesec}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \lhead{Andrew Weir}
+% \rhead{Dissertation chapter draft}
+% \rfoot{\thepage}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+% \hyphenpenalty=5000
+% \tolerance=1000
+  \linespread{1.6}
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\ext}[1]{\ensuremath{\llbracket \textrm{{#1}} \rrbracket}} 
+\newcommand{\pred}[1]{\ensuremath{\mathrm{{#1}}}}
+\newcommand{\ty}[1]{\ensuremath{\mathrm{\langle #1 \rangle}}}
+\newcommand{\el}[1]{\sout{#1}}
+\bibpunct[:]{}{}{,}{a}{}{,}
+\renewcommand{\thesection}{\arabic{section}} %TODO comment this out at the end!
+
+
+\begin{document}
+
+\renewcommand{\firstrefdash}{}
+
+%\chapter*{Chapter draft}
+
+\section{How to answer a question}
+
+Consider a question like \Next.
+
+\ex. Who ate the last cookie?
+
+There are a number of ways of answering this question. One can answer it with a fully clausal answer, as in \Next[a], or with a short answer as in \Next[b]. One can also answer it with an answer (either clausal or short) embedded under another verb, as in \Next[c, d]. It is also possible to answer the question rather more indirectly, as in \Next[e].
+
+\ex. 		\a. John ate the last cookie.
+		\b. John.
+		\c. I think John ate the last cookie.
+		\d. I think John.
+		\e. Well, John's been looking awfully guilty lately.
+		
+\Last[a--d] are all clearly in some sense `direct' answers to the question in \LLast, while \Last[e] has to be pragmatically construed as an answer following Gricean principles: we construe the answer in \Last[e] as being somehow relevant to the discourse, and the most obvious way in which it could be relevant is as a hint that John might be the culprit. In what follows, I will largely disregard `indirect' answers of the form in \Last[e], and will focus instead on what the alternation between clausal answers \Last[a, c] and short answers \Last[b, d] can tell us.
+
+One account of the alternation between \Last[a, c] and \Last[b, d] is that short answers are \emph{elliptical} for clausal answers; short answers are versions of clausal answers where most of the material, except for the focused component (intuitively, the answer to the question), goes unspoken. So the alternation between short answers and their clausal congeners would be simply two different surface realizations of the same underlying form, in the same way as other forms of ellipsis such as VP ellipsis \Next[b] and sluicing \Next[c] have been argued to be. I here reserve the term `ellipsis' for cases of unpronounced structure -- surface anaphors in the terms of \cite{HS76}; for example, null pro-forms or Null Complement Anaphora would not fall under this rubric. I assume that (at least) VP ellipsis and sluicing do involve structurally present material which goes unpronounced, rather than e.g. null pro-forms, {\it pace} \cite{Ch87, Lo95} a.o.
+
+\ex. 		\a. Who ate the last cookie? --- John \el{ate the last cookie}. \hfill (fragment)
+		\b. Who ate the last cookie? --- John did \el{eat the last cookie}. \hfill (VP ellipsis)
+		\c. Someone ate the last cookie, but I don't know who \el{ate the last cookie}. \hfill (sluicing)
+		
+On  an elliptical analysis, fragment answers are essentially the same process of clausal ellipsis as is involved in sluicing. This proposal has its most extended defense in the work of Jason Merchant, in particular \cite{Me04}. In this proposal, a focused constituent -- the short answer -- raises to a position in the left-periphery of the clause (Merchant does not commit himself to a specific label for this projection but suggests that it could be identified with \cite{Ri97}'s Focus Phrase, which I adopt here). The rest of the clause then elides. Merchant's syntactic implementation of this is the same as in his work on sluicing (\cite{Me01}): the left-peripheral head which attracts the fragment ({\it wh-}word in sluicing) to its Spec is endowed with a particular feature [E], which licenses the non-pronunciation of its complement.\footnote{This is a slight oversimplification of Merchant's syntax for fragments. In fact Merchant has the fragment move again to a position higher than the Spec of the [E]-bearing 
+head, for reasons I will discuss in more detail in section {\bf promissory note\ldots}.%TODO section reference for a section you haven't written yet
+I abstract away from this here.} The notion that ellipsis-licensing is the property of a particular head originates in \cite{Lo95}, and has been further developed by Lobke Aelbrecht (\cite{Ae09, Ae10}). I provide examples of Merchant's approach to fragment answers below.
+
+\ex. 		\a. Who ate the last cookie? --- John.
+		\b.  \Tree[.FocusP \qroof{John}.DP [.FocusP {Focus$_{\mathrm{[E]}}$} [.TP \qroof{t}.DP [.TP T \qroof{ate the last cookie}.vP ]]]]
+
+\ex. 		\a. What did you eat? --- Natto. \marginpar{I think I will have to, at some point, tackle the question of whether stripping and fragments are the same thing, or whether stripping is the `limiting case of gapping' (assuming gapping is different).}
+		\b. \Tree[.FocusP \qroof{Natto}.DP [.FocusP {Focus$_{\mathrm{[E]}}$} [.TP \qroof{I}.DP [.TP T \qroof{ate t}.vP ]]]]
+		
+This `movement-plus-ellipsis' approach, where a constituent is moved to a Focus position outside of the domain of clausal ellipsis, has also been adopted for other phenomena which look like they involve ellipsis of most of a clause leaving a few focused remnants, such as for {\it why}-stripping ({\it John ate natto. Why natto?}) by \cite{NYO12} (see also \cite{We12why}) and for so-called `non-constituent coordination' ({\it John met with Mary on Tuesday and Bill on Wednesday}) by \cite{ST13}. Stripping ({\it John met with Mary, but not Bill}) might plausibly also come under this rubric.
+		
+\section{Arguments for an elliptical analysis of short answers}\label{sec-Merchant-account}
+
+The extent to which an elliptical account (one in which clausal structure is present but goes unpronounced) is tenable for fragment answers (as well as sluicing, {\it why}-stripping and non-constituent co-ordination) depends on evidence for the presence of that clausal structure. Much such evidence has been provided for all of these cases. As the status of short answers as elliptical is more controversial than it is for cases such as sluicing or {\it why}-stripping, I will concentrate here on presenting \cite{Me04}'s arguments that fragment answers show properties of containing elliptical clausal structure. Similar arguments have been made for sluicing (\cite{Ro69, Me01}), {\it why-}stripping (\cite{NYO12}), and non-constituent coordination (\cite{ST13}), and the reader is referred to these works and references therein for these arguments. I present two main sorts of evidence presented by Merchant for clausal syntactic structure within fragment answers: connectivity effects, and constraints on movement.
+
+\subsection{Connectivity effects}
+
+Merchant points out that in languages with clearly expressed morphological case, the case of a fragment answer is the same as the case which it would bear in a full, non-elliptical utterance. This parallels \cite{Ro69}'s demonstration of the same facts for sluicing.
+
+\ex. 		{\it Greek} (Merchant's (45, 46))
+		\ag. Pjos idhe tin Maria? --- O Giannis. / *Ton Gianni. \\
+			who.\textsc{nom} saw the Maria --- the Giannis.\textsc{nom} / the Giannis.\textsc{acc} \\
+			`Who saw Maria? --- Giannis.'
+		\bg. Pjon idhe i Maria? --- *O Giannis. / Ton Gianni. \\
+			who.\textsc{acc} saw the Maria? --- the Giannis.\textsc{nom} / the Giannis.\textsc{acc} \\
+			`Who did Maria see? --- Giannis.'
+			
+\ex. 		\label{german-case-connectivity}{\it German} (Merchant's (49, 50))
+		\ag. Wem folgt Hans? --- Dem Lehrer. / *Den Lehrer. \\
+			who.\textsc{dat} follows Hans --- the.\textsc{dat} teacher / the.\textsc{acc} teacher \\
+			`Who is Hans following? --- The teacher.'
+		\bg. Wen sucht Hans? --- *Dem Lehrer. / Den Lehrer. \\
+			who.\textsc{acc} seeks Hans --- the.\textsc{dat}  teacher / the.\textsc{acc} teacher \\
+			`Who is Hans looking for? --- The teacher.'
+			
+\ex. 		{\it Sluicing in German} (Merchant's (10) after \cite{Ro69})
+		\ag. Er will jemandem schmeicheln, aber sie wissen nicht, \{*wer /*wen /wem\}.\\
+		he wants someone.\textsc{dat} flatter, but they know not who.\textsc{nom} who.\textsc{acc} who.\textsc{dat}\\
+		`He wants to flatter someone, but they don't know who.'
+		\bg.  Er will jemandem loben, aber sie wissen nicht, \{*wer /wen /*wem\}.\\
+			he wants someone.\textsc{dat} praise, but they know not who.\textsc{nom} who.\textsc{acc} who.\textsc{dat}\\
+			`He wants to praise someone, but they don't know who.'
+			
+			
+The fact that fragments obligatorily appear in a particular Case, Merchant argues, shows that a Case assigner must be present in the structure of the fragment answer, although elided.	 Merchant also suggests that English possessive fragments also show similar matching effects:
+
+\ex. 		(Merchant's (53))\\
+		Q: Whose car did you take?
+			\a. John's.
+			\b. *John.
+			
+I think this data, however, is not strictly speaking to do with morphological case; it speaks more to the fact that, in English, possessive-marked DPs cannot move to the exclusion of the rest of the DP that they are in construction with, and force pied-piping (cp. *{\it Whose did you take car?}, {\it *Who did you take 's car?}). \Last[a] represents pied-piping of the fragment {\it John's car}, with NP ellipsis of {\it car} licensed by the possessive marking. This is still, however, an argument for the movement analysis (on a par with the so-called `P-stranding generalization', to be discussed below); the fact that fragments apparently obey restrictions on when material must be pied-piped suggests that movement is involved in the derivation of fragments (and, therefore, that there is underlying structure).\marginpar{Having said that, if possessive extraction is generally banned because it's left-branch, then ellipsis should alleviate it. Maybe ellipsis never alleviates islands: Barros et al.}
+
+As well as case connectivity effects, Merchant also points to binding connectivity facts. Fragment answers are not licit, for example, if the corresponding non-elliptical utterance would contain a violation of principles of binding theory.
+
+\ex. 		\a. {\it Principle C} (Merchant's (57))\\
+			Where is he$_{2}$ staying? --- *In John$_{2}$'s apartment. / *He$_{2}$ is staying in John$_{2}$'s apartment.
+		\b. {\it Principle B} (Merchant's (59))\\
+				Who did John$_{1}$ try to shave? --- *Him$_{1}$./*John$_{1}$ tried to shave him$_{1}$.
+
+Again, Merchant argues that this shows that there is hidden structure present in fragment answers, and it is that structure which requires the principles of binding theory to be respected.
+
+\subsection{Movement effects}
+
+Merchant provides a range of data to support the generalization that  it is all and only those constituents which can (in principle\footnote{The qualification `in principle' is necessary because -- contra Merchant's conclusion -- certain island effects are ameliorated under ellipsis. This will be discussed in more detail in section {\bf promissory note\ldots}%TODO reference to section you haven't written yet
+.}) move in a given language which can be fragment answers in that language. An important argument is the so-called P-stranding generalization (originally presented in \cite{Me01}). Languages which allow preposition stranding also allow prepositions to be omitted in fragment answers. However, languages which do not allow preposition stranding -- languages in which prepositions are obligatorily pied-piped under movement -- also do not allow the omission of prepositions in fragment answers. \Next shows two examples Merchant gives of English (allowing P-stranding) and German (not allowing P-stranding), but Merchant provides many more.
+
+\ex. 		\a. Who was Peter talking with? --- Mary. / With Mary.
+		\bg. Mit wem hat Anna gesprochen? --- Mit dem Hans. / *Dem Hans. \\
+				with whom has Anna spoken --- with the Hans / the Hans \\
+				`Who did Anna speak to? --- Hans.'
+
+On this basis, Merchant concludes that fragment answers must be created by movement; in P-stranding languages, fragment answers may omit prepositions because they may be stranded in the ellipsis site, while languages in which the preposition must pied-pipe must also express the preposition in the answer, suggesting that the prepositional phrase has moved.
+
+Other examples show that if a constituent cannot move in the full clausal structure, it also cannot serve as a fragment answer. For example, consider the below:
+
+\ex. 		\a. 	(\cite{Me04}'s (89), adapted)\\
+			Did Abby vote for a \emph{Green Party} candidate?
+				\a. *No, Reform Party. ( = Reform Party \el{she voted for a t candidate})
+				\b. No, a Reform Party candidate. ( = A Reform Party candidate \el{she voted for t})
+				\z.
+			\b. (Merchant's (137), adapted)\\
+				What should I do with the spinach?
+				\a. *Wash.	( = Wash \el{you should t it})
+				\b. Wash it. ( = Wash it \el{you should t})
+				\z. 
+			\b. What kind of car does he drive?
+				\a. ??Red. (= Red \el{he drives a t car})
+				\b. A red one. ( = A red one \el{he drives t})
+				
+				
+In \Last[a], the fragment is a noun being extracted from a noun-noun compound, which is impossible in English. The focused phrase {\it Reform Party} has to pied-pipe the whole DP {\it a Reform Party candidate} to a position outside of the ellipsis. Similarly in \Last[b], extraction of a (bare) verb is impossible in English, and also impossible in fragment answers, which require pied-piping of the entire VP. In \Last[c], an adjective is being extracted from a prenominal position, which is similarly impossible; again, pied-piping of the entire DP is required. Note that if the adjective is in predicative position (from which extraction is possible), it can be a fragment answer unproblematically. \marginpar{Again, the failure of ellipsis to improves these implies that compound nouns and prenominal Adj positions put `different' restrictions on movement from e.g. relative clauses, complex NPs, \ldots}
+
+\ex. 		What color is his car? --- Red. ( = Red \el{it is t})
+
+It is also true that, for example, English VPs (which can move) can be fragment answers, but finite TPs (which cannot move) cannot be.\footnote{There is a complication with some examples like \ref{subjectdrop}, noted by \cite{Me04}. Some cases which appear to be finite TP fragments do seem to be licit: {\it What's your problem? --- Haven't been feeling very well lately.} \cite{We12}, following \cite{Na82}, analyzes such cases as not elliptical, or at least not elliptical in the sense of ellipsis as discussed here: rather, they arise from a phonological process of left-edge deletion of weak syllables, to comply with \cite{Se09}'s \textsc{StrongStart} constraint. There are also interesting questions concerning the grammaticality of cases like \TextNext[b] in `reduced written register' (diaries, text messages, internet, etc.); discussing such cases is beyond the scope of this dissertation, but see \cite{Hae97, Ha07, HI01, We12}, and references cited therein for discussion.}
+
+\ex. 		VPs can move and TPs cannot:
+		\a. (He said he would make curry, and) [VP make curry] he should t.
+		\b. (John will make curry, and) *[will make curry] Mary t, too.
+		
+\ex. 		VPs can be answers and TPs cannot:
+		\a. What will you do then?		--- Go to the beach \el{I will t}.
+		\b. What will you do then?		--- *Will go to the beach \el{I t}.\label{subjectdrop}
+
+Merchant notes further that control infinitivals can (marginally) move, but raising infinitivals cannot (an observation attributed to \cite[62]{Cho81}); Merchant points out that this contrast also carries over to fragment answers. \Next and \NNext are adapted from \cite[696ff.]{Me04}; the judgments are mine.
+
+\ex. 		\a. Immobility of raising infinitivals 
+			\a. (People don't often simply stop writing, but) *to procrastinate, people do tend. \marginpar{But how's this: {\it Do people tend to malinger? --- No, to procrastinate.}. Sounds better\ldots}
+			\b. (Mary seemed to be well, but) *to be sick, \textsc{John} seemed.
+			\z. 
+		\b. Impossibility of raising infinitival fragment answers
+			\a. How do people tend to behave? --- *To procrastinate. 
+			\b. How did John seem? --- *To be sick.
+			
+\ex. 		\a. Mobility of control infinitivals
+			\a. (Mary wants to \emph{move} to Europe, but) ?to get a job in Europe, she doesn't want. \marginpar{To my ear, it takes some work to get the control infinitivals to sound even marginally OK in topicalization. I wonder if this is a real contrast Merchant is adducing. Also *{\it It's not to retire early that Mary wants} sounds awful to me.}
+			\b. (It's not retiring early that Mary wants,) ?it's to get a job in Europe that Mary wants.
+			\z. 
+		\b. Possibility of control infinitival fragment answers
+			\a. What does she really want? --- To get a job in Europe.
+			
+Merchant also notes the following interesting contrast, originally due to \cite{Mor73}. It is possible to answer a question which seeks an answer of propositional type, as in \Next[a], both with a sentence containing a complementizer and one without it:
+
+\ex. 	What are you arguing in this section?
+		 \a. Fragment answers are elliptical structures. \label{nonCanswer}
+		\b. That fragment answers are elliptical structures.
+		
+However, if the speaker does not actually agree with the embedded proposition, then the complementizer cannot be omitted. Merchant gives the example below: clearly the speaker here cannot believe the given answer, as no-one can assert `I am taller than I really am'. In such an answer, the complementizer cannot be omitted, although in the full clausal structure, this is unproblematic.
+
+\ex. 		(Merchant's (93, 94))
+		\a. What does no-one believe? --- \#(That) I'm taller than I really am.
+		\b. No-one believes (that) I'm taller than I really am.
+		
+Merchant points out, however, that left-dislocated CPs obligatorily contain a complementizer.
+
+\ex. 		(Merchant's (95))\\
+		{}*(That) I'm taller than I really am, no-one believes.
+		
+Merchant takes the obligatoriness of the complementizer in fragment answers as further evidence for a left-dislocation analysis: the requirement to have a complementizer is parallel between the left-dislocation and the fragment cases. (I presume that an answer like \ref{nonCanswer} is simply not a fragment or elliptical -- it is simply an assertion by the speaker of one of their beliefs, which is then pragmatically construed via Gricean principles of Relevance as relevant to the question at hand.)
+
+All of these parallelisms constitute strong syntactic evidence for a clausal ellipsis account of fragment answers.\footnote{Merchant presents some other arguments, for which I refer the reader to Merchant's paper. However, there are two important arguments for clausal structure adduced by Merchant which I believe to be empirically flawed: firstly Merchant suggests that fragment answers are island-sensitive, and secondly Merchant argues that negative polarity items like {\it anybody}, which cannot front in English, also cannot be fragment answers. I believe that the specific data Merchant adduces in making these points are indeed ungrammatical, but not for the reasons Merchant cites; other cases of island-violating fragments, or NPI fragments, are acceptable. These cases will be discussed at greater length in section {\bf promissory note\ldots}.%TODO section reference for section you haven't written yet
+Even if Merchant's arguments from these cases fail, however, I do not believe that the case for clausal structure in fragment answers overall is in danger, as I will discuss.} However, many 
+researchers have taken issue with the clausal ellipsis analysis on semantic grounds: there are areas where fragment answers seem to pattern differently from full clausal answers with regard to their interpretation, which is not immediately expected if the fragment case is elliptically derived from the clausal case. In the next section, I will present some arguments that have been made in favor of approaches in which fragment answers are not derived elliptically.
+
+\section{Arguments for `bare' fragment answers}
+
+\subsection{Fragments with no syntax: Stainton and `out-of-the-blue' fragments}
+
+In various papers, Robert Stainton has argued against an elliptical account of fragments. (\cite{St98, St05, St06book}, a.o.) The chief argument throughout these papers has been that ellipsis is generally considered to require a linguistic antecedent (it is a surface anaphor in \cite{HS76}'s terms). So, for example, VP ellipsis such as the below is usually considered to require previous linguistic material to be licensed\footnote{But there is considerable debate about this; Hankamer and Sag's claims were initially challenged by \cite{Sc77} on the basis of apparently acceptable out-of-the-blue cases, like {\it Shall we?} as an invitation to dance, or {\it Don't!} as a general-purpose prohibitive. \cite{Pu01} argued that these cases were very restricted in their distribution, and should be seen as lexicalized idiomatic exceptions: the generalization was that VP ellipsis did really require a linguistic antecedent. More recently, however, \cite{MP12} have suggested that VP ellipsis actually \emph{can} have extra-linguistic/contextual antecedents, but that there are heavy restrictions on the discourse conditions required to license this. I won't attempt to add much to this debate at least as far as VP ellipsis is concerned, restricting my attention to clausal ellipsis.}; it cannot be licensed extra-linguistically by reference to the context (in contrast to an anaphor like {\it do it}, as Hankamer \& Sag point out).
+
+\ex. 		(Hankamer \& Sag's (6))
+		\a. [Sag produces a cleaver and prepares to hack off his left hand]\\
+			Hankamer: \#Don't be alarmed, ladies and gentlemen, we've rehearsed this act several times, and he never actually does.
+		\b. [Same context]\\
+			Hankamer: \ldots He never actually does it.
+			
+The case of sluicing, clausal ellipsis, also often appears to require linguistic antecedents\ldots
+
+\ex. 		\a. [I see someone in the distance playing the bagpipes.]\\
+			??Who?/I wonder who? (intended: Who is that?/I wonder who that is?)
+		\b. [I see a beautifully wrapped gift waiting at my front door.]
+			\a. ??Who?/I wonder who?	(intended: Who sent this?/I wonder who sent this?)
+			\b. ??What?/I wonder what? (intended: What is this?/I wonder what this is?)
+			
+\ldots but this is not completely clear, as examples like \Next show.
+
+\ex. 		\a. [I knock at the door.] Guess who?\footnote{The title of \cite{Ro69}.}
+		\b. [Disasters have befallen me.] Why, God, why?
+		\b. [I see someone trying to fix their car engine, and failing.] He doesn't know how.\marginpar{I can see {\it He doesn't know how} being a problem for my semantic story. Maybe {\it how} here means `the way' and this isn't a sluice?}
+		\b. [Someone gets into my taxi.] Where to, guv?\footnote{So-called `swiping': \cite{vC04, HarAi07}.}
+		
+In any case, however, the fact that ellipsis often requires a syntactic antecedent has been taken by Stainton as an argument against ellipsis being involved in the derivation of fragments. Stainton argues that antecedentless fragments seem not just possible but rather frequent in naturally-occurring data, and so (the argument goes) fragments should not be generated by ellipsis (at least not solely; Stainton acknowledges that in answers to (direct) questions, an elliptical source may be possible). Examples of the sorts of antecedentless fragments that Stainton has in mind, taken from his various papers on the topic, are given below.
+
+\ex.		\a. [On getting into a taxi.] (To) the train station, please.
+		\b. [A \& B are at a linguistics workshop. There is an empty chair. A nods at it and raises his eyebrows at B. B says:]\\
+			An editor of Natural Language Semantics.
+		\b. [A child spooning out jam at the breakfast table.] Chunks of strawberries.
+		\b. [The child in (c)'s mother replying.] Rob's mom.
+		\b. [On hearing a strange sound.] The {\it nyo-gyin}, the song of mourning.
+		\b. [Admonishment to a child holding a bowl of soup insecurely.] Both hands!
+
+		
+\cite{Me04} provides similar examples of the type (his (2, 3)).
+
+\ex. 		\a. Abby and Ben are at a party. Abby sees an unfamiliar man with Beth, a mutual friend of theirs, and turns to Ben with a puzzled look on her face. Ben says:\\
+		``Some guy she met at the park.''
+		\b. Abby and Ben are arguing about the origins of products in a new store on their block, with Ben maintaining that the store carries only German products. To settle their debate, they walk into the store together. Ben picks up a lamp at random, upends it, examines the label (which reads {\it Lampenwelt GmbH, Stuttgart}), holds the lamp out towards Abby, and proudly proclaims to her:\\
+		``From Germany! See, I told you!''
+		
+These fragments do not have linguistic antecedents and yet are licensed. On the basis of such data, Stainton argues that subsentential utterances of this sort are directly generated, without clausal structure. These utterances simply denote what their constituent components denote. For example, an utterance like {\it An editor of Natural Language Semantics} simply denotes the generalized quantifier given in \Next[b].
+
+\ex. 		\a. An editor of Natural Language Semantics.
+		\b. $\lambda P_{\ty{et}}. \exists x. P(x) $ \& $x$ is a NALS editor
+		
+However, these utterances appear to be used to perform the same sorts of speech acts -- assertions, questions, commands -- that require some form of propositional meaning.\footnote{\cite{St06book} contains some considerable discussion on the question of whether fragments should be understood as encoding/communicating propositional meaning. I won't recap it here as detailed discussion of these issues is beyond the scope of this dissertation. For our purposes, we will agree -- with Stainton and with Merchant -- that fragments like those in \LLast must somehow be interpreted as communicating the same information as propositions can. The debate centers on how they are so interpreted -- whether by positing covert clausal structure, or by another mechanism.}
+
+\ex. 		\a. Some guy she met at the park. \hfill (assertion)
+		\b. [Seeing someone you don't recognize at a party, turning to a friend:]\\
+			Anyone you know? \hfill (question)
+		\b. [Admonishment to a child holding a bowl of soup insecurely.] Both hands! \hfill (command)
+		
+On the elliptical account, these subsentential utterances receive propositional interpretations because they are elliptical for full clausal utterances which receive propositional interpretations from the normal rules for semantic interpretation (although it may not be obvious at this juncture how the elided material is understood as being present but unspoken).
+
+\ex. 		\a. \sout{That's} some guy she met at the park.
+		\b. \sout{Is that} anyone you know?
+		\b. \sout{Use} both hands!
+		
+How are these cases handled on the account in which these fragments are generated on their own, without clausal structure? Stainton's proposal is that there will be certain salient or manifest properties or objects, which are not considered by the speaker or hearer in English or whatever natural language they are speaking, but rather only at the level of the `language of thought', Mentalese.\marginpar{How does one get questions or commands out of this?} In the case of a manifest property, these can be represented as functions which combine with the denotation of subsententials by function application. A concrete example is the case of {\it An editor of Natural Language Semantics} (while looking at an empty chair at a meeting). Here, Stainton argues, there is a manifest property, something like THAT CHAIR IS FOR \_\footnote{Stainton uses the convention of writing Mentalese in capitals.}, or in lambda notation, $[\lambda x. $ that chair is for $x]$. This property combines with the denotation of what was actually said, and the proposition that results is what was (understood 
+to be) asserted.
+
+\ex. 		\a. \ext{An editor of NALS} = $\lambda P_{\ty{et}}. \exists x. P(x) $ \& $ x$ is a NALS editor
+		\b. Manifest property: $[\lambda x. $ that chair is for $x]$
+		\c. Composition of the two by Function Application:\\
+		  	$[\lambda P_{\ty{et}}. \exists x. P(x) $ \& $x$ is a NALS editor$](\lambda x. $ that chair is for $x$) \\
+		  	$= \exists x. $ that chair is for $x$ \& $x$ is a NALS editor
+
+In this way, subsentential utterances are understood as having propositional meaning (and therefore as being able to be used to perform speech acts like assertion), without that meaning being in any way `encoded' in the fragment itself; the assertion comes from the combination of a manifest property (in Mentalese, not in the target natural language) with the denotation of the utterance.
+
+\subsection{Subsententials, but with syntax: \cite{GS00, Ja13}}
+
+An alternative account also argues that subsententials are generated without covert clausal structure. However, these accounts do make reference to the properties of syntactic antecedents, in order to capture facts such as the Case connectivity facts. These are accounts such as \cite{GS00}'s and \cite{Ja13}'s.
+
+\subsubsection{\cite{GS00}}
+
+\cite{GS00} propose an account of subsententials based in the Head-driven Phrase Structure Grammar (HPSG) formalism.\footnote{My understanding of the HPSG framework is limited. I therefore abstract away from details of the implementation, and the sketch presented here is by necessity quite a rough one. I hope, however, that I am not doing violence to Ginzburg \& Sag's account. For some more discussion of Ginzburg \& Sag's approach, see \cite{Me04}.} In their account, a subsentential is an utterance of type {\it headed-fragment-phrase} ({\it hd-frag-ph}). It is not elliptical in the sense of containing  deletion; no clausal material is associated with a {\it hd-frag-ph}. However, a constraint is placed on any phrase of this type, namely that it must match in syntactic category and featural specification with the category and featural specification of an antecedent, denoted as \textsc{sal}(ient)-\textsc{utt}(erance). This antecedent is (roughly) the phrase which expresses the questioned constituent within the maximal Question under Discussion (QUD). For example, given an overt interrogative (and QUD) {\it Who left?}, the \textsc{sal-utt} would be {\it who}. Semantically, the {\it hd-frag-ph} is co-indexed\marginpar{I don't understand the coindexation mechanism.} with \textsc{sal-utt}, giving the interpretation of subsententials as answers to the QUD, as below.
+
+\ex. 	\a. Who left?	(QUD: who left? \textsc{sal-utt}: who)
+	\b. John. ({\it John} must match in syntactic features with the antecedent {\it who} and must be coindexed with it, giving the interpretation that John was the one who left)
+
+The syntactic feature-matching requirement \marginpar{Interesting in the light of the recently discovered code-switching facts.} forces Case-matching in cases such as German (repeated here from \ref{german-case-connectivity}):
+
+\ex. 		{\it German} (Merchant's (49, 50))
+		\ag. Wem folgt Hans? --- Dem Lehrer. / *Den Lehrer. \\
+			who.\textsc{dat} follows Hans --- the.\textsc{dat} teacher / the.\textsc{acc} teacher \\
+			`Who is Hans following? --- The teacher.'\\
+			{\it Den Lehrer} must match in syntactic features (including dative case) with the antecedent \textsc{sal-utt} {\it wem} `who.\textsc{dat}'
+			
+
+
+\subsubsection{\cite{Ja13}}\label{sec-jacobson-analysis}
+
+A different account is provided by \cite{Ja13}, who proposes that question-answer pairs such as the below are a basic unit of the grammar.
+
+\ex. 		Who left the party at midnight? --- Claribel.
+
+In Jacobson's proposed syntax/semantics (based on a Categorial Grammar framework and the semantic framework of Direct Compositionality, \cite{BJ07} a.o.), this pair represents a syntactic category called `Qu-Ans'.\footnote{This is a syntactic category which appears to span utterances and even speakers, which seems unconventional at first blush. Jacobson points out, however, that there is no inherent reason that the grammar should not have something to say about the felicity or grammaticality of syntactically combining two categories into a third even if those two categories are spoken by different people. The idea of combining utterances into a larger grammatical unit has been countenanced elsewhere; e.g. \cite{Hei82}'s text-level combination. A problematic case, however (and one that Jacobson notes) is one where the two categories that combine to form a Qu-Ans are not only cross-speaker, but not adjacent:
+
+\ex. 	(Jacobson's (9))\\
+	A: Who left the party at midnight? Do you know?\\
+	B: Yeah, um\ldots Bill.
+	
+It is not obvious how the rules of syntax can combine the Qu here ({\it Who left the party at midnight}) with an Ans ({\it Bill}) which is separated from it by intervening material. Jacobson notes this problem, but leaves its solution open.} A Qu is any expression which is a question. An Ans is any category. A Qu-Ans pair is well formed if the Qu contains a {\it wh-}word of a particular category C, and Ans is also of category C. For example, in \Last, the Qu contains {\it who}, of category NP or DP (depending on theoretical predilections); the Ans is {\it Claribel}, also of category NP or DP, and so \Last is a well-formed member of the category Qu-Ans. The structure is as below.
+
+\ex. 	\Tree[.Qu-Ans \qroof{Who left the party at midnight?}.Qu \qroof{Claribel}.Ans ]
+
+Semantically, Jacobson follows \cite{GS00} in analyzing (constituent) questions as lambda-abstractions over the semantic type of the constituent which is being questioned. So, for example, the semantics of the question {\it Who left the party at midnight?} is given below.
+
+\ex. 	\ext{Who left the party at midnight} $= \lambda x. x$ left the party at midnight
+
+And the semantics of a Qu-Ans pair is simply that of function application:
+
+\ex. 	\a. Who left the party at midnight? --- Bill.
+	\b. \ext{Who left the party at midnight} $= \lambda x. x$ left the party at midnight
+	\b. \ext{Bill} = Bill
+	\b. \ext{Who left the party at midnight}(\ext{Bill}) = Bill left the party at midnight
+	
+This works for generalized quantifier answers, as well; the GQ takes the denotation of the question as its argument, rather than vice versa, by type-driven function application:
+
+\ex. 	\a. Who left the party at midnight? --- Every student.
+	\b. \ext{Every student} $= \lambda P_{\ty{et}}. \forall x. x$ is a student $\rightarrow P(x)$
+	\b. \ext{Every student}(\ext{Who left the party at midnight})\\
+		$= [\lambda P_{\ty{et}}. \forall x. x$ is a student $\rightarrow P(x)](\lambda x. x$ left the party at midnight$)$\\
+		$= \forall x. x$ is a student $\rightarrow x$ left the party at midnight
+		
+
+\section{Concerns for non-elliptical accounts} 
+
+All of the non-elliptical accounts of fragments share the property that clausal structure is not present in the spoken clause. They therefore also share Merchant's core objection to a non-elliptical account, namely that syntactic effects \emph{do} appear to be present in fragments. For example, as we have seen, Case and binding connectivity effects obtain between the fragment and its antecedent. Furthermore, cross-linguistically, fragments obey the P-stranding generalization: if a particular language forces pied-piping of prepositions, it also forces prepositions to appear in fragment answers.
+
+\cite{GS00}'s and \cite{Ja13}'s accounts are designed to handle the Case and binding connectivity effects by encoding a syntactic dependency between the antecedent question and fragment answer -- it is just that this dependency does not arise because the fragment answer is covertly clausal, but by some other mechanism. In this section, however, I wish to raise a number of problems for non-elliptical accounts.
+
+\subsection{Problems for accounts without clausal structure}
+
+\subsubsection{Whence the P-stranding generalization?}
+
+Non-elliptical analyses of fragments must perforce be non-movement accounts, as if there is no elided clause in the structure, the fragment does not therefore move out of that clause. Accounts of clausal ellipsis that do not refer to movement, however, do not give us a handle on the P-stranding generalization, as \cite{Me04, Me10} points out. That is, it is difficult to see why both the P-less and P-ful fragment answers to a question like \Next are good in English, but only the P-ful answer is good in German.
+
+\ex. 		(\cite{Me04}'s (72, 78), adapted) 
+	\a. With whom was Peter talking? --- With Mary. / Mary. \label{p-stranding-good-in-Eng}
+	\bg. Mit wem hat Anna gesprochen? --- Mit dem Hans. / *Dem Hans. \\
+		with whom has Anna spoken {} with the Hans / the Hans \\
+		`Who did Anna speak to? --- Hans.'
+
+These facts follow from a movement-plus-ellipsis account of fragments, because English and German have different possibilities for moving DPs out of PPs; the answer *{\it Dem Hans} is ruled out in German because the DP could not move to a left-peripheral position without pied-piping the preposition {\it mit}. But it is not obvious what should make the difference between English and German on other accounts.
+
+On accounts of subsententials which are entirely semantic/pragmatic and which involve no syntax at all beyond the syntax of the fragment itself, such as Stainton's account, this is not accounted for: the Mentalese of an English and German speaker should both easily be able to accommodate a manifest property such as ANNA WAS TALKING TO \_\_ to combine with {\it dem Hans} in \Last[b]. The preposition should not be required; the DP {\it dem Hans} should be able to be generated `bare'. However, it cannot be.\footnote{Stainton could and does (2006:97) counterargue that cases with overt questions, such as \Last, \emph{do} contain `true' ellipsis of the type argued for by \cite{Me04} and in the present work; and that the `Mentalese' mechanism is to be restricted only to cases of antecedentless/`out-of-the-blue' fragments. See \ref{sec-antecedentless-fragments} below for discussion of this possibility.}
+
+Accounts of subsententials which do make reference to syntax, but not to movement, also have problems capturing the P-stranding generalization. \cite[669f.]{Me04} makes this point for \cite{GS00}'s account, by considering Greek examples like the below:\footnote{At p.~669, Merchant actually discusses sluicing examples. I have amalgamated this with his later discussion of P-stranding in fragment answers in the same paper (p.~685ff., with \TextNext being Merchant's (77)), and have made the requisite alterations in material I have quoted from his paper, shown in square brackets.}
+
+\ex.	\ag. Me pjon milise i Anna?\\
+	    with whom spoke the Anna\\
+	    `With whom did Anna speak?'
+	 \bg. Me ton Kosta.\\
+	 	with the Kosta.\\
+	 \c. *Ton Kosta.
+	 
+Greek disallows P-stranding, and also disallows an absence of P in a fragment answer. Merchant points out that this does not follow from Ginzburg and Sag's analysis: `nothing prevents [{\it ton Kosta} in \Last] from being the head of a {\it hd-frag-ph} whose \textsc{sal-utt} value is the \emph{local} value of [{\it pjon}]' (p.~669f., emphasis in the original). That is, it is not clear why the syntactic matching requirement imposed on the fragment in \Last[b] should require a matching with the category of the entire PP, rather than just the DP, in the question.
+
+In fact Ginzburg and Sag (p.~301 fn.~9) do propose to deal with pied-piping by imposing a requirement that the value of \textsc{sal-utt} that is chosen should be the most extensive possible, on the basis of the below examples (their judgments indicated):
+
+\ex. 	\a. A: To whom did you give the book?\\
+		B: \#(To) Jo.
+	\b. A: On what does the well-being of the EU depend?\\
+		B: \#(On) a stable currency.
+
+That is, given a question with pied-piping as in the examples in \Last, \textsc{sal-utt} must obligatorily be the whole prepositional phrase which is pied-piped, and the requirement that {\it hd-frag-ph}s match in syntactic features and category with \textsc{sal-utt} should therefore deliver us the result that pied-piping responses are required if the antecedent contains a pied-piped constituent. However, I have been unable to replicate the judgments shown in \Last with other English speakers. I do not believe there is a contrast between the fragments containing the prepositions and those without, as shown also in \ref{p-stranding-good-in-Eng}. (See \cite[fn.~8]{Me04} for a similar observation and discussion of \cite{GS00}'s proposal in this respect.) The intuitions of the speakers I have consulted are very clear on this point. In fact, to the extent that there is a contrast, the variants \emph{without} prepositions seem better, at least to English speakers I have consulted.\footnote{This preference could be interpreted as support for the movement analysis of these fragments, to the extent that pied-piping in English is generally the marked option compared to P-stranding.} It is possible, as \cite{Me04} suggests, that the results reported by Ginzburg \& Sag represent a particular dialect of English, one in which pied-piped questions do indeed require pied-piped answers. However, given the existence of speakers for whom that is not the case (that is, for whom {\it To whom did you give the book? --- Jo} is acceptable), we cannot generally appeal to a principle of taking the largest available antecedent and requiring it to match in syntactic features with the fragment. Such a principle is clearly not at work for speakers who accept the dialogues in \Last. As such,  the contrast between English (and other P-stranding languages) and Greek (and other pied-piping languages) remains unexplained.
+
+In fact, it is not clear that there is any general requirement that there be syntactic category matching between an antecedent and a fragment answer at all, as \Next shows. 
+
+\ex. 	 Did he eat the natto $[_F$ reluctantly$]$? --- No, with relish.
+
+Here, the focused constituent which licenses the fragment is an adverb, but the fragment is a PP; however, the fragment is licensed, even though it does not match its licensor in syntactic category. Furthermore, in some cases there need not even \emph{be} an antecedent that fulfils the role of \textsc{sal-utt}; fragment answers can add new information in a way parallel to `sprouting' cases such as {\it He ate, but I don't know what} (\cite{CLMcC11}):
+
+\ex. 	\a. Did he eat? --- Yes, natto.
+	\b. Did he eat natto? --- Yes, with relish.
+	
+\marginpar{Hmm. {\it With relish} doesn't fall under my analysis, I think.}If there is a requirement that fragments match in syntactic features and category with an antecedent \textsc{sal-utt}, then it is not clear how this requirement can hold in cases like \Last, where there does not appear to be an antecedent \textsc{sal-utt}. On an elliptical analysis, these examples can be handled unproblematically. The syntactic requirements placed on the fragment are imposed by the elided clausal structure, rather than any matching requirement between the fragment and the antecedent; the matching requirement is rather between the \emph{elided clause} and the antecedent.
+
+\ex. 	\a. Did he eat the natto $[_F$ reluctantly$]$? -- No, with relish \sout{he ate the natto}.
+	\a. Did he eat? --- Yes, natto \sout{he ate}.
+	\b. Did he eat natto? --- Yes, with relish \sout{he ate natto}.
+
+Jacobson's analysis also does not account for syntactic facts such as the P-stranding generalization. One could imagine that, because a German question such as {\it mit wem hat Anna gesprochen} `with whom did Anna speak' has a pied-piped PP, it is therefore looking for a specific syntactic category of Ans to combine with. Say that the question is of category Qu/PP, to use a categorial-style slash notation, and that this syntactically rules out combination with a DP like {\it Dem Hans}.  However, if this is the case, then it should equally be true of the English pied-piped question \ref{p-stranding-good-in-Eng} that it should demand something of category PP to combine with, but in fact this question can be answered with a DP fragment {\it Mary} unproblematically ({\it pace} Ginzburg and Sag's judgments). Again, the contrast between English (and other P-stranding languages) and Greek (and other pied-piping languages) remains unexplained. 
+
+However, this contrast is accounted for by a movement-plus-ellipsis account: the English DP-only answer is simply the below.
+
+\ex. 	With whom was Peter talking? --- Mary \sout{Peter was talking with t}.
+
+\subsubsection{Subjectless VP fragments}
+
+Another issue for accounts which do not contain clausal structure is that v/VPs can be fragments, as shown below.
+
+\ex. 	What should I do? --- Go to the doctor.
+
+So too can categories somewhat bigger than VP, for example categories big enough to contain aspect morphology, as in the below example from \cite{St06book}: 
+
+\ex. 	\a. [Looking at a fast-moving car.] Moving pretty fast!
+	\b. [Dealer indicating a car.] Driven exactly 10,000 miles.
+
+On analyses in which these subsententials are `bare', then the fragments in \Last are only as big as something like AspP, or whatever category(ies) smaller than TP we want to analyse progressive or perfective verbal constituents as.
+
+The problem on this account is the location of the subject. Under the VP-internal subject hypothesis (\cite{KS91} a.m.o.), the subject should be base-generated in a low position (the Spec of vP or VoiceP, following e.g. \cite{Kr96}) and should then raise to [Spec, TP], the canonical subject position in English.
+
+However, on a `bare constituent' analysis of a `small' verbal subsentential such as \LLast, \Last, there is no [Spec, TP] position for the subject to move into. It should therefore be stranded in a low position, and we might expect that it should get pronounced in such a verbal fragment, contrary to fact. In a very `small' constituent such as \LLast, we might assume that this is only as big as VP, and following \cite{Kr96}, the subject (merged in a higher Spec, vP or VoiceP) has not yet been merged in. However, on standard assumptions, \marginpar{Do I need a reference for Aspect $>$ v?} aspectual morphology is merged in a higher position than the initial Merge position of the subject, meaning that the subject should already have been Merged in in a fragment like \Last. On the `bare constituent' analysis, the subject should be pronounced in a low position. Explaining the fact that it is not pronounced would require the postulation of a silent subject pronoun, perhaps the employment of PRO. However, note also that floated quantifiers are licit in such verbal fragments, as shown in \Next.
+
+\ex. 	\a. What should the students do? --- \emph{All} turn up in the Chancellor's office and protest.
+	\b. \emph{All} looking pretty good.
+	\b. \emph{All} driven no more than 10,000 miles.
+	
+On the `stranding' analysis of floating quantifiers (\cite{Sp88} a.o.), such a position of {\it all} is the remnant of movement of a DP out of a QP which is left stranded in a low subject position, as below.
+
+\exi. 	\a. The students should all protest.
+	\b. [TP [DP The students]$_1$ [TP should [vP [QP all t$_1$ ] [vP protest]]]]
+	
+If this analysis of floating quantifiers is correct, then the presence of floating quantifiers in verbal fragments like \Last is diagnostic of subject movement out of those fragments. However, this only makes sense if there is higher clausal structure, such as TP, for subjects to move into. If the verbal constituent is generated `bare', then the entire subject should appear within the VP. The lack of subject is immediately explained if verbal fragments are examples of full clausal ellipsis. On such an analysis, the subject has been merged and has risen to [Spec, TP]; the verbal constituent which the subject has evacuated then moves to a left-peripheral position, and the rest of the clause elides:
+
+\ex. 	\a. [Go to the doctor] \sout{you should t}
+	\b. [Driven exactly 10,000 miles] \sout{this car has t}
+	\b. [All t$_1$ turn up in the Chancellor's office and protest]$_2$ \sout{[the students]$_1$ should t$_2$}
+	
+This analysis also explains why only verbal constituents which have moved are ones that can appear as fragments:
+
+\ex. 	He said he should have been promoted\ldots
+	\a. and promoted, he should have been.
+	\b. ?and been promoted, he should have.
+	\b. *and have been promoted, he should.
+	
+\ex. 	Should he have been promoted?
+	\a. No, demoted.
+	\b. ?No, been demoted.
+	\b. *No, have been demoted.
+	
+This distribution is predicted on the movement account, but not on the `bare constituent' account.
+
+The problems discussed above are problems for any account of fragments which does not assume that the fragment moves or that there is clausal structure. I now turn to some problems which are specific to the proposal in \cite{Ja13}.
+
+\subsection{Problems for \cite{Ja13}}
+
+\subsubsection{Antecedents which are not questions}\label{sec-antecedents-which-are-not-questions}
+
+Not only questions license fragments. Antecedents containing indefinites and focused constituents also do.
+
+\ex. 		\a. Someone left early --- John.
+		\b. \textsc{Mary} left early. --- No, John.
+
+This is problematic for Jacobson's analysis, in which the fragment directly combines with a preceding syntactic interrogative; there are no interrogatives in \Last, and therefore nothing for the fragment to combine with. The semantics would also not work. Questions are plausibly interpreted as lambda-abstracts (e.g. \ext{Who left} $= \lambda x. x$ left), but sentences like {\it Someone left early} or {\it \textsc{Mary} left early} are surely propositions (respectively $[\exists x. x $ left early$]$, and [Mary left early] with something like the presupposition that {\it left early} is Given (\cite{Sc99})), not lambda-abstracts. It is therefore not clear how the subsentential like {\it John} in \Last could either syntactically or semantically combine with the given antecedents using a mechanism like Jacobson's.
+
+\cite{Ja13} claims that examples containing indefinites like \Last[a] are ungrammatical (assigning such examples a ?* diacritic), but to my ear it is perfect, and I have not been able to replicate Jacobson's  judgment with other native speakers of English.\footnote{Jacobson does not discuss focus cases  %TODO check this!
+, but \cite{GS00} report fragments licensed by focus creating an implicit question (p.~301, fn.~10):
+
+\ex. A: Does Bo know \textsc{Brendan}?\\
+	B: No, (she knows) Frank.
+	
+Such implicit questions are also extensively used by \cite[687ff.]{Me04} in order to investigate the properties of fragments extracted (on Merchant's analysis) from islands.} I believe the data are particularly clear when the {\it someone}-sentence and the subsentential are produced by different speakers.
+
+\ex. 	I hear someone left early. --- Yeah, John. \label{indefinite-across-speaker}
+
+Exchanges like \Last strike me as being impeccable.\footnote{Note again that material ({\it Yeah}) intervenes between the antecedent and the fragment, providing another example of the problem Jacobson acknowledges with the claim that fragments syntactically compose with their licensing antecedents.} Jacobson does acknowledge the goodness of the data like the below with {\it namely} or {\it i.e.}.
+
+\ex. 	\a. Someone left the party early, namely Claribel.
+	\b. Someone left the party early, i.e. Claribel.
+
+Jacobson proposes that these are not true examples of subsententials, but rather something more like extraposition from a DP/NP-internal position. {\it namely/i.e.}~phrases are proposed to be parts of complex generalized quantifiers -- that is, {\it someone namely Claribel} is a complex GQ in the same way as something like {\it every boy but John}.
+
+\ex. 	\a. Someone -- namely Claribel -- left the party early.
+	\b. Someone -- i.e. Claribel -- left the party early.
+
+But an extraposition account seems to me to be implausible. Firstly, the examples in \Last seem fairly clearly to be parentheticals, requiring heavy prosodic breaks between the {\it namely/i.e.}~phrases and the surrounding material. They do not seem to be parts of the generalized quantifier in the way that, for example, the {\it but}-phrase in {\it every boy but John} is. Secondly, given that subsententials can be replies by an interlocutor (as in \ref{indefinite-across-speaker}), an extraposition account would imply that an extraposed part of a complex generalized quantifier can be supplied by a second speaker. While extraposition of, for example, a {\it but}-part of a complex generalized quantifier is possible in general, as \Next[a] shows, this is quite marked across speakers, as shown in \Next[b], particularly so if material like {\it yes} intervenes \Next[c]. However, a second speaker can easily provide a {\it namely}-phrase, as \NNext shows, even with {\it yes} intervening (in fact to my ear \NNext is better with the {\it yes} than without):
+
+\ex. 	\a. [Every boy t] left [but John].
+	\b. Every boy left. --- ??But John. \marginpar{Actually the reply {\it But John} on its own isn't \emph{too} bad.}
+	\b. Every boy left. --- ?*Yes, but John.
+	
+\ex. 	Someone left. --- Yes, namely Claribel.
+
+Thirdly, it is not clear how an extraposition account of this sort can deal with the focus cases, where the DP in the antecedent is a proper name which could not be extraposed from; and the fragment is also not plausibly something that would occur in construction with the DP in the antecedent.
+
+\ex. 	\textsc{John} left early. --- No, Mary.
+
+In this case, it is very difficult to see how the subsentential reply can be accommodated on a view in which subsententials are syntactically and semantically integrated with their antecedent directly. It can be accommodated easily, however, if the reply in \Last is taken to covertly contain a \emph{second} instance of a clause, deleted under identity with an antecedent:
+
+\ex. 	\textsc{John} left early. --- No, Mary \sout{left early}.
+
+ --- in short, an elliptical approach. %It should also be noted here, however, that \cite{GS00}'s approach, using the Question under Discussion as the source of the antecedent, can also handle these cases: if a sentence like {\it Someone left early} can raise the `implicit' QUD {\it Who left early?}, then {\it who} can be taken as the value of \textsc{sal-utt}, allowing {\it Mary} to be licensed as a {\it hd-frag-ph}, given the requisite syntactic feature-equivalence and semantic co-indexing. As will be seen later, I will agree with Ginzburg \& Sag that the Question under Discussion has a crucial role to play in licensing fragments, although I shall defend an elliptical approach.
+ 
+\subsubsection{Answering embedded questions}
+ 
+Jacobson notes that examples like the following are well-formed.
+ 
+\ex. I know who left early --- Claribel. \label{embedded-question}
+ 
+Jacobson takes this to imply that certain verbs can embed not just questions, but Qu-Ans pairs. While Jacobson does not provide the exact syntactic constituency she is assuming, I assume that the structure of the above is something like \Next, where the verb {\it know} is selecting for something of category Qu-Ans. (I mix Minimalist/GB-style representations of phrase markers here with categorial-style slash notation for `Qu-Ans/DP', a label indicating a constituent that will provide a Qu-Ans once it has combined with a DP -- that is, `Qu-Ans/DP' is a constituent question in which the questioned constituent is of category DP.)
+
+\ex.	\Tree[.TP I [.VP [.V know ] [.Qu-Ans \qroof{who left early}.Qu-Ans/DP \qroof{Claribel}.DP ] ] ]
+
+The semantics of the Qu-Ans part of such a tree would be as below.\footnote{The question meaning and the meaning of the whole Qu-Ans should be intensionalized, that is, the denotation of the Qu-Ans should be a proposition rather than a truth value. I abstract away from this, as Jacobson also does.}
+
+\ex. 	\Tree[.TP I [.VP [.V know ] [.{$\pred{left-early}(\pred{claribel})$} \qroof{who left early}.{$\lambda x. \pred{left-early}(x)$} \qroof{Claribel}.{$\pred{claribel}$} ] ] ]
+
+The interpretation that this would receive is that the speaker knows that Claribel left. This has rather weaker truth conditions than the sentence in \ref{embedded-question} actually has, however. \marginpar{Discussion of exhaustivity etc. to go here.} %TODO exhaustivity and all that jazz
+
+Even if concerns about exhaustivity could be handled, for example by pragmatic strengthening, examples like the below would still be problematic.
+
+\ex. 	A: I wonder who left early. B: Claribel.
+
+B can, by using a subsentential constituent, provide an answer to the embedded question that A utters. The structure of such an utterance would, on Jacobson's analysis, presumably have to look something like the below (again with a mix of Minimalist-style representations and categorial-style notation):
+
+\ex. 	\Tree[.TP I [.VP [.V wonder ] [.Qu-Ans \qroof{who left early}.Qu-Ans/DP \qroof{Claribel}.DP ] ] ]
+
+Here we have a syntactic problem. While syntactically combining entire utterances cross-speaker may be plausible, it is unclear how \Last is supposed to work when the DP {\it Claribel} is provided by a different speaker from the one that provides {\it I wonder who left early}. The problem is structure-building: it is not clear how the second speaker can provide a syntactic constituent {\it Claribel} which is meant to `slot in' at a lower level than the root node. In Minimalist terms, this would be a case of countercyclic Merge, which is usually considered to be restricted in application, if countenanced at all. In categorial grammar terms, the constituency in \Last would imply that {\it Claribel} had right-concatenated with the string {\it who left early} before the resulting string right-concatenated with {\it wonder}; but then it is unclear how speaker A could pronounce the string {\it I wonder who left early} without pronouncing {\it Claribel}.\marginpar{I need to learn more about categorial grammar.}
+
+There is also a semantic problem in \Last. Consider the denotations of the subtrees:
+
+\ex. 	\Tree[.TP I [.VP [.V wonder ] [.{$\pred{left-early}(\pred{claribel})$} \qroof{who left early}.{$\lambda x. \pred{left-early}(x)$} \qroof{Claribel}.{$\pred{claribel}$} ] ] ]
+
+Here {\it wonder} would be selecting a proposition, the proposition `that Claribel left'. But {\it wonder} semantically selects for a question, not a proposition (\cite{Gr79} a.m.o.):
+
+\ex. 	\a. I wonder whether Claribel left./who left./where Claribel went.
+	\b. *I wonder that Claribel left.
+
+We might be able to solve the syntactic problem by allowing a dependency on an answer to copy up the tree and be resolved at the highest level (again, represented here with an ad hoc mix of Minimalist-style labels and categorial-style slashes):
+
+\ex. 	\Tree[.TP [.TP/DP I [.VP/DP [.V wonder ] \qroof{who left early}.Qu-Ans/DP ] ] \qroof{Claribel}.DP ]
+
+But it is not clear that this will solve the semantic problem. {\it I wonder who left early} does not itself denote a question or a lambda-abstraction of any kind, rather denoting a proposition. It is therefore not clear how it could semantically compose with the denotation of the DP {\it Claribel}.
+
+By contrast, on an elliptical account, fragments providing answers to embedded questions pose no problem. These examples are simply analyzed as the below.
+
+\ex. 	\a. I know who left early --- Claribel \sout{left early}.
+	\b. A: I wonder who left early.\\
+	    B: Claribel \sout{left early}.
+	
+\subsection{Problems for Stainton}
+
+In this section, I discuss some problems which are specific to Stainton's approach, in which the fragment does not interface with clausal syntax at all.
+
+\subsubsection{The lack of immobile fragments}
+
+On Stainton's analysis, in principle, it appears that any syntactic category can be generated as a subsentential. If it has semantically unsaturated arguments, as in the case of a generalized quantifier for example, the manifest property combines with the denotation of the subsentential to deliver a proposition, as below.
+
+\ex. 	\a. [indicating a pair of empty chairs]\\
+		Two external examiners.
+	\b. \ext{Two external examiners} $= \lambda P. \exists x. |x| \geq 2 $ \& $P(x)$ \& $x$ are external examiners
+	\b. Manifest property: $\lambda x. $ these chairs are for $x$
+	\b. Combination of the two: $\exists x. |x| = 2 $ \& these chairs are for $x$ \& $x$ are external examiners
+	
+In principle, it seems as if this should be recursively possible. That is, if there is a subsentential which has \emph{two} unsaturated property-type arguments, and there are also two salient properties, one might imagine that both salient properties could combine with the denotation of the subsentential in turn, giving a propositional interpretation. On the face of it, this does indeed seem possible, as examples like the below show.
+
+\ex. 	[Context: I walk into a classroom containing fifty students. I'm used to one or two students being asleep at the start of a class, but this being the morning after an important game which the home team won, I am faced with thirty-seven sleeping students. I exclaim:]\\
+	Thirty-seven!
+	
+\ex. 	[Same context.]\\
+	More than half!
+	
+\ex. 	\a. Two manifest properties: $[\lambda x. x$ is sleeping$]$ and $[\lambda x. x$ are students$]$
+	\b. \ext{thirty-seven} $ = \lambda P. \lambda Q. \exists x. P(x) $ \& $Q(x) $ \& $|x| \geq 37$
+	\b. Combination of subsentential with the property `being a student':\\
+		$\lambda Q. \exists x. x$ is a student \& $Q(x)$ \& $|x| \geq 37$
+	\b. Combination of the function thereby generated with the property `sleeping':\\
+		$\exists x. x$ are students \& $x$ is sleeping \& $|x| \geq 37$
+		
+\ex. 	\a. \ext{more than half} $ = \lambda P. \lambda Q. |P \cap Q| > \frac{1}{2} |P|$
+	\b. Combination of subsentential with the property `being a student':\\
+		$\lambda Q. |\pred{student} \cap Q| > \frac{1}{2} |\pred{student}|$
+	\b. Combination of the function thereby generated with the property `sleeping':\\
+		$|\pred{student} \cap \pred{sleeping}| > \frac{1}{2} |\pred{student}|$
+		
+The problem comes when we consider the example below.
+
+\ex. 	[Context: same as before, but this time \emph{all} the students are sleeping.]\\
+	{}*Every!
+	
+It isn't clear what the semantic problem is with \Last; we should imagine that two salient properties exist to saturate both arguments of {\it every}:
+
+\ex. 	\a. \ext{every} $= \lambda P. \lambda Q. \forall x. P(x) \rightarrow Q(x)$
+	\b. combining with the property `student' and `sleeping' in that order:\\
+		$\forall x. x$ is a student$ \rightarrow x$ is sleeping 
+		
+The problem rather seems to be a syntactic one. The obvious difference between {\it every} and something like {\it thirty-seven} or {\it more than half} is that the latter license noun phrase ellipsis, while {\it every} does not:
+
+\ex. 	\a. John ate two cookies, but I ate thirty-seven (cookies).
+	\b. John ate less than half the cookies, and I ate more than half (the cookies).
+	\b. John ate no cookies; I ate every *(cookie).
+
+So the obvious treatment of subsententials like {\it thirty-seven} or {\it more than half} is that these are actually {\it thirty-seven students} and {\it more than half the students}, respectively, with NP ellipsis.
+
+This is easily accounted for on the movement-plus-ellipsis account of subsententials: the fragment {\it thirty-seven students} moves, clausal ellipsis takes place, and the NP {\it students} elides independently of the clausal ellipsis:
+
+\ex. 	[[Thirty-seven $\langle$students$\rangle$ ] \sout{t are sleeping}]\\
+	where $\langle$angle brackets$\rangle$ indicate noun phrase ellipsis and \sout{strikethrough} indicates clausal ellipsis
+	
+{\it Every} cannot license noun phrase ellipsis in this was, and so subsentential {\it every} is not licensed.
+
+This does not,\marginpar{Stainton might say: subsententials must have their SYNTACTIC arguments saturated.} however, clearly follow from Stainton's analysis. It is not clear what would not license the generation of the bare determiner {\it every}, with its arguments being saturated by manifest properties. The system might be augmented with a grammatical requirement either that subsententials must be phrasal (not heads like the determiner {\it every}), but this would be an extra stipulation on this account, while it follows immediately from a movement-plus-ellipsis approach; as A'-movement of the type implicated on this account can only target phrases, and would be predicted not to move a category like {\it every} on its own.
+
+
+
+\subsubsection{The problem of too many salient properties}\label{sec-too-many-salient-properties}
+
+Stainton's approach proposes that a subsentential is understood as giving a propositional meaning by composing with a salient or manifest property. This raises the issue of restricting which properties count as `salient'.\footnote{See also \cite[sec. 2]{Me10} for discussion of this issue.} In this respect, consider examples like \Next.
+
+\ex. 	Q: Who did John say has the key to the liquor cabinet?\label{liquor-cabinet}
+	\a. Mary.
+	\b. Well, Mary has the key to the liquor cabinet, but I don't know what John said.
+	\b. \#Well, Mary, but I don't know what John said.
+
+Here, the subsentential {\it Mary} is grammatical in principle, as shown in \Last[a]. However, it cannot be understood as meaning that Mary is actually the one with the key (an `embedded' reading, retrieving the denotation of the embedded clause {\it has the key to the liquor cabinet} in the antecedent), while not addressing the question of what John thinks, as shown by the infelicitous continuation {\it but I don't know what John said} in \Last[c]. Such a contribution to the conversation is not uncooperative or impossible in principle, as \Last[b] shows; you just can't use the subsentential {\it Mary} to do it.
+	
+The problem here is that the property $[\lambda x. x $ has the key to the liquor cabinet$]$ should be just as salient as $[\lambda x. $ John thinks that $ x $ has the key to the liquor cabinet$]$. It is not clear why, on Stainton's analysis, an answer such as \LLast[c] is not possible; the subsentential {\it Mary} should be able to combine semantically with the manifest property $[\lambda x. x $ has the key to the liquor cabinet$]$, to deliver the proposition that Mary has the key to the liquor cabinet. This should in principle be possible, especially given the context provided by the continuation {\it but I don't know what John thinks}. Intriguingly, the subsentential with this `embedded' reading \emph{is} licensed in the following, minimally different example.
+
+\ex. 	John said that someone here has the key to the liquor cabinet.\\
+	--- (Well, yeah,) Mary. (I mean, I don't know what John thinks, but Mary has the key.) \label{indefinite-liquor-cabinet}
+	
+It appears that the condition on the licensing of subsententials, and how we construe propositional meaning from them, must be sensitive to the difference between a sentence containing an indefinite such as \Last and one containing a {\it wh-}word such as \ref{liquor-cabinet}. It is not immediately clear how this can be derived from Stainton's analysis, where the subsentential combines with a salient property. A similar point is made by the below example, due to Jeremy Hartman (p.c.).
+
+\ex. 	Why did John go to the party? \label{why-questions-don't-give-you-antecedents}
+	\a. Mary went to the party, and John does everything Mary does.
+	\b. *Mary, and John does everything Mary does.
+	
+Again, it seems plausible that the property $[\lambda x. x $ went to the party$]$ should be made salient by the linguistic context, and yet it cannot serve as the manifest property which would combine with the subsentential to give a propositional meaning on Stainton's account; that is, the subsentential {\it Mary} here cannot be understood as communicating the meaning {\it Mary went to the party}.
+
+These examples, of course, are problematic for elliptical accounts of fragments also. Other elliptical processes, such as verb phrase ellipsis (VPE), can unproblematically pick up antecedents in embedded clauses. All of the cases discussed above which do not support subsententials do support VPE, for example.
+
+\ex. 	Who did John say has the key to the liquor cabinet?\\
+	--- Well, Mary does \sout{have the key to the liquor cabinet}, but I don't know what John thinks.
+
+\ex. 	Why did John go to the party?\\
+	--- Well, Mary did \sout{go to the party}, and John does everything Mary does.
+
+ It is unclear why, on the elliptical analysis of subsententials, the elided clause cannot pick up an antecedent in an embedded clause (while VPE can unproblematically do this). I will discuss this in much greater detail in section \ref{sec-semantic-antecedence-condition}. However, on the face of it, such data look like they provide support for Jacobson's approach to fragments, in which subsententials directly compose with questions construed as categorial lambda-abstractions. We would expect in this case that, given the antecedent {\it Who did John say has the key to the liquor cabinet}, the subsentential {\it Mary} would only be able to combine with the entire clause, which would denote the abstraction $[\lambda x. $ John said that $ x $ has the key to the liquor cabinet$]$. It would not be able to combine with an abstraction $[\lambda x. x$ has the key to the liquor cabinet$]$, as no such abstraction exists in the antecedent for the fragment to syntactically and semantically combine with.
+ 
+ However, the same issue arises here as discussed in \ref{sec-antecedents-which-are-not-questions} ; examples like the below (repeated from \ref{indefinite-liquor-cabinet}), containing an indefinite rather than a {\it wh-}word, \emph{do} license `embedded' readings for subsententials.
+ 
+\ex. 	John said that someone here has the key to the liquor cabinet.\\
+	--- (Well, yeah,) Mary. (I mean, I don't know what John thinks, but Mary has the key.)
+	
+It is not clear how Jacobson's approach can extend to this case in general, as discussed in section \ref{sec-antecedents-which-are-not-questions}. However, it is also not clear what allows the fragment to compose with an `embedded' meaning in the case where the antecedent contains an indefinite, rather than a {\it wh-}word. Of course, it is not clear on an elliptical account either why the presence of an indefinite in the antecedent should make a difference compared to the presence of a {\it wh-}word; again, I defer discussion of how we might make an elliptical account sensitive to such facts to section \ref{sec-semantic-antecedence-condition}.
+
+\subsection{Antecedentless fragments}\label{sec-antecedentless-fragments}
+
+We have seen from the discussion of Stainton's work that fragments can be antecedentless. While this is posed as a problem for the ellipsis account, it is also a problem for accounts such as \cite{GS00} and \cite{Ja13}. In fact, I submit that it is more of a problem for these accounts than for the elliptical account. In direct-generation accounts, the fragments are syntactically dependent on an antecedent, in order to capture Case and binding facts. But this syntactic dependence between the fragment and the antecedent means that the antecedent must be a \textsc{syntactic} object. On Jacobson's approach, for example, a subsentential answer literally syntactically combines with the question it is answering. If there is no Qu, then there can be no Qu/Ans pair.
+
+This might not be a problem if we made the syntactic dependence optional, but then of course we lose the empirical coverage of the fact that Case-matching seems to be obligatory rather than optional. Perhaps syntactic dependence of a fragment is not required just in case there is no antecedent to combine with. This would amount to saying that a subsentential need not find a \textsc{sal-utt} to match with (on \cite{GS00}'s analysis) or an interrogative to combine with (on \cite{Ja13}'s analysis), but rather could be generated on its own -- perhaps with help from an analysis like Stainton's to provide the requisite propositional meaning. In fact, this analysis of antecedentless fragments would be more-or-less equivalent to Stainton's.
+
+The problem with such a solution -- and also, ipso facto, a problem for Stainton's approach -- is that Case connectivity continues to be observed \emph{even in `antecedentless' cases}. Merchant points out that in certain discourse-initial situations, fragments are generated with the case that would be required if a verb were present. The 'caf\'e' examples are from \cite[(219, 220)]{Me04}; the `Both hands' example is from \cite[fn.~11]{Me10}, after discussion in \cite{St06book}.
+
+\ex. 		\ag.  (Enan) kafe (parakalo)!\\
+		a coffee.\textsc{acc} please\\
+		`(A) coffee (please)!' (in a Greek caf\'e)
+		\bg.  Vody (pozhalujsta)!\\
+		water.\textsc{gen} please\\
+		`Water (please!)' (in a Russian caf\'e)
+		\bg.  Dvumja rukami!\\
+		two.\textsc{instr} hands.\textsc{instr}\\
+		`Both hands!' (warning a Russian child to be careful with their bowl of soup)
+		
+\ex. 		\ag. Ferte mou (enan) kafe (parakalo)!\\
+			bring.\textsc{imp} me a coffee.\textsc{acc} please\\
+			Bring me (a) coffee (please)!'
+		\bg. Dajte mne vody (pozhalujsta)!\\
+			give.\textsc{imp} me water.\textsc{gen} please\\
+			`Give me (some) water (please)!'
+		\bg. Pol'zujsja dvumja rukami!\\
+			use two.\textsc{instr} hands.\textsc{instr}\\
+			`Use both hands!'
+
+\ex. 		\ag. *Kafes (parakalo)!\\
+			coffee.\textsc{nom} please\\
+		\bg. *Voda (pozhalujsta)!\\
+			water.\textsc{nom} please\\
+		\bg. *Dve ruki!\\
+			two.\textsc{nom/acc} hands.\textsc{gen}\\
+
+\cite[108f.]{St06book} suggests that these cases can be understood by assigning Case some semantic import. For example, the reason why {\it dvumja rukami} `both hands' would obligatorily show up in the instrumental case in a Russian fragment is because the instrumental case itself might bear an instrumental semantics which would be obligatory on anything denoting an instrument, whether a subsentential or an argument within a sentential utterance. \cite{Me10} acknowledges this possibility for cases like instrumental, and it might also extend to cases like the genitive examples in Russian ({\it voda} `water.\textsc{gen}') which might plausibly be assigned a partitive semantics; however, it is less clear how such an account might extend to the obligatory use of a Case like accusative, which has been generally argued not to have any semantic import, as Merchant notes (sec. 5).
+
+%TODO Maybe some discussion of Jacobson's Hungarian data could go here?
+
+Case connectivity provides another argument against Stainton's approach, in which a subsentential can be directly generated, with the propositional interpretation being inferred by the provision of a manifest property. Given this, and on the assumption that at least accusative and dative Cases do not have semantic import of their own, the below Case connectivity effects, repeated from \ref{german-case-connectivity}, are mysterious.
+
+\ex. 		{\it German} (Merchant's (49, 50))
+		\ag. Wem folgt Hans? --- Dem Lehrer. / *Den Lehrer. \\
+			who.\textsc{dat} follows Hans --- the.\textsc{dat} teacher / the.\textsc{acc} teacher \\
+			`Who is Hans following? --- The teacher.'
+		\bg. Wen sucht Hans? --- *Dem Lehrer. / Den Lehrer. \\
+			who.\textsc{acc} seeks Hans --- the.\textsc{dat}  teacher / the.\textsc{acc} teacher \\
+			`Who is Hans looking for? --- The teacher.'
+			
+The point here is that {\it den Lehrer} and {\it dem Lehrer}, accusative and dative case versions of `the teacher' respectively, should both denote the same entity (in a semantic metalanguage, $\iota x. \pred{teacher}(x)$). As Stainton's theory works only on the level of the semantics, and combines the meaning of a subsentential with a salient property, the Case of the fragment should not matter (we might even expect the least marked Case, presumably nominative, to be possible).
+
+\cite{St06book} replies to this criticism by acknowledging that replies to explicit questions may indeed be elliptical, produced by a mechanism similar to that proposed by Merchant, and so case-matching is predicted to be required in cases like \Last. The `manifest property' mechanism would only be used to account for antecedentless fragments, not replies to explicit questions as in \Last. However, the question then arises of why Stainton's mechanism is not available \emph{as well} as the elliptical mechanism in the case where there is an explicit question. There should in principle be two paths to generating a subsentential like {\it the teacher} in \Last; one is the elliptical route, but the other is a directly generated subsentential without clausal structure which combines with a salient property (assuming that the property $[\lambda x. \textrm{ Hans is following } x]$ is made salient by the question\footnote{See also section \ref{sec-too-many-salient-properties}, on the problem of `too many properties'.}). If the latter option were available, it is unclear why the case connectivity is required. We would need a stipulation that, in answers to questions, \emph{only} the elliptical route is possible.
+
+This cannot be claimed as a complete victory for the ellipsis analysis, however. A similar problem is faced by ellipsis accounts. In order to claim that `out-of-the-blue' fragments are elliptically generated -- a claim we wish to preserve, due to the Case connectivity effects in antecedentless fragments discussed above -- we seem to need to claim that no syntactic antecedent is required for an ellipsis site to be licensed.
+
+\ex. 	\a. The train station, please.\\
+		$\approx$ \sout{Take me to} the train station, please.
+	\bg. \sout{Pol'zujsja} dvumja rukami!\\
+			use two.\textsc{instr} hands.\textsc{instr}\\
+			`\sout{Use} both hands!'
+
+We might imagine that this implies that the antecedence condition on ellipsis is purely semantic (as suggested e.g. by \cite{Me01}); however that semantic condition is properly defined, it may have enough `squish' to allow for implicit antecedents to be construed within an ellipsis site even without explicit antecedents being present. Indeed, a theory of clausal ellipsis which allows for implicit antecedents to license ellipsis is one that will be defended later in this work. However, if a syntactic antecedent is present, it appears to force a syntactic isomorphism between the antecedent and the content of the ellipsis site, as shown by the following data from \cite{Me10}.
+
+\ex. 	Voice matching obligatory (\cite{Me10}'s (23b), German)
+	\ag. Q: Wer hat den Jungen untersucht? A: *Von einer Psychologin.\\
+	{} who.\textsc{nom} has the boy examined? {} by a psychologist\\
+	`Q: Who examined the boy? A: [intended] (He was examined) by a psychologist.'
+	\bg. Q: Von wem wurde der Junge untersucht? A: *Eine Psychologin.\\
+	{} by who.\textsc{dat} was the boy examined {} a psychologist.\textsc{nom}\\
+	`Q: Who was the boy examined by? A: [intended] A psychologist (examined him).'
+
+Here, despite the fact that the two antecedents -- active and passive versions of the same sentence -- presumably bear the same truth conditions and make the same semantic denotations salient (or whatever will ultimately be required for a semantic antecedence condition on ellipsis), the presence of a clause with one voice specification does not seem to license the ellipsis of the version of the clause with the other voice specification: 
+
+\ex. 	Q: Wer hat den Jungen untersucht?\\
+	A1: Eine Psychologin \sout{hat den Jungen untersucht}.\\
+	A2: *Von einer Psychologin \sout{wurde der Junge untersucht}.
+	
+In this case, the defender of the ellipsis approach has to argue that syntactic isomorphism is obligatory just in case there is syntax to be isomorphic to. Otherwise, there is a greater freedom in what is construed within the ellipsis site. But whatever mechanism allows that greater freedom has to be constrained just in case there is an overt antecedent, just as Stainton's analysis has to rule out the `bare' subsententials as answers to explicit questions.
+
+So, on any approach, something needs to be said about the effect overt antecedents have on the acceptability of subsententials which do not syntactically match those antecedents. However, I think there is still an argument against the availability of a `dual' approach (subsententials being generated either by clausal ellipsis or generated `bare'), although a somewhat weakened one. A proponent of the clausal ellipsis (always) approach can state a constraint on the mechanisms used to resolve ellipsis: if an overt antecedent is available, it must be used; if not, greater flexibility is allowed. This would be a constraint within one mechanism, the mechanism of ellipsis; while its etiology is somewhat mysterious and stating the constraint is somewhat stipulative at this juncture, further research on it could shed further light on why ellipsis should work in this way.\footnote{Indeed, the nature of this constraint is discussed briefly towards the end of \cite{Me10}, and some possible avenues for understanding it are presented.}
+
+By contrast, a proponent of the `dual' approach would have to say that, if it is possible to use clausal ellipsis to generate a subsentential in a given context, then a \emph{different} grammatical mechanism -- the generation of a `bare' constituent which needs to combine with a Mentalese predicate to receive an interpretation -- may not be used in that context. Such a restriction, for example, would be similar to one ruling out overt verb phrases if ellipsis could be used, or ruling out the use of a definite description if a pronoun could be used, as in the below cases.
+
+\ex. 	\a. John ate some fish, and Mary did too.
+	\b. ?John ate some fish, and Mary ate some fish too.
+	
+\ex. 	\a. The man came in. He sat down.
+	\b. ?The man came in. The man sat down.
+	
+As can be seen, such effects do obtain (the type of case in \Last being discussed under the label of the Repeated Name Penalty, \cite{GGG93} a.o.), but they are subtle, and appear to be problems for the on-line processing mechanisms rather than representing a categorical, grammatical ban on the `disfavored' mechanism. By contrast, a failure of Case connectivity in the subsentential cases is indeed categorically banned. For the `dual' approach to be tenable, we would need to know what it is about the presence of a syntactic antecedent that forces the subsentential to be interpreted as if generated via clausal ellipsis (rather than generated `bare'). The proponent of the ellipsis approach has to answer a similar question about the effect of the antecedent on the syntactic content of the ellipsis site, but this can be understood as a constraint on the ellipsis mechanism (albeit a rather mysterious one), rather than as a restriction on the grammatical mechanisms available in principle in a given context.
+
+
+
+\subsection{Taking stock}
+
+ My conclusion from this section is that the ellipsis-based account of subsententials is the correct one. The syntactic evidence, in particular the P-stranding generalization discussed by Merchant and the unavailability of fragments whose syntactic categories are immobile, points to this conclusion; and, I have argued, other extant analyses of subsententials which analyse them as being non-elliptical, such as Stainton's, Ginzburg and Sag's, and Jacobson's, run into problems, many of which can be easily remedied on the assumption that subsententials are generated via a process of clausal ellipsis.
+
+However, the considerations that motivate the non-elliptical analyses of subsententials remain to be addressed. My strategy to account for these considerations will be to concentrate on the semantic antecedence conditions involved in clausal ellipsis. My argument will be that a particular version of these antecedence conditions can suffice to account for the objections raised by authors who propose non-elliptical accounts. In addition, I will argue that this condition also accounts for the ability of indefinites to license fragments, as well as the distinction between antecedent clauses containing indefinites (which can license `embedded' interpretations for fragments) and antecedent clauses containing long-moved {\it wh-}words (which cannot license `embedded' interpretations). In the following section, I will discuss some existing proposals for the semantic antecedence condition on clausal ellipsis, and will provide arguments -- some provided by authors who argue for non-elliptical analyses -- that extant analyses are not sufficient. I will then propose a condition based on the notion of answering the Question under Discussion (\cite{RoQUD}), drawing particularly on a proposal by \cite{Re07}, which I argue can capture the data and allow us to retain an elliptical account of subsententials.
+
+\section{On the semantic antecedence condition for clausal ellipsis}\label{sec-semantic-antecedence-condition}
+
+\subsection{Issues any elliptical analysis will have to handle}
+
+There are a number of problems which elliptical accounts of fragments have to account for. In this section, I enumerate three of these problems: (i) the failure of certain clauses to serve as antecedents for ellipsis in some cases; (ii) the range of elements in an antecedent which can serve as licensors for ellipsis; (iii) the problem of presupposition inheritance.
+
+\subsubsection{Which clauses can be antecedents}
+
+We have seen that, given a constituent question in which a {\it wh-} word has moved from an embedded position to a matrix position, fragments can only `answer' the matrix clause.
+
+\ex. 	(repeated from \ref{liquor-cabinet})\\
+	Q: Who did John say has the key to the liquor cabinet?
+	\a. Mary.
+	\b. Well, Mary has the key to the liquor cabinet, but I don't know what John said.
+	\b. \#Well, Mary, but I don't know what John said.
+	
+That is, the elided clause can be the matrix clause of the antecedent, as in \Next[a], but not the embedded clause, as in \Next[b].
+
+\ex. 	\a. Mary \sout{[John said t has the key to the liquor cabinet]}
+	\b. *Mary \sout{[t has the key to the liquor cabinet]}
+	
+However, we have also seen that embedded clauses containing indefinites \emph{can} be the antecedents for clausal ellipsis.
+
+\ex. 	(repeated/adapted from \ref{indefinite-liquor-cabinet})\\
+	John said that someone here has the key to the liquor cabinet.
+	\a. Yeah, Mary. John said Mary has the key. (But it's actually Bill that has it.)
+	\b. Yeah, Mary. I mean, I don't know what John said, but Mary has the key.
+	
+\ex. 	\a. Mary \sout{[John said that t has the key to the liquor cabinet]}
+	\b. Mary \sout{[t has the key to the liquor cabinet]}
+	
+The same is true of embedded clauses containing focused material:
+
+\ex. 	John said that \textsc{Bill} has the key to the liquor cabinet.
+	\a. No, \textsc{Mary}. You reported that wrong: John said \textsc{Mary} has the key.
+	\b. No, \textsc{Mary}. I don't know what John said, but you should know that it's actually Mary that has the key.
+	
+\ex. 	\a. Mary \sout{[John said that t has the key to the liquor cabinet]}
+	\b. Mary \sout{[t has the key to the liquor cabinet]}
+	
+VP ellipsis does not seem to be sensitive to this distinction, as we can see from \Next. VP ellipsis in \Next can pick up the embedded clause unproblematically%\footnote{A very particular intonation, however, is required to make the answer in \TextNext[a] good: a rise-fall-rise over the entire clause, with rise-fall on {\it Mary} and rise on {\it does}. This is similar to what \cite{Ja13} terms the `best-I-can-do' intonation, to be discussed in the following section REF %TODO (ignore for now) rise-fall-rise
+, and in \NNext, the VP ellipsis site can pick up either the matrix or embedded clauses.
+
+\ex. 	Who did John say has the key to the liquor cabinet?
+	\a. Well, Mary actually does \sout{have the key to the liquor cabinet}, but I don't know what John said.
+	
+\ex. 	John said that someone here has the key to the liquor cabinet.
+	\a. Yes, Mary does \sout{have the key to the liquor cabinet} (although I don't know what John said).
+	\b. Yes, and Mary did \sout{say that someone here has the key to the liquor cabinet} too.
+	
+\ex. 	John said that \textsc{Bill} has the key to the liquor cabinet.
+	\a. That's wrong -- Mary does \sout{have the key to the liquor cabinet}.
+	
+If we wish to analyze fragments as involving ellipsis, the conditions on that ellipsis will have to cleave the correct distinction between VP ellipsis and clausal ellipsis as shown above, and will also have to account for the fact that 	{\it wh}-questions enforce a matrix interpretation of the elided clause, while indefinites and focused elements allow embedded interpretations.
+
+Furthermore, even matrix questions can sometimes fail to provide antecedents for clausal ellipsis, as the below example (repeated from \ref{why-questions-don't-give-you-antecedents}, due to Jeremy Hartman p.c.) indicates.
+
+\ex. 	Why did John go to the party?
+	\a. Mary went to the party, and John does everything Mary does.
+	\b. *Mary \sout{went to the party}, and John does everything Mary does.
+
+Despite the fact that {\it John went to the party} is present in the linguistic context, it cannot be picked up as an antecedent for clausal ellipsis, as shown by the failure of \Last[b] to mean `Mary went to the party, and \ldots'. Note that, again, VP ellipsis can pick this antecendent up unproblematically:
+
+\ex. 	Why did John go to the party?\\
+	Mary did \sout{go to the party}, and John does everything Mary does.
+	
+The failure of clausal ellipsis to pick up such antecedents, which should in principle be available, is an issue which an elliptical account will need to handle. 
+
+\subsubsection{What licenses clausal ellipsis}
+
+{\it Wh-}questions clearly license fragments.
+
+\ex. 	A: Who left early? B: John.
+
+So do focused elements:
+
+\ex.  A: \textsc{Mary} left early. B: No, John.
+
+Indefinites and weak quantifiers also license fragments. These examples should be pronounced with all-new intonation, with `default' stress placement (indicated here with a grave accent), in order to show that it is the indefinite/weak quantifier itself which is licensing the fragment, independently of the power of focus to do so.
+
+\ex.	\a. A: Someone/a man with a hat drank all the b\`eer. B: Yeah, John.
+	\b. A: Two students drank all the b\`eer. B: Yeah, John and Mary.
+	
+Strong quantifiers are considerably more marginal.\marginpar{These examples need rather deeper exploration and analysis, I think.}
+
+\ex. 	\a. A: Most students refused to come to cl\`ass today. B: ?\#Yeah, John, Mary, Bill, Anne, Tom and Sue.
+	\b. A: Few students refused to come to cl\`ass today. B: ?\#Yeah, John and Mary.
+	
+Again, this contrasts with VP ellipsis, which is licensed in \Last:
+
+\ex. 	\a. A: Most students refused to come to cl\`ass today. B: Yeah, John, Mary, Bill, Anne, Tom and Sue did \sout{refused to come to class today}.
+	\b. A: Few students refused to come to class today. B: Yeah, (but) John and Mary did \sout{refused to come to class today}.
+
+However, the {\it few} example can be rescued with {\it only}.
+
+\ex. 	A: Few students refused to come to class today. B: Yeah, only John and Mary. \marginpar{The behavior of {\it only} in fragments is quite weird in general.}
+
+A theory of fragments that appeals to clausal ellipsis will have to explain why weak quantifiers license fragments but strong quantifiers do not, as well as the difference between clausal ellipsis and VP ellipsis in this respect.
+
+Another interesting contrast between clausal ellipsis and VP ellipsis is discussed by \cite{AB10} with respect to sluicing. AnderBois points out that indefinites license sluicing, but negative quantifiers under negation do not, even though these are semantically equivalent (that is, $\neg \neg \exists x. P(x) \Leftrightarrow \exists x. P(x)$).
+
+\ex. 		\label{indefsluicing}
+		\a. \label{indefsluicinga}Someone left, but I don't know who.
+		\b. \label{indefsluicingb}\#It's not the case that no-one left, but I don't know who.
+		
+This extends to fragment answers also.
+
+\ex. 	\a. A: Someone left. B: Yeah, John.
+	\b. A: It's not the case that no-one left. B: \#Yeah, John.
+	
+In addition, AnderBois notes that clauses that are within appositives cannot provide a sluice's antecedent:
+		
+\ex. 		\label{appossluicing}
+		\a. \label{appossluicinga}John once killed a man in cold blood, but he can't even remember who.
+		\b. \label{appossluicingb}\#John, who once killed a man in cold blood, doesn't even remember who.
+
+Again, this extends to fragment answers, very starkly.
+
+\ex. 	\a. A: John once killed a man in cold blood, I hear. B: Yeah, Bill.
+	\b. A: John, who once killed a man in cold blood, is otherwise nice. B: \#Yeah, Bill.
+
+AnderBois points out that VP ellipsis is good in these cases.
+  
+  \ex. 	\a. It's not the case that no-one left, but I don't know who did \sout{leave}.
+  	\b. John, who doesn't look after his sister, says that Mary should \sout{look after his/her sister}.
+
+In addition, restrictive relative clauses, by contrast with appositives, can contain an indefinite which provides the antecedent for a fragment. Either indefinite in \Next can license fragments; the `outer' indefinite, containing the relative clause, is shown licensing the fragment in \Next[a], while the `inner' indefinite contained within the relative clause is shown licensing the fragment in \Next[b].
+
+\ex. 	John saw a man who killed a woman in cold blood, I hear.
+	\a. Yeah, Bill \sout{John saw t}.
+	\b. Yeah, Mary \sout{John saw a man who killed t in cold blood}. 
+	
+ Again, a theory of fragments (and indeed of sluicing) which analyses them as clausal ellipsis will have to account for the failure of double negatives and material within appositives to license it, as well as the contrast between putative clausal ellipsis and VP ellipsis.
+ 
+\subsubsection{The problem of presupposition inheritance}
+
+\cite{Ja13} points out a number of cases where short answers behave differently from their putative full clausal counterparts. I will refer to this property of short answers as {\it presupposition inheritance}: the short answers `inherit' the presuppositions of the antecedent sentence, for example of an NP restrictor in a constituent question, in a way that need not be the case for a full clausal answer, or for an answer containing VP ellipsis.
+
+For example, the clausal answer in \Next[a] communicates that John and Bill came to the party. It need not, however, communicate that John and Bill are in fact linguists, as the continuation shows. Rather, it can be construed as what Jacobson terms a `best-I-can-do' answer. It communicates that John and Bill came to the party, but also implies that the speaker is unsure whether or not John and Bill are linguists. The verb phrase ellipsis answer in \Next[b] has the same property.\footnote{Jacobson reports that some speakers report the VPE answer as degraded with respect to the full clausal answer, but not as bad as the short answer, which is clearly out. Some English speakers I have asked have reported the same intuition.} However, the short answer does not allow this; \Next[c] commits the speaker to the view that John and Bill are linguists.
+
+\ex. 		(after Jacobson)\\
+		Which linguists came to the party?
+		\a. {John and Bill} came to the party\ldots (but I don't know if they're linguists.)
+		\b. John and Bill did\ldots (but I don't know if they're linguists.)
+		\d. \#John and Bill\ldots (but I don't know if they're linguists.)
+
+ Jacobson notes that cases where the response denies a presupposition of the question in this way are best with a particular intonation, which she dubs the `best-I-can-do' intonation: I diagnose this intonation as a rise-fall-rise contour or B-accent over the whole clause, with the rise-fall on the focused element and the final rise at the end of the clause. The presence of this rise-fall-rise contour, however, does not improve the short answer: \Last[c] can be pronounced either with `normal' (falling) intonation or with a rise-fall-rise contour, but is infelicitous in either case. A similar effect is seen in answers which are quantificational, as in \Next.
+
+\ex.	Which students were dancing in the quad?
+		\a. Some Germans were dancing in the quad\ldots (but I don't know if they were students).
+		\b. Some Germans were\ldots (but I don't know if they were students).
+		\b. \#Some Germans\ldots (but I don't know if they were students).
+
+Again, the clausal answer in \Last[a] and VPE answer in \Last[b] communicate that I saw some Germans, but it is not necessary that they were students. The short answer in \Last[c], however, commits the speaker to the claim that the students that he saw were Germans.%\footnote{Note that, interestingly, it does \emph{not} claim that the Germans that he saw were students. It is a felicitous answer, for example, if he saw a group of German professors and German students together. This fact will become important in analyzing such examples.} And again, the short answer in \Last[d] cannot communicate the `uncertainty' effect which the parallel clausal answer in \Last[b] does, and in fact \Last[d] is rather degraded.
+The rise-fall-rise contour in the best-I-can-do answers is not responsible for the infelicity of the short answers: an example of a similar effect can be seen in \Next (due to Jeremy Hartman p.c.), in which providing the information that Jane Austen wrote Emma is not a `best-I-can-do' answer, and in which {\it Jane Austen} (in the full clausal answer \Next[a] and the VPE answer \Next[b]) is pronounced with focus (falling) intonation.
+
+\ex. 		Which Bront\"e sister wrote {\it Emma}?
+		\a. Jane Austen wrote Emma, you fool.
+		\b. Jane Austen did, you fool.
+		\b. \#Jane Austen, you fool.
+		
+Here, the clausal answer in \Last[a] can correct a presupposition of the question (that one of the Bront\"e sisters wrote {\it Emma}). The VPE answer in \Last[b] can also do this. However, the short answer in \Last[c] cannot do this, and is so infelicitous in this context.
+
+Other presuppositions are also inherited by short answers in a way that VPE answers need not, especially if the VPE answers are produced with `best-I-can-do' rise-fall-rise intonation. For example, the gender presupposition brought about by the possessive pronoun in \Next need not be inherited by a VPE answer, but must be inherited by a short answer; on the assumption that John is male, the short answer in \Next[b] is sharply infelicitous.\footnote{I thank Giorgios Spathas for this observation.}
+
+\ex. 	Who handed in her own homework?
+	\a. ?John did\ldots
+	\b. \#John\ldots 
+
+These differences between short answers and clausal answers form one of \cite{Ja13}'s main arguments that short answers should not be derived by ellipsis from full clauses, as their behavior does not seem to follow from the behavior of forms of ellipsis such as verb phrase ellipsis. As I have discussed above, I believe there are reasons to reject the conclusion that short answers do not involve ellipsis. However, the challenge which Jacobson raises has to be answered: it is clear that, at least, the clausal ellipsis mechanism which is appealed to will have to differ from the VP ellipsis mechanism, in which presuppositions do not need to be inherited.
+
+On a view of fragments which makes reference to clausal ellipsis, these three problems -- the problem of embedded antecedents, the ability of some elements in some configurations to license fragments but not other elements in other configurations, and the problem of presupposition inheritance -- will have to be accounted for by part of the theory of ellipsis. At least the latter of these concerns seems to most easily be characterizable in semantic terms, rather than in ways which make reference to the syntax involved in ellipsis.%\footnote{One possible syntactic analysis might be to say that an NP restrictor contributing a presupposition is interpreted not (only) in the site in which it is spoken but also in its base position. One might try to leverage this into delivering the effects that we see in a pair like {\it Which student left? --- Mary, \#but she's not a student.} However, as we will see, this strategy will not work in the general case.}
+This also seems to be a plausible way of characterizing the difference between indefinites and double-negatives, or appositives and restrictive relatives. My strategy therefore will be to pursue the hypothesis that these effects should fall out from the correct formulation of the semantic antecedence condition on clausal ellipsis. To that end, I will review existing proposals for the semantic antecedence condition; none of the existing proposals, I argue, correctly capture all of the data above. I will then propose my own revision of the semantic antecedence condition which, I will argue, does succeed in capturing these data. I will split the semantic conditions into what I will call {\it focus-based} approaches and {\it question-based} approaches.\footnote{This is not a clean cut; as we will see the `question-based' approaches also make reference to focus semantics. However, I will adopt the labels for convenience.}
+
+\subsection{Focus-based approaches}
+
+\subsubsection{\cite{Ro92}: contrast condition}
+
+\cite{Ro92} proposes a condition on VP ellipsis, which is summarized by \cite{Joh01} as follows.
+
+\ex. (Johnson's (52))
+	\a. An elided VP must be contained in a constituent which contrasts with a constituent that contains its antecedent VP.
+	\b. $\alpha$ \underline{contrasts} with $\beta$ iff
+		\a. Neither $\alpha$ nor $\beta$ contain the other, and
+		\b. For all assignments g, the semantic value of $\beta$ w.r.t. g is an element of the focus value of $\alpha$ w.r.t. g.
+		\b. The focus value of [$_{\xi}$\ldots$\gamma$\ldots], where $\gamma$ is focused, is $\{\phi: [_{\phi}$\ldots$x$\ldots$]\}$, where $x$ ranges over things of the same type as $\gamma$ and the ordinary semantic value of $\xi$ is identical to $[\phi]$ except that $x$ replaces $\gamma$.
+		
+An example of this constraint at work is given in \Next.
+
+\ex. 	\a. John read Aspects, and [$_{F}$ Mary] did \sout{read Aspects} too.
+	\b. The VP [read Aspects] in the second conjunct is contained within the clause [[$_F$Mary] read Aspects]. This clause has the focus value $\{$Mary read Aspects, John read Aspects, Sue read Aspects, Bill read Aspects \ldots$\}$
+	\b. There is a constituent -- namely [John read Aspects] -- which is a member of the focus value of [[$_F$Mary] read Aspects]. This antecedent constituent contains the VP [read Aspects], and therefore the ellipsis of [read Aspects] in the second conjunct is licensed.
+	
+Can this constraint be extended to clausal ellipsis? Given the fact that VP ellipsis is licensed in a number of situations in which clausal ellipsis is not, this does not seem to be the way to go\marginpar{Is this too obvious to go into detail about?}; and indeed a contrast condition between clauses does not, for example, capture the inability of clausal ellipsis to pick up embedded clauses as antecedent.
+
+\ex. 	\a. A: Who did John say has the key to the liquor cabinet? B: \#Mary \sout{t has the key to the liquor cabinet}.
+	\b. Putative antecedent clause is [x has the key to the liquor cabinet]. Whatever value the assignment function g gives to the variable x in this clause, it will be a member of the focus value of the elided clause (i.e. $\{$Mary has the key to the liquor cabinet, Bill has the key to the liquor cabinet, \ldots$\}$)
+	\b. As the antecedent and the elided material are both contained within constituents that satisfy the contrast relation, the ellipsis should be licensed, contrary to fact.
+	
+Such a condition also does not capture presupposition inheritance in short answers, as shown below.
+
+\ex. 	\a. A: Which student [t left early]? B: \#John \sout{t left early}, but he isn't a student.
+	\b. Putative antecedent clause is [x left early]. Whatever value the assignment function g gives to the variable x in this clause -- even if we assume that the value it can take is restricted to students -- it will be a member of the focus value of the elided clause; the focus value of the elided clause will range over everything of the same type as {\it John}, i.e. $\{$John left early, Mary left early, Bill left early, \ldots$\}$
+	\b. As the antecedent and the elided material are both contained within constituents that satisfy the contrast relation, the ellipsis should be licensed, contrary to fact.
+
+We can see, therefore, that an extension of \cite{Ro92}'s focus-based condition on VP ellipsis does not make the right predictions for clausal ellipsis.
+
+\subsubsection{Merchant: e-\textsc{given}ness} \label{sec:egivenness}
+
+An influential proposal for the identity condition on clausal ellipsis is e-\textsc{given}ness, a constraint proposed in work by Jason Merchant (\cite{Me01, Me04}), building on \cite{Sc99}'s definition of \textsc{given}ness and on \cite{Ro92}'s focus-based condition.
+
+\ex. 	\label{e-givenness}\a. A clause may be elided if it is e-\textsc{given}.
+	\b. A clause E is e-\textsc{given} if there is an antecedent clause A such that F-clo(A) $\Leftrightarrow$ F-clo(E).
+	\b. The focus closure (F-clo) of a clause is the denotation of that clause with all focused elements replaced by variables, and all variables (that is, traces plus focused elements which have been replaced) having been existentially closed.
+	
+An example of this principle is given below for a sluicing example and a fragment answer example.
+
+\ex. 	\a. John ate something, but I don't know what. [\sout{John ate t}]
+	\b. Antecedent: \ext{John ate something} $ = \exists x. $ John ate $x$
+	\b. F-closure of antecedent: $ = \exists x. $ John ate $x$\\
+		(identical, as all variables are already bound)
+	\b. Elided clause: \ext{John ate t} $ = $ John ate $x$
+	\b. F-closure of elided clause: $\exists x. $ John ate $x$\\
+		F-closures of antecedent and elided clause are in a mutual entailment relationship, so ellipsis is licensed.
+		
+\ex. 	\a. John ate [$_F$ the beans]. --- No, [$_F$ the chips].
+	\b. Antecedent: \ext{John ate the beans} = John ate the beans
+	\b. F-closure of antecedent: $ = \exists x. $ John ate $x$
+	\b. Elided clause: \ext{John ate t} $ = $ John ate $x$
+	\b. F-closure of elided clause: $\exists x. $ John ate $x$\\
+		F-closures of antecedent and elided clause are in a mutual entailment relationship, so ellipsis is licensed.
+
+As can be seen, this principle delivers results which are on the face of it correct for both sluicing and fragment answers, and in particular, it captures the fact that indefinites and focused elements license clausal ellipsis. Indefinites introduced an existentially closed variable, as shown in \LLast, which can correspond to a variable representing a trace in the elided clause which is then existentially closed via the mechanism of F-closure. Focused elements in the antecedent are also transformed into existentially closed variables by the mechanisms of F-closure.
+
+% \subsubsection{The problem of `relational opposites'}
+% 
+% Merchant's intention is that e-\textsc{given}ness should be the semantic antecendence condition which is relevant both for clausal ellipsis (sluicing, fragment answers) and for verb phrase ellipsis. However, Hartman REF points out a type of construction where e-\textsc{given}ness makes the wrong predictions for verb phrase ellipsis. Hartman terms this the problem of {\it relational opposites}; they consist in sentences like the below.
+% 
+% \ex. 	\textsc{John} lost to someone at chess, and then \textsc{Mary} did.
+% 
+% The problem is that the VPE site in \Last can only be interpreted as `Mary lost to someone at chess'. It cannot be interpreted as `Mary beat someone at chess'. However, if someone loses to someone at chess, this mutually entails that someone beat someone at chess. The e-\textsc{given}ness condition should therefore predict that the ellipsis site in \Last should be capable of being construed as meaning that Mary beat someone at chess, as shown below.
+% 
+% \ex. 	\label{e-givenness-overpredicts-identity}\a. John lost to someone ate chess, and then Mary did \sout{[t beat someone at chess]}.
+% 	\b. F-clo(\textsc{John} lost to someone at chess) = $\exists x. \exists y. x$ lost to $ y $ at chess
+% 	\b. F-clo([t beat someone at chess]) = $\exists z. \exists w. z$ beat $w$ at chess
+% 	\b. F-clo(\textsc{John} lost to someone at chess) $\Leftrightarrow$ F-clo([t beat someone at chess])\\
+% 	F-closures of antecedent and elided clause are in a mutual entailment relationship, so ellipsis in (a) should be licensed, contrary to fact.
+% 	
+% 	
+% This problem extends also to e-\textsc{given}ness as the semantic condition on clausal ellipsis, as examples like the below show.
+% 
+% \ex. 	\textsc{John} lost to someone at chess, and then \textsc{Mary}.
+% 
+% This sentence can mean that Mary lost to someone at chess, but cannot receive the interpretation that Mary beat someone at chess.\footnote{At least, not with the indicated focus. The following sentence can be true in that situation:
+% 
+% \ex. 	John lost to \textsc{someone I don't know} at chess, and then \textsc{Mary}.
+% 
+% This can mean that John lost to Mary, which of course entails that Mary beat someone at chess. However, this is expected given the predicted elliptical reading (under e-\textsc{given}ness analyses and others) of \Last as below.
+% 
+% \ex. 	John lost to \textsc{someone I don't know} at chess, and then Mary [\sout{John lost to t at chess}]
+% 
+% } However, the e-\textsc{given}ness approach predicts that the sentence should be able to bear this reading, as the below ellipsis should be licensed for the same reason as shown in \ref{e-givenness-overpredicts-identity}. 
+% 
+% \ex. 	\#\textsc{John} lost to someone at chess, and then Mary [\sout{t beat someone at chess}]
+% 
+	
+% \subsubsection{e-\textsc{given}ness and the `three problems'}
+
+% Recall that we want our clausal ellipsis condition to capture the following three generalizations:
+% 
+% \begin{itemize}
+%  \item Fragments cannot target embedded clauses in constituent questions as antecedents, although they can target embedded clauses containing indefinites.
+%  \item {\it Wh}-words, indefinites and weak quantifiers, and focused elements license fragments; but double negatives, clauses within appositives, and strong quantifiers do not.
+%  \item Presuppositions are inherited by short answers.
+% \end{itemize}
+
+e-\textsc{given}ness does not completely solve any of our `three problems', however. Given the definition of e-\textsc{given}ness provided, a clause is e-\textsc{given} if there is any antecedent which mutually entails the elided clause, modulo F-closure. Clausal ellipsis should therefore be able to pick up an embedded clause in a constituent question as its antecedent, contrary to fact:
+
+\ex. 	\a. A: Who did John say has the key to the liquor cabinet?\\
+	    B: \#Mary \sout{has the key to the liquor cabinet}
+	\b. Putative antecedent clause: [t has the key to the liquor cabinet]\\
+		F-closure: $\exists x. x$ has the key to the liquor cabinet
+	\b. Putative elided clause: [t has the key to the liquor cabinet]\\
+		F-closure: $\exists x. x$ has the key to the liquor cabinet\\
+		F-closures are identical, so ellipsis should be licensed, contrary to fact.
+		
+We might rework e-\textsc{given}ness to look only for main, unembedded clauses as the antecedents of elided clauses; but we then lose coverage of the fact that fragment answers \emph{can} pick up embedded clauses as antecedents if they contain indefinites. This fact is also true of sluicing, the construction which originally prompted Merchant to propose the e-\textsc{given}ness condition.
+
+\ex. 	\a. A: John said someone here has the key to the liquor cabinet.\\
+		B: Yeah, Mary \sout{has the key to the liquor cabinet}.
+	\b. John said someone here has the key to the liquor cabinet, but I don't know who \sout{has the key to the liquor cabinet}.
+	
+Furthermore, there are cases in which even matrix clauses cannot supply the appropriate antecedent, as in the below example repeated from  
+	
+e-\textsc{given}ness does, by virtue of its f-closure mechanism, capture the fact that indefinites, focused material, and {\it wh-}words (which move and leave an existentially closed variable) license fragments, while strong quantifiers do not.  However, as \cite{AB10} points out, it does not capture the fact that double-negation indefinites do not license fragments; because double negatives and simple indefinites are truth-conditionally equivalent,\marginpar{Actually, \emph{does} e-givenness capture e.g. cardinality indefinites? {\it Two people left --- John and Mary}, etc.} e-\textsc{given}ness could not distinguish between them. e-\textsc{given}ness does also does not capture the fact that antecedents cannot be found in appositives, for the same reasons as discussed for embedded clauses above; it is not clear how to restrict e-\textsc{given}ness from finding the clausal antecedent in the appositive.
+
+Finally, the problem of presupposition inheritance is not captured by e-\textsc{given}ness. We can see that in the pair below, the F-closed antecedents and elided clauses \emph{do} entail one another (as they are identical). However, ellipsis is not licensed in this example.
+   
+   \ex. \a. Which Bront\"e sister [t wrote Emma]?\\
+   		--- *Jane Austen \el{[t wrote Emma]}
+   	\b. $\exists x. x$ wrote Emma $\Leftrightarrow \exists x. x$ wrote Emma
+   
+One might suggest that the NP restrictor is interpreted in the trace position as well as in the moved position in the antecedent, following for example \cite{Fo02}'s mechanism of Trace Conversion. If this were the case, the mutual entailment relation would not hold between the antecedent and elided clause.
+
+\ex. 	\a. Which Bront\"e sister [ [t Bront\"e sister] wrote Emma ]?\\
+		F-closure of antecedent: $\exists x. x$ is a Bront\"e sister \& $x$ wrote Emma
+	\b. $\exists x. x$ is a Bront\"e sister \& $x$ wrote Emma $\not \Leftrightarrow \exists x. x$ wrote Emma
+
+However, this cannot be a general solution, in the light of examples like the below.
+   
+   \ex. Some students left. Some professors, too. (= some professors \sout{left})
+   
+Here, if the NP restrictor is generally interpreted within the antecedent and elided clauses, the mutual entailment would not go through:
+
+\ex. 	$\exists x. x$ are students and $x$ left $\not \Leftrightarrow \exists x. x$ are professors and $x$ left.
+
+e-\textsc{given}ness, as formulated in \cite{Me01} for example, does not capture this contrast. %TODO Finish this off
+
+\subsection{Question-based approaches} \label{sec:question-based-approaches}
+
+An intuition that drives a number of approaches to clausal ellipsis is that there should be some form of semantic `congruence' between the elided clause and an antecedent semantic question.\footnote{As discussed in section \ref{sec-jacobson-analysis}, \cite{Ja13}, while not incorporating ellipsis in its analysis, is also based on this general intuition; in this analysis, fragments/short answers directly compose syntactically and semantically with antecedent interrogatives/questions.} In this section, I will review a selection of these analyses.
+
+\subsubsection{\cite{Kr06}: background matching}
+
+\cite{Kr06} proposes a condition on short answers where a background -- roughly, all constituents in an utterance except the focused one(s) -- can be elided under a particular congruence relation between the ellipsis-containing clause and an antecedent question. Krifka uses a structured meaning account of questions, in which a constituent question can be represented as an ordered pair $\langle$W, B$\rangle$, where W is the set over which the questioned constituent ranges, and B (the `background') is the denotation of the proposition from which the questioned constituent has been extracted, with the variable left by the questioned constituent lambda-abstracted over. An example is given below.
+
+\ex. 	\a. Which student did John meet?
+	\b. $\langle \{ x | x$ is a student$\}, \lambda x. $ John met $x \rangle$
+	
+Krifka proposes that an utterance containing focus can also be semantically represented as a similar structured object, an ordered triple $\langle$F, A, B$'\rangle$, in which F is the denotation of the focused constituent, A is the set of focus alternatives to F (\`a la \cite{Ro92Foc}), and B$'$ is again a lambda abstraction representing the background in the same fashion as above. An example is given below.
+
+\ex. 	\a. John met [$_F$ Bill ].
+	\b. $\langle \pred{Bill}, \{\pred{Bill, Mary, Sue, \ldots}\}, \lambda x. $ John met $x \rangle$
+	
+Krifka proposes that there is a congruence condition between questions and answers, to ensure the correct focus placement in an answer, shown below.\footnote{It's not clear how general this constraint is meant to be. It can't be a general constraint on any sort of response to a question, as background-matching of the type required in \TextNext is clearly not required if the response is of the `indirect' type:
+
+\ex. 	A: Who ate the cake? B: Well, [$_F$ Bill]'s been looking kind of guilty lately.
+
+Here, the background of the question ($\lambda x. x$ ate the cake) and that of the answer ($\lambda x. x$ has been looking kind of guilty lately) clearly do not match. I will understand the constraint in \TextNext as strictly applying only to short answers, and will discuss it in that light.}
+
+\ex. 	(Krifka's (79))\\
+	A pair QUEST($\langle$W, B$\rangle$) --- ANSW($\langle$F, A, B$'\rangle$ is congruent iff:\\
+	B=B$'$ and W $\subseteq$ A (or W=A).\\
+	If congruent, the answer asserts that out of the elements X of A, it hold for X=F that B(X).
+	
+For example, the question-answer pair {\it Which student did John meet? --- John met [$_F$ Bill]} is congruent because they have identical backgrounds ($\lambda x. $ John met $x$), and because the set of students is a subset of the focus value of {\it John} (which is the set of all entities). Krifka proposes that, in a congruent question-answer pair, all clausal material in the answer other than the focused material can be elided, resulting in question-short answer pairs like {\it Which student did John meet? --- Bill}.\footnote{Krifka embeds this in a syntactic theory of focus movement to the left periphery, making the syntactic side of this theory look very similar to that in \cite{Me04}.}
+
+This approach has the advantage that we predict that embedded clauses in interrogatives cannot provide the antecedent for a fragment answer: the backgrounds do not match.
+
+\ex. 	\a. Who did Mary say has the key to the liquor cabinet?\\
+	    Background B = $\lambda x. $ Mary said $x$ has the key to the liquor cabinet
+	\b. *[$_{F}$ Mary] \sout{has the key to the liquor cabinet}.\\
+		Background B = $\lambda x. x$ has the key to the liquor cabinet\\
+		Backgrounds do not match; congruence condition not met, so ellipsis not licensed.
+
+The same is true for cases such as the below. The background of the question {\it Why did John go to the party?} does not match the background of the elided clause, and so such cases are ruled out.
+
+\ex. 	\a. Why did John go to the party?\\
+		Background B = $\lambda x. $ John went to the party for reason $x$
+	\b. *[$_{F}$ Mary] \sout{went to the party} (and John does everything Mary does)\\
+		Background B = $\lambda x. x$ went to the party\\
+		Backgrounds do not match; congruence condition not met, so ellipsis not licensed.
+
+We could also imagine that this condition, with slight reworking, gives us the technology for dealing with focused phrases licensing ellipsis; if the condition is background-matching, we predict that clausal ellipsis should be good if the backgrounds of two clauses match, as below.
+
+
+\ex. 	\a. [$_{F}$ John ] left early. (B = $\lambda x. x$ left early)
+	\b. No, [$_{F}$ Mary ] \sout{left early}. (B = $\lambda x. x$ left early)
+
+However, it is not clear why indefinites license fragments on this account. Antecedents containing indefinites can have focus on constituents other than the indefinite, and yet the value of the elided clause is interpreted as if its background is a lambda-abstraction with a variable in the place of the indefinite in the antecedent, rather than one in the place of the focused constituent. The below example demonstrates this problem:
+
+\ex. 	\a. Somebody here has [$_{F}$ the key to the liquor cabinet].\\
+		Background B = $\lambda x. $ somebody here has $x$
+	\b. Yeah, Mary \sout{has the key to the liquor cabinet}.\\
+		Background B = $\lambda x. x$ has the key to the liquor cabinet\\
+		Backgrounds do not match so ellipsis should not be licensed, contrary to fact.
+		
+In addition, presupposition inheritance is not captured by this analysis.
+Consider the below example, in which ellipsis fails to go through.
+
+\ex. 	\a. Which student left early?\\
+		Semantic representation: $\langle \{ x | x$ is a student$\}, \lambda x. x $ left early $\rangle$
+	\b. *Bill \sout{left early} (but he's not a student).\\
+		Semantic representation: $\langle \pred{Bill}, \{\pred{Bill, Mary, Sue, \ldots}\}, \lambda x. x $ left early $\rangle$
+	\b. Congruence condition: backgrounds should match (met), and what the question ranges over should be a subset of the focus value of the answer (met, as the set of students is a subset of the set of focus alternatives to {\it Bill}, which is the set of entities). So ellipsis should be licensed even if Bill is not a student, contrary to fact.
+	
+Krifka suggests an alternative, stricter version of the condition matching focus alternatives to the question set, one in which they have to be equal. We might imagine that this solves our problem here: we could force the contextually relevant alternatives to {\it Bill} to be equal to the set of students, which would require that Bill himself be a student (as the set of alternatives to $x$ always contains $x$ as a member). However, this does not solve the problem generally: consider the below question-short answer pair, which \emph{is} licensed, even though it does not meet the congruence condition.
+
+\ex. 	\a. Which students were dancing in the quad?\\
+		Semantic representation: $\langle \{ x | x$ is a student$\}, \lambda x. x $ was dancing in the quad$\rangle$
+	\b. Some Germans \sout{were dancing in the quad}.\\
+		Semantic representation: $\langle$ \ext{some Germans}, \{\ext{some Americans}, \ext{some Danes}, \ext{some Scots}, \ldots $\},$ $\lambda x. x $ was dancing in the quad $\rangle$
+	\b. Congruence condition: backgrounds should match (met), and what the question ranges over should be a subset of the focus value of the answer (not met; the set of students is not a subset of the focus alternatives \{\ext{some Americans}, \ext{some Danes}, \ext{some Scots}, \ldots \}). So ellipsis should not be licensed here, contrary to fact.
+	
+So this question-based account moves us some of the way towards understanding some of the conditions on clausal ellipsis, it does not capture all of the data. One datum it does not capture is the ability of indefinites to license fragments. Intuitively, it seems to be the case that the reasons an indefinite-containing utterance like {\it someone here has the key to the liquor cabinet} licenses a fragment answer like {\it yeah, Mary} is that the antecedent utterance can be understood as raising an implicit question, roughly `who has the key to the liquor cabinet?'. Such implicit questions in discourse are often discussed under the rubric of the Question under Discussion or QUD (\cite{RoQUD}); I turn now to an analysis which bases the clausal ellipsis condition on the QUD.
+
+\subsubsection{\cite{Re07}: equivalence between QUD and focus value of elided clause}
+
+\cite{Re07} proposes the following condition on fragment answers.\footnote{Reich also proposes that this condition can correctly describe the distribution of gapping sentences (e.g. {\it John ate fish and Mary $\Delta$ beans}); I do not discuss this here. I have considerably abbreviated Reich's condition here, abstracting away from his syntactic implementation. I have also used a formulation from \cite{Re07} which is not quite his final conclusion; he refines the condition further, but I do not believe the refinements discussed are germane to the conclusions drawn here.}
+
+\ex. 	In an elliptical clause $\alpha$, \ext{$\alpha$}$^F$ = \ext{QUD}, where \ext{$\alpha$}$^F$ represents the focus-semantic value of $\alpha$, and the denotation of the Question under Discussion (QUD) is understood as the Hamblin denotation of the question, i.e. the set of all possible answers. Non-focused material in $\alpha$ can be phonologically deleted.
+
+An example of how this works is given in \Next.
+
+\ex. 	\a. Who left?\\
+		\ext{QUD} = \{John left, Mary left, Sue left, \ldots\}
+	\b. Mary \sout{left}.\\
+		\ext{Mary left}$^F$ = \{John left, Mary left, Sue left, \ldots\}
+	\b. \ext{QUD} = \ext{Mary left}$^F$, therefore ellipsis licensed.
+	
+Imposing a semantic identity requirement between the Question under Discussion and the elided clause captures, as in \cite{Kr06}, the inability of fragments to find their antecedents in embedded clauses in interrogatives. On the assumption that an overt interrogative such as {\it Who did John say has the key to the liquor cabinet?} can only raise a Question under Discussion about what John said (and not about who \emph{actually} has the key to the liquor cabinet), we predict that a fragment cannot pick up an embedded clause in an interrogative as antecedent, as shown below.
+
+\ex. 	\a. Who did John say has the key to the liquor cabinet?\\
+		\ext{QUD} = \{John said Bill has the key to the liquor cabinet, John said Mary has the key to the liquor cabinet, John said Sue has the key to the liquor cabinet, \ldots\}
+	\b. *Mary \sout{has the key to the liquor cabinet}.\\
+		\ext{Mary has the key to the liquor cabinet}$^F$ = \{Mary has the key to the liquor cabinet, Bill has the key to the liquor cabinet, Sue has the key to the liquor cabinet, \ldots\}
+	\b. \ext{QUD} $\neq$ \ext{Mary has the key to the liquor cabinet}$^F$, therefore ellipsis not licensed.
+	
+The same is true of examples in which the question asks for an answer which is not provided by the fragment, as in the below case:
+
+\ex. 	\a. Why did John go to the party?\\
+		\ext{QUD} = \{John went to the party because he likes parties, John went to the party because he fancies someone there, John went to the party because he does everything Mary does, \ldots\}
+	\b. *Mary \sout{went to the party} (and John does everything Mary does)\\
+		\ext{Mary went to the party}$^F$ = \{Mary went to the party, Bill went to the party, John went to the party, \ldots\}
+	\b. \ext{QUD} $\neq$ \ext{Mary went to the party}$^F$, therefore ellipsis not licensed.
+	
+This analysis also correctly predicts that indefinites and focused constituents suffice to license fragments. Intuitively, as discussed above, clauses containing indefinites can pragmatically be understood as requests for information about the identity of that indefinite. \marginpar{Should this be formalized more?} We could therefore see indefinites as raising implicit Questions under Discussion. The placement of focus is well known to presuppose a particular Question under Discussion: indeed treating focus placement is one of \cite{RoQUD}'s main motivations for constructing the Question under Discussion framework. Reich's analysis therefore predicts that indefinites and focused elements should license fragments.
+
+\ex. 	A: Somebody here has the key to the liquor cabinet.\\
+		(implicit QUD: {\it Who has the key to the liquor cabinet?})\\
+	B: Yeah, Mary \sout{has the key to the liquor cabinet}.
+	
+\ex. 	\textsc{John} has the key to the liquor cabinet.\\
+		(presupposes QUD: {\it Who has the key to the liquor cabinet?})\\
+	B: No, Mary \sout{has the key to the liquor cabinet}.
+	
+We also capture the fact that double negatives, and content within appositives, do not license fragments. Such utterances are difficult to understand as information-seeking questions.\footnote{I will not attempt to explore here the pragmatics of why this should be so. \cite{AB10}, who notes the ellipsis facts concerning double negatives and content within appositives, offers a semantic explanation in the framework of Inquisitive Semantics.} It feels natural to describe the situations in \Next as ones in which questions about the identity of the person being referred to by the indefinite is implicit or `pregnant', with the speaker's actions trying to prompt their interlocutor to answer these questions; but this is much less natural in \NNext, which seem like very peculiar scenarios, at least on that interpretation of what the speaker's actions are meant to prompt the interlocutor to do.
+
+\ex. 	\a. (I hear that) somebody here has the key to the liquor cabinet. [Speaker raises eyebrows, looks hopefully at interlocutor]
+	\b. (I hear that) this is a guy who killed someone in cold blood. [Speaker raises eyebrows, looks hopefully at interlocutor]
+
+\ex. 	\a. (I hear that) it's not the case that nobody here has the key to the liquor cabinet. [Speaker raises eyebrows, looks hopefully at interlocutor]
+	\b. (I hear that) John, who once killed someone in cold blood, is nice once you get to know him. [Speaker raises eyebrows, looks hopefully at interlocutor]
+	
+So Reich's QUD-based condition captures the first two of our `three problems'. However, it does not fully capture the problem of presupposition inheritance. It does capture the problem for some cases: for example, the case below is predicted to be bad.
+
+\ex. 	\a. A: Which student left early?\\
+		\ext{QUD} = \{student1 left early, student2 left early, student3 left early\ldots\}
+	\b. B: *John \sout{left early} (but John's not a student)\\
+		\ext{John left early}$^F$ = \{John left early, Mary left early, \ldots\}
+		
+Here, the QUD and the focus value of the elided clause will only be identical if we assume that all the members of the set of alternatives to {\it John} are students. This will entail that John is himself a student, making the continuation in \Last[b] infelicitous.
+
+However, the goodness of the following dialogue is not captured.
+
+\ex. 	\a. Which students were dancing in the quad?\\
+		\ext{QUD} = \{s1+s2 were dancing in the quad, s1+s3 were dancing in the quad, s2+s3 were dancing in the quad, \ldots\}
+	\b. Some Germans \sout{were dancing in the quad}.\\
+		\ext{Some Germans were dancing in the quad}$^F$ = \{Some Germans were dancing in the quad, some Americans were dancing in the quad, some Danes were dancing in the quad, \ldots\}
+		
+Here, the focus value of the elided clause is not identical to the value of the Question under Discussion. The same is true of answers in which there is narrow focus within a part of the answer. This focus placement will generate an alternative set which is not identical to the Hamblin denotation of the Question under Discussion, as shown below.
+
+\ex. 	\a. Which student was dancing in the quad?\\
+		\ext{QUD} = \{s1 was dancing in the quad, s2 was dancing in the quad, s3 was dancing in the quad, \ldots\}
+	\b. A [$_{F}$ German ] student \sout{was dancing in the quad}.\\ 
+		\ext{A [$_{F}$ German ] student was dancing in the quad}$^F$ = \{a German student was dancing in the quad, an American student was dancing in the quad, a Danish student was dancing in the quad, \ldots\}
+		
+Ellipsis is licensed in the dialogue in \Last, despite the fact that the QUD and the focus value of the elided clause are not identical. \cite{Re07}'s analysis, therefore, does not completely capture the data concerning presupposition inheritance in short answers. However, given the success of a QUD-based account in capturing the data concerning embedded clauses, and the data concerning which elements license fragments, I argue that the semantic condition on clausal ellipsis should indeed make reference to the Question under Discussion. In the following section, I will propose a condition which incorporates Reich's insight, but which also draws on \cite{Me01, Me04}'s e-\textsc{given}ness condition.
+
+
+
+\subsection{Altering e-\textsc{given}ness to refer to the QUD}
+
+Recall the definition of e-\textsc{given}ness given by Merchant, repeated here from \ref{e-givenness}:
+
+\ex. 	\a. A clause may be elided if it is e-\textsc{given}.
+	\b. A clause E is e-\textsc{given} if there is an antecedent clause A such that F-clo(E) $\Leftrightarrow$ F-clo(A).
+	\b. The focus closure (F-clo) of a clause is the denotation of that clause with all focused elements replaced by variables, and all variables (that is, traces plus focused elements which have been replaced) having been existentially closed.\label{fclosure}
+	
+One of the problems raised for e-givenness in section \ref{sec:egivenness} was that the clause `if there is an antecedent clause' is too liberal: not all potential antecedent clauses can actually serve to provide an antecedent for clausal ellipsis. Rather, the evidence gathered in section \ref{sec:question-based-approaches} suggests that the antecedent should be located in the Question under Discussion. However, the QUD, as a question, is not the appropriate kind of object to be in a mutual entailment relationship with a proposition. While entailment relations can be defined over questions (i.e. between questions and other questions: \cite{RoQUD}) %TODO Groenendijk & Stokhof ref here too
+, such relations are not defined over entities of different types. I propose, however, that there is a simple transformation which can be applied to the QUD, understood as having a Hamblin denotation (that is, as a set of propositions which are possible answers to the question), to transform it into a proposition: namely, taking the union, or disjunction, of all the propositions within the set that the QUD denotes. \Next illustrates this operation for the question {\it Who left?}. In the toy model in \Next, the only people are John, Mary and Sue; John left in worlds $w_0, w_1, w_2$, Mary left in worlds $w_0, w_3$; and Sue left in worlds $w_1, w_2, w_4$. (We could say that in world $w_5$, nobody left.)
+
+\ex. 	\a. \ext{who left} = \{John left, Mary left, Sue left\}\\
+	$= \{ \{ w: $ John left in $ w\}, \{ w: $ Mary left in $w \}, \{ w: $ Sue left in $w \} \}$\\
+	$= \{ \{w_0, w_1, w_2\}, \{w_0, w_3\}, \{w_1, w_2, w_4\} \}$
+	\b. $\bigcup$\ext{who left} = $\bigcup\{ \{ w: $ John left in $ w\}, \{ w: $ Mary left in $w \}, \{ w: $ Sue left in $w \} \}$\\
+	$=\bigcup\{ \{w_0, w_1, w_2\}, \{w_0, w_3\}, \{w_1, w_2, w_4\} \}$\\
+	$=\{w_0, w_1, w_2, w_3, w_4\}$
+	
+The result of taking the union of the set of propositions denoted by the question is to give us the proposition which is the disjunction of those propositions, that is, the proposition `that John left or Mary left or Sue left'; or, to put it another way, the set of all worlds in which at least one of John, Mary or Sue left. To put it yet another way, the proposition obtained by taking the union of the question {\it who left} is the existential statement $\exists x. x$ left, as an existential statement is equivalent to a long disjunction. This sort of existential statement is exactly the sort of statement which Merchant's e-\textsc{given}ness condition creates by f-closing an antecedent. As such, this operation can give us a way of formulating a version of the e-\textsc{given}ness condition which makes reference to the QUD, which I provide in \Next. In order to avoid confusion with Merchant's original definition of e-\textsc{given}ness, I rechristen the condition as QUD-\textsc{given}ness.
+
+\ex. 	A clause E is QUD-\textsc{given} iff $\bigcup$QUD $\Leftrightarrow$ F-clo(E), where F-clo has the definition given in \ref{fclosure}.
+
+I propose that non-focused elements of a clause which is QUD-\textsc{given} can be elided, in much the same way that e-\textsc{given}ness functions in Merchant's proposal. A simple example of how this works is shown in \Next.
+
+\ex. 	Who left? --- Mary \sout{left}.
+	\a. QUD = \ext{Who left?} = \{Mary left, Bill left, Sue left, \ldots\}
+	\b. $\bigcup$QUD = $\bigcup$\{Mary left, Bill left, Sue left, \ldots\}\\
+	= Mary left or Bill left or Sue left or\ldots \\
+	= $\exists x. x$ left
+	\b. F-clo([$_F$ Mary] left) = $\exists x. x$ left
+	\b. $\bigcup$QUD $\Leftrightarrow$ F-clo(E), so ellipsis is licensed.
+	
+We see that this condition functions to license the `simple' cases of fragments as responses. As this condition is based on the QUD, it also inherits the benefits of \cite{Re07}'s analysis; it predicts, for example, that indefinites and focused elements, which raise implicit QUDs, should be able to license ellipsis. In both of the below cases, for example, the implicit QUD is {\it Who left?}, which license the ellipsis in {\it Mary \sout{left}} just as the QUD which is explicitly posed by {\it Who left} in \Last does.
+
+\ex. 	\a. Someone left. --- Yeah, Mary \sout{left}.
+	\b. \textsc{Bill} left. --- No, Mary \sout{left}.
+	
+This approach also predicts the failure of embedded clauses within interrogatives to provide the antecedents for clausal ellipsis, in much the same way as \cite{Re07}'s analysis does; the union of the QUD will only ever provide an antecedent proposition which corresponds to the matrix clause, as shown below.
+
+\ex. 	Who did John say has the key to the liquor cabinet?
+	\a. QUD = \{John said Mary has the key, John said Bill has the key, \ldots\}
+	\b. $\bigcup$QUD $= \exists x. $ John said that $x$ has the key to the liquor cabinet
+	
+Given \Last[b], only the first of the two below possibilities for an elided clause will be licensed, which is a good prediction.
+
+\ex. 	\a. \sout{John said that} Mary \sout{has the key to the liquor cabinet}
+	\b. F-clo(\Last[a]) = $\exists x.$ John said that $x$ has the key to the liquor cabinet\\
+	which is in a mutual entailment relation with $\bigcup$QUD, therefore ellipsis licensed.
+	
+\ex. 	\a. Mary \sout{has the key to the liquor cabinet}
+	\b. F-clo(\Last[a]) = $\exists x. x$ has the key to the liquor cabinet\\
+	which is \emph{not} in a mutual entailment relation with $\bigcup$QUD, therefore ellipsis not licensed.
+
+We also predict correctly that examples like the below do not work.
+
+\ex. 	Why did John go to the party? --- \#Mary \sout{went to the party} (and John does everything Mary does)
+	\a. QUD = \{John went to the party because he likes parties, John went to the party because he fancies someone there, John went to the party because he does everything Mary does, \ldots\}
+	\b. $\bigcup$QUD = $\exists x.$ John went to the party for reason $x$
+	\b. F-clo([$_F$ Mary] went to the party) $= \exists x. x$ went to the party\\
+	which is not in a mutual entailment relation with $\bigcup$QUD, therefore ellipsis not licensed.
+	
+This condition, therefore, inherits all the advantages of a QUD-based approach. However, it has not yet solved the problem of presupposition inheritance, and therefore does not yet have any clear advantage over the QUD-based approach proposed by \cite{Re07}. %TODO It might be worth recapping Jacobson's objection to this idea.
+In the following section, I propose a way in which presupposition inheritance can be captured in the present system.
+
+\subsection{Presupposition inheritance and contextual restriction of determiners}
+
+
+
+%\section*{Bibliography}
+
+\bibliographystyle{$HOME/Documents/Linguistics/unified.bst}
+\bibliography{$HOME/Documents/Linguistics/linguistics2.bib}
+
+\end{document}
+
