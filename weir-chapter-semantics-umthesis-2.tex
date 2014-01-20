@@ -1377,7 +1377,7 @@ Then the interpretation of [[[every C] student] is asleep] goes as follows:
 	
 The introduction of the variable C, which can pick up values like `in the room', captures the fact that a sentence like {\it every student is asleep} refers not to every student in the entire domain of discourse, but rather to every student in a restricted domain, namely students in the classroom.
 Note that C is contextually provided.
-As such, its precise value is indeterminate, or rather, determined as a matter of discouse.
+As such, its precise value is indeterminate, or rather, determined as a matter of discourse.
 It's possible, for example, for confusion to arise over the intended referent of C:
 
 \ex. 	(after examples in \cite{Kr04DomRest})\\
@@ -1396,9 +1396,90 @@ B's utterance disregards this choice, widening the relevant domain to the entire
 		C$_2$ = in the photograph
 		
 B's utterance is `pedantic' or uncooperative in the sense that B is filling in a value for C which A did not intend.
-But B's choice to `widen' C is clearly a \emph{possible} move, showing that C can have various possible assignments, depending on the discourse.
+But B's choice to `widen' C is clearly a \emph{possible} move, showing that C can have various possible assignments across different speakers.
 
+Positing covert domain restriction variables give us the requisite tools to capture `presupposition inheritance', as in \Next, repeated from \ref{ex-domain-restriction-in-full-answers}.
 
+\ex. 	Milling around in the quad are some American faculty, some American students, some German faculty, and some German students.
+The German students start dancing, although the German faculty refrain.
+	\a. A: Which students were dancing in the quad?\\
+	B: The Germans were dancing in the quad.
+
+Here, the definite determiner {\it the} must have a domain restrictor on it.
+This is true even before we start worrying about restricting the domain to only students; clearly, in almost all usages of the definite determiner, {\it the Germans} will mean something like `all the Germans in the relevant situation' rather than `all the Germans in the universe'.
+So we posit a restrictor $C$ which combines with {\it the}, and a concomitant semantics for {\it the}, as below:
+
+\ex. 	\a. \Tree[.DP [.D the C ] \qroof{Germans}.NP ]
+	\b. $\ext{the} = \lambda C. \lambda P. \iota x. C(x) $ \& $P(x)$
+	
+What, then, is a possible value for C?
+One likely value would be `in the quad'.
+This value for the restrictor would give the `corrective' meaning, telling us that all the Germans (not just the students) were dancing.
+
+\ex. 	\a. $\ext{C} = \lambda x. \pred{inTheQuad}(x)$
+	\b. $\ext{[[the C] Germans]} = \iota x. \pred{inTheQuad}(x) $ \& $\pred{german}(x)$
+	\b. $\ext{[[the C] Germans] were dancing} = \pred{dance}(\iota x. \pred{inTheQuad}(x) $ \& $\pred{german}(x))$\\
+	i.e. all the Germans in the quad were dancing.
+	
+However, another possible value for the restrictor would be one in which it picks up not just `in the quad', but specifically `students in the quad'.
+The property `student' is salient in the discourse given the question, so supposing that C can pick it up is a plausible assumption.\footnote{Although, again, see \cite{Kr04DomRest}, who points out that overgeneration problems can arise if C is allowed to pick up just any salient property.
+I leave this matter aside here, though.}
+Given this value of C, we arrive at the below denotation for {\it the C Germans}.
+
+\ex. 	\a. $\ext{C} = \lambda x. \pred{inTheQuad}(x) $\&$ \pred{student}(x)$
+	\b. $\ext{[[the C] Germans]} = \iota x. \pred{inTheQuad}(x) $ \& $ \pred{student}(x) $ \& $\pred{german}(x)$
+	\b. $\ext{[[the C] Germans] were dancing} = \pred{dance}(\iota x. \pred{inTheQuad}(x) $ \& $ \pred{student}(x) $ \& $\pred{german}(x))$\\
+	i.e. all the German \emph{students} in the quad were dancing.
+	
+Via the independently motivated mechanism of domain restriction, we explain the phenomenon of `presupposition inheritance' in full answers.
+We now need to address the question of why this is \emph{required} in fragment answers.
+My answer is that the ellipsis condition, which requires a mutual entailment relation between (a focus-closed version of) the elided clause and the union of the QUD, will force a particular choice of C in order to ensure that this entailment relation is satisfied.
+
+Let us consider first why the `corrective' reading is ruled out in elliptical answers.
+As we saw above, this reading corresponds to a choice of C which restricts Germans only to those who were in the quad, i.e. $\ext{C} = \lambda x. \pred{inTheQuad}(x)$.
+I assume further that this is also the value of C in the initial utterance.\footnote{This is perhaps not strictly necessary here because {\it in the quad} forms part of the utterance itself.
+However, it clearly would be necessary in a context like \Next.
+
+\ex. 	I hear you were in the quad with a lot of students yesterday.
+	Which students were dancing?
+	
+Here, {\it which students} clearly has to be restricted to `students in the quad', even though `in the quad' is not explicit in the utterance containing {\it which students.}}
+Therefore, we have the below denotation for \it{Which students were dancing in the quad}.
+
+\ex. 	\ext{[[Which C] students] were dancing in the quad}\\
+	$\approx$ \ext{[Which students in the quad] were dancing in the quad}\\
+	= \{Mary was dancing in the quad, John was dancing in the quad, Sue was dancing in the quad, \ldots\}
+	
+This question is the QUD, and the union of the QUD is the below existential statement:
+
+\ex.	$\bigcup$QUD = $\bigcup$\ext{[Which students in the quad] were dancing in the quad}\\
+	$= \exists x. \pred{student}(x) $ \& $\pred{inQuad}(x)$ \&$ \pred{dancingInQuad}(x)$
+	
+Now consider the answer {\it The Germans}, intended as a `corrective' type of answer, in which the contextual restriction is simply `in the quad', not `students in the quad'.
+Here, a particular assumption will have to be made, which does not affect the analysis yet, but which will when we consider the `non-corrective' short answer: only the NP {\it Germans} receives focus-marking.
+If the entire DP {\it [[the C] Germans]} was focus-marked, then under focus-closure, C would also be existentially closed, rather than having a fixed value.\footnote{An alternative analysis to avoid this problem would be to put the contextual variable in a position external to the DP.
+
+\ex. 	\Tree[.XP C [.DP [.D the ] \qroof{Germans}.NP ] ]
+
+Here, the DP {\it the Germans} could be F-marked, to the exclusion of the contextual variable.
+While  there is considerable debate about the position of the contextual variable (i.e. whether it is `on' the NP or the determiner), as far as I can tell, no-one proposes the structure in \Last.
+I don't know if this is for principled reasons, and I haven't tried to determine if something would go wrong if it was done.
+For that reason, I stick to a story in which C is merged with a determiner, although this complicates the process of F-marking and the calculation of the ellipsis condition somewhat.}
+This will be the wrong result when we come to consider the good, presupposition-inheriting fragment answers.
+For now, let us see what happens when we set C equal to `in the quad', and calculate the ellipsis condition.
+
+\ex. 	Which students were dancing in the quad? -- [[The C] [$_F$ Germans]] \el{were dancing in the quad}.
+	\a. $\bigcup$QUD $= \exists x. \pred{student}(x) $ \& $\pred{inQuad}(x)$ \&$ \pred{dancingInQuad}(x)$
+	\b. \ext{[[The C] [$_F$ Germans]] were dancing in the quad} $= \pred{dancingInQuad}(\iota x. \pred{inQuad}(x) $ \& $ \pred{german}(x)$
+	\b. F-clo(E) $=\exists P. \pred{dancingInQuad}(\iota x. \pred{inQuad}(x) $ \& $ P(x)$\\
+		(existential closure of the property {\it Germans})
+
+Here, the ellipsis condition is not met; that is, $\bigcup$QUD $\neg \Leftrightarrow$ F-clo(E).
+The left-to-right entailment, i.e.  $\bigcup$QUD $\Rightarrow$ F-clo(E), is met; the existence of a student who was dancing in the quad entails that there exists a property $P$ which is such that the bearer of $P$ was dancing in the quad (i.e. $P$ is the property of being the students who were dancing in the quad).
+However, the right-to-left entailment, i.e. F-clo(E) $\Rightarrow \bigcup$QUD, is not met.
+The existence of a property $P$ which is such that the bearer of $P$ was dancing in the quad does not entail that a \emph{student} was necessarily dancing in the quad.
+
+	
 \bibliographystyle{$HOME/Documents/Linguistics/unified.bst}
 \bibliography{$HOME/Documents/Linguistics/linguistics2.bib}
 
