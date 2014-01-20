@@ -1344,16 +1344,59 @@ For example, in the utterance below, {\it every student} does not mean every stu
 Rather, it refers only to the students in the room.
 
 \ex. 	I walk into a classroom containing 30 students, all of whom are asleep. I can report this situation later by uttering:\\
-	Every student was asleep.
+	Every student was asleep.\label{ex:every-student-asleep}
 	
 Here, the DP {\it every student} has to be interpreted somehow as {\it every student who was in the classroom}.
 There is considerable debate in the literature concerning the precise mechanisms by which this is done: see e.g. REFS. %TODO 
 I present here one implementation, closest in details to Marti REF, %TODO Marti ref
 \footnote{I abstract away from certain details of Mart\'i's analysis.
-In particular, the detail that the contextual variable which restricts the denotation of the NP contains a functional part, which can cause the contextual variable to take different values depending on the denotation of a higher quantifier %TODO v. Fintel ref functional parts
+In particular, the detail that the contextual variable which restricts the denotation of the NP contains a functional part, which can cause the contextual variable to take different values depending on the denotation of a higher quantifier, %TODO v. Fintel ref functional parts
 is neglected here.
-This is not crucial to the current account.}
+This is not crucial for my purposes.}
 although I think that any implementation which captures the facts in \ref{ex-domain-restriction-in-full-answers} would be sufficient {\it mutatis mutandis}. 
+In Mart\'i's analysis, building on von Fintel REF's %TODO v.F. ref
+analysis, a silent variable C, ranging over properties (sets of individuals), is merged as complement to a determiner, as in \Next.
+
+\ex. 	\Tree[.DP [.D every C ] \qroof{student}.NP ]
+
+This variable C has its meaning contextually supplied;\footnote{There are issues with letting C contextually pick up a salient property, as discussed by \cite{Kr04DomRest}; there are cases where it seems to overgenerate.
+Kratzer proposes an alternative analysis based on situation semantics.
+As stated, I believe that alternative analyses of domain restriction, such as Kratzer's, could also be used to account for the problem of `presupposition inheritance' in short answers.
+I won't attempt to do this here, however.}
+this value serves to restrict the domain of the quantifier {\it every}.
+Say that, in a context like \ref{ex:every-student-asleep}, the salient value of C is a restriction like `in the classroom', i.e. \ext{C} $ = \lambda x. \pred{inTheClassroom}(x)$.
+Then the interpretation of [[[every C] student] is asleep] goes as follows:
+
+\ex. 	\a. $\ext{every} = \lambda C. \lambda P. \lambda Q. \forall x. [C(x) $ \& $P(x)] \Rightarrow Q(x)$
+	\b. $\ext{C} = \lambda x. \pred{inTheClassroom}(x)$
+	\b. $\ext{every C} = \lambda P. \lambda Q. \forall x. [\pred{inTheClassroom}(x) $ \& $ P(x)] \Rightarrow Q(x)$
+	\b. $\ext{student} = \lambda x. \pred{student}(x)$
+	\b. $\ext{[every C] student} = \lambda Q. \forall x. [\pred{inTheClassroom}(x) $ \& $ \pred{student}(x)] \Rightarrow Q(x)$
+	\b. $\ext{is asleep} = \lambda x. \pred{asleep}(x)$
+	\b. $\ext{[[every C] student] is asleep} = \forall x. [\pred{inTheClassroom}(x) $ \& $ \pred{student}(x)] \Rightarrow pred{asleep}(x)$
+	
+The introduction of the variable C, which can pick up values like `in the room', captures the fact that a sentence like {\it every student is asleep} refers not to every student in the entire domain of discourse, but rather to every student in a restricted domain, namely students in the classroom.
+Note that C is contextually provided.
+As such, its precise value is indeterminate, or rather, determined as a matter of discouse.
+It's possible, for example, for confusion to arise over the intended referent of C:
+
+\ex. 	(after examples in \cite{Kr04DomRest})\\
+	Context: A and B are looking at a photo of a family outside a farmstead, all of whom are smiling. In the far background are some farmhands, working in a field, who are not smiling.\\
+	A: Everyone is smiling.\\
+	B: Those farmhands aren't.\\
+	A: I was only talking about the family, of course.
+	
+B's utterance is not false, but represents a different choice of domain restriction variable C from A's choice.
+A was focusing only on the family, leaving out `unimportant details' such as the farmhands.
+B's utterance disregards this choice, widening the relevant domain to the entire photograph.
+
+\ex. 	\a. A: [Everyone C$_1$] is smiling.\\
+		C$_1$ = in the family
+	\b.	B: [Those farmhands C$_2$] aren't.\\
+		C$_2$ = in the photograph
+		
+B's utterance is `pedantic' or uncooperative in the sense that B is filling in a value for C which A did not intend.
+But B's choice to `widen' C is clearly a \emph{possible} move, showing that C can have various possible assignments, depending on the discourse.
 
 
 \bibliographystyle{$HOME/Documents/Linguistics/unified.bst}
