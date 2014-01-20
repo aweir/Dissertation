@@ -1276,11 +1276,85 @@ We also predict correctly that examples like the below do not work.
 This condition, therefore, inherits all the advantages of a QUD-based approach. However, it has not yet solved the problem of presupposition inheritance, and therefore does not yet have any clear advantage over the QUD-based approach proposed by \cite{Re07}. %TODO It might be worth recapping Jacobson's objection to this idea.
 In the following section, I propose a way in which presupposition inheritance can be captured in the present system.
 
-\subsection{Presupposition inheritance and contextual restriction of determiners}
+\subsection{Presupposition inheritance and domain restriction}
 
+Let us first note that \textsc{QUD-given}ness does not immediately predict the phenomenon of `presupposition inheritance'.
+In fact, the situation is worse: as it stands, \textsc{QUD-given}ness simply does not predict \emph{any} short answer to constituent questions containing an NP restrictor to be grammatical, as \Next shows.
 
+\ex. 	Which students were dancing in the quad? --- John and Mary \el{were dancing in the quad}.
+	\a. QUD = \{John was dancing, Mary was dancing, John and Mary were dancing, Susan was dancing, \ldots\}
+	\b. $\bigcup$QUD = $\exists x \in \pred{student}. x$ was dancing in the quad
+	\b. F-clo(E) = $\exists x. x$ was dancing in the quad\\
+	which is not in a mutual entailment relation with $\bigcup$QUD, therefore ellipsis not licensed.
+	
+The problem is that the mechanism of F-closure does not currently give us a way to express the necessary restriction to students in the elided clause.
+The existential closure in \Last[c] should have its domain restricted to students, but nothing in the analysis so far lets us do that.
 
-%\section*{Bibliography}
+The key observation which will help us here is that `presupposition inheritance' is not a phenomenon restricted to ellipsis.
+The same effect can be achieved in non-elliptical sentences such as the below.
+
+\ex. 	A: Which students were dancing in the quad?\\
+	B: The Germans were dancing in the quad.
+	
+\Last has a reading on which B is `correcting' A's presupposition, and telling A that, in fact, the correct way of characterizing the dancers in the quad is as Germans, not students.
+However, there is another reading of B's utterance in which B is telling A that the students that were dancing in the quad were the German students.
+This comes out more clearly in the scenario in \Next.
+
+\ex. 	Milling around in the quad are some American faculty, some American students, some German faculty, and some German students.
+The German students start dancing, although the German faculty refrain.
+	\a. A: Which students were dancing in the quad?\\
+	B: The Germans were dancing in the quad.
+	
+Here, B's utterance can be judged as true,\footnote{There is, however, a preference for the short answer {\it The Germans}.
+I suspect this preference comes about because the short answer unambiguously conveys the information that B is talking about the German students; because the long answer also has the `corrective' reading (i.e. `no, it wasn't students that were dancing, it was Germans'), the short answer may be preferred in order to avoid ambiguity.
+I think it is clear, though, that the long answer is still felicitous in this scenario, i.e. the reading of B's answer in which B means `the German students' by `the Germans' does exist.} 
+even though there are more Germans than just students.
+This is the same effect as has been called `presupposition inheritance' above.
+The key observation to be made about ellipsis is not that it allows `presupposition inheritance' -- non-elliptical sentences also do -- but that it \emph{forces} it, disallowing the `corrective' reading.
+
+\ex. 	A: Which students were dancing in the quad?\\
+	B: The Germans.\\
+	{\it No reading:} it wasn't students that were dancing in the quad, it was Germans.
+	
+Given these observations, the strategy will be to isolate what is responsible for the `presupposition inheritance' reading in full sentences, and then to see if the mechanisms proposed so far will be sufficient to force this reading in elliptical sentences.
+I will argue that they are.
+
+Let us consider again the case in which `presupposition inheritance' appears in full sentences:
+
+\ex. 	Milling around in the quad are some American faculty, some American students, some German faculty, and some German students.\label{ex-domain-restriction-in-full-answers}
+The German students start dancing, although the German faculty refrain.
+	\a. A: Which students were dancing in the quad?\\
+	B: The Germans were dancing in the quad.
+	
+Recall that the reading of interest here is one in which, intuitively, B's utterance of {\it the Germans} is taken to mean {\it the German students} or {\it those of the Germans who are students}.
+\footnote{The meaning here is not an appositive-like one: {\it the Germans, who are (by the way) students}.
+Not all the Germans in the scenario are students, so the presupposition (or conventional implicature, Potts REF)%TODO Potts ref appositives
+contributed by the appositive would fail to go through.}
+This is unexpected given a standard semantics for the definite determiner {\it the}, where it combines with the predicate {\it Germans} and returns the maximal unique entity
+\footnote{I take the word `entity' to cover plural entities here.}
+which is German.
+\footnote{The precise semantics of the definite determiner (for example, the choice between presuppositional (Fregean) and quantificational (Russellian) definitions0 is tangential here: the important point is that on all definitions of definiteness, maximality is invoked, i.e. {\it the} cannot pick out a subset.}
+That entity should be all the Germans, including the German faculty; but that's not what B's answer is (necessarily) taken to mean.
+How can the definite DP {\it the Germans} apparently denote the maximal entity which satisfies the predicate {\it German student}, which in the given scenario is a subsection of the maximal entity which satisfies the predicate {\it Germans}?
+
+The answer comes from {\it domain restriction}.
+It is very well known REFS %TODO Domain restriction refs
+that quantificational, definite, and other expressions containing NPs must have their domains `restricted' in some way.
+For example, in the utterance below, {\it every student} does not mean every student in the entire world.
+Rather, it refers only to the students in the room.
+
+\ex. 	I walk into a classroom containing 30 students, all of whom are asleep. I can report this situation later by uttering:\\
+	Every student was asleep.
+	
+Here, the DP {\it every student} has to be interpreted somehow as {\it every student who was in the classroom}.
+There is considerable debate in the literature concerning the precise mechanisms by which this is done: see e.g. REFS. %TODO 
+I present here one implementation, closest in details to Marti REF, %TODO Marti ref
+\footnote{I abstract away from certain details of Mart\'i's analysis.
+In particular, the detail that the contextual variable which restricts the denotation of the NP contains a functional part, which can cause the contextual variable to take different values depending on the denotation of a higher quantifier %TODO v. Fintel ref functional parts
+is neglected here.
+This is not crucial to the current account.}
+although I think that any implementation which captures the facts in \ref{ex-domain-restriction-in-full-answers} would be sufficient {\it mutatis mutandis}. 
+
 
 \bibliographystyle{$HOME/Documents/Linguistics/unified.bst}
 \bibliography{$HOME/Documents/Linguistics/linguistics2.bib}
