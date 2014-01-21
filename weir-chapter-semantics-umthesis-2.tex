@@ -1445,7 +1445,7 @@ However, it clearly would be necessary in a context like \Next.
 	
 Here, {\it which students} clearly has to be restricted to `students in the quad', even though `in the quad' is not explicit in the utterance containing {\it which students.}}
 I notate the contextual domain variable in the question as C$'$, to distinguish it from the variable in the reply, which (as we will see) has a possibly different denotation.
-Therefore, we have the below denotation for \it{Which students were dancing in the quad}.
+Therefore, we have the below denotation for {\it Which students were dancing in the quad}.
 
 \ex. 	\ext{[[Which C$'$] students] were dancing in the quad}\\
 	$\approx$ \ext{[Which students in the quad] were dancing in the quad}\\
@@ -1519,23 +1519,60 @@ I assume, following REFS %TODO Name refs
 , that proper names are actually covertly definite descriptions.\footnote{This is supported, for example, by the fact that some languages (e.g. colloquial German) overtly use definite determiners in names, e.g. {\it der Hans} `the Hans'.}
 That is, {\it John} is something like [$_{\mathrm{DP}}$ THE [$_{\mathrm{NP}}$ John]], where THE is a covert definite determiner.
 As such, such structures can contain contextual restrictors.
-This is a natural enough move to make; if we say {\it John}, we cannot mean every bearer of the name `John' in the world, but rather must mean something like `the John that is known to us both'.
+This is a natural enough move to make; if we say {\it John}, we cannot mean every bearer of the name `John' in the world, but rather must mean something like `the John in the relevant situation'.\footnote{This is a placeholder for whatever the condition actually is.
+I use a property-type denotation $[\lambda x. x $ is contained within the relevant situation$]$, but it's possible that the contextual restriction actually is a situation pronoun, as in \cite{Kr04DomRest}'s proposal. 
+I abstract away from this here.}
 So we have a structure and interpretation like \Next.
 
 \ex. 	\a.	\Tree[.DP [.D THE C ] \qroof{John}.NP ]
 	\b. 	\a. \ext{THE} = \ext{the} $= \lambda C. \lambda P. \iota x. P(x) $ \& $C(x)$
-		\b. \ext{C} $\approx \lambda x. x$ is known to the interlocutors
+		\b. \ext{C} $\approx \lambda x. x$ is contained within the relevant situation
 		\b. \ext{John} $ = \lambda x. x$ is called John
-		\b. \ext{[[THE C] John]} $\approx \iota x. x$ is known to the interlocutors and $x$ is called John
+		\b. \ext{[[THE C] John]} $\approx \iota x. x$ is contained within the relevant situation and $x$ is called John
 		
-Now, if matters were left here, then the ellipsis condition in \LLast would not go through.
+Now, if matters were left here, then the ellipsis condition would not go through in \LLast.
 
-% `John' wouldn't only be a student.
-% But if you introduce the domain restriction over students as well as people we know, then we're laughing.
-% Note that if you make this move, you're then forbidden from asserting that John isn't a student -- you'd contradict yourself.
+\ex. 	Which linguistics student left the party early? --- John \el{left the party early}.
+	\a. $\bigcup$QUD $= \exists x. x$ is a linguistics student \& $ x$ left the party early
+	\b. E = [[[THE C] [$_{F}$ John]] left early
+	\b. F-clo(E) $= \exists P. $ the unique $x$ which is contained within the relevant situation and which bears $P$ left the party early.\\
+	$\bigcup$QUD $\neg \Leftrightarrow$ F-clo(E), so ellipsis not licensed. 
 
-% Jacobson's account doesn't quite make the right predictions here.
+The issue in \Last is that just because a property $P$ exists such that there is a unique bearer of P that left early, doesn't mean that there exists a linguistics student that left early.
+We need to ensure that the focus closure of the elided clause contains a restriction only to linguistics students.
+I propose that the contextual restrictor C can be construed to contain this restriction, i.e. C $= [\lambda x. x$ is contained within the relevant situation and $x$ is a linguistics student$]$.
+For the ellipsis condition to be met and ellipsis to be felicitous, this is the required value of C.
 
+\ex. 	Which linguistics student left the party early? --- John \el{left the party early}.
+	\a. $\bigcup$QUD $= \exists x. x$ is a linguistics student \& $ x$ left the party early
+	\b. E = [[[THE C] [$_{F}$ John]] left early
+	\b. \ext{C} = $\lambda x. x$ is contained within the relevant situation and $x$ is a linguistics student
+	\b. F-clo(E) $= \exists P. $ the unique $x$ which is contained within the relevant situation \emph{and which is a linguistics student} and which bears $P$ left the party early.\\
+	$\bigcup$QUD $\Leftrightarrow$ F-clo(E), so ellipsis is licensed.
+	
+The fact that the ellipsis condition is only felicitous with a certain value of the contextual restrictor C -- one which restricts the domain of the fragment {\it John} only to linguistics students -- is what accounts for the infelicity of the below fragment.
+
+\ex. 	Which linguistics student left the party early? --- \#John, but he's not a linguistics student.
+
+If C restricts the denotation of {\it John} only to linguistics students, the response in \Last is self-contradictory.
+By contrast, full sentences and VP ellipsis sentences, which don't have to satisfy the clausal ellipsis condition/\textsc{QUD-given}ness,\footnote{VP ellipsis has to satisfy some other identity condition, but on the current account, it cannot be the same condition as is implicated in clausal ellipsis}
+do not place this requirement on C.
+The denotation of {\it John} does not therefore have to be restricted to linguistics students in \Next.
+
+\ex. 	Which linguistics student left the party early?
+	\a. John left the party early, but he's not a linguistics student.
+	\b. John did, but he's not a linguistics student.
+	
+In conclusion, then, we have seen in this section that the problem of `presupposition inheritance' can be accounted for on an elliptical account of ellipsis, once the identity condition on ellipsis is taken to be \textsc{QUD-given}ness, and with the addition of the independently motivated mechanism of contextual domain restriction of quantifiers and definite descriptions.
+
+\section{Conclusion}
+
+In this chapter, I have defended a view of short/fragment answers in which they are derived via clausal ellipsis.
+I have argued that many facts about what can or cannot be a licit fragment are easily understandable on a clausal ellipsis account, while these are less easily understood on a `direct generation' approach.
+I have also defended the clausal ellipsis account from challenges based on the problem of `presupposition inheritance' by proposing a new condition on clausal ellipsis, \textsc{QUD-given}ness.
+This condition is independently motivated by the fact that only the QUD, rather than for example any antecedent utterance of the right type, appears to provide the antecedent for an elided clause.
+Combined with the independently needed mechanism of contextual domain restriction, this condition delivers `presupposition inheritance' in fragment answers.
+Having devoted attention to the semantics of clausal ellipsis and the identity condition which must be met to license it, I now turn to the details of the syntax of clausal ellipsis.
 
 \bibliographystyle{$HOME/Documents/Linguistics/unified.bst}
 \bibliography{$HOME/Documents/Linguistics/linguistics2.bib}
