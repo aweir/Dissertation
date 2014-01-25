@@ -1,0 +1,110 @@
+\documentclass[11pt,letterpaper]{article}
+\addtolength{\textwidth}{3cm}
+\addtolength{\hoffset}{-2cm}
+\usepackage{url, xypic, qtree, fancyhdr, tipa, natbib, times, linguex, stmaryrd, tree-dvips, mathastext}
+\usepackage[normalem]{ulem}
+\usepackage[small,compact]{titlesec}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Andrew Weir}
+\rhead{}%TODO
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\hyphenpenalty=5000
+\tolerance=1000
+\linespread{1.3}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\newcommand{\ext}[1]{\ensuremath{\llbracket \textrm{{#1}} \rrbracket}} 
+\newcommand{\pred}[1]{\ensuremath{\mathrm{{#1}}}}
+\newcommand{\ty}[1]{\ensuremath{\mathrm{\langle #1 \rangle}}}
+\newcommand{\ec}[0]{\ensuremath{\emptyset}{} {}}
+\newcommand{\el}[1]{$\langle${#1}$\rangle$}
+\bibpunct[:]{}{}{,}{a}{}{,}
+
+\title{}
+\author{Andrew Weir}
+
+\begin{document}
+
+\section{Manipulating the QUD}
+
+I have argued that the clausal ellipsis condition should be fundamentally based on the Question under Discussion. Such a condition suggests that clausal ellipsis should be sensitive to manipulations of the Question under Discussion by interlocutors.
+In this section I aim to show that this is a welcome prediction.
+
+One argument I have made above for a QUD-based condition on clausal ellipsis is that short/fragment answers must `directly' answer the question that is posed.
+That is, while the full answer in \Next[a] is acceptable, the short answer in \Next[b] is unacceptable.
+
+\ex. 	(repeated from REF) %TODO Jane Austen ref
+	Which Bront\"e sister wrote `Emma'?
+	\a. \textsc{Jane Austen} wrote `Emma', you fool.
+	\b. \#\textsc{Jane Austen}, you fool.
+	
+I have argued that the reason \Last[b] is infelicitous is because the \textsc{QUD-given}ness condition requires that the focus closure of the elided clause here should mutually entail the union of the QUD.
+In this case, it does not, as shown in \Next below.
+The only way to make the ellipsis in \Last[b] go through would be to have a domain restriction which restricts the domain of \Last[b] only to Bront\"e sisters; but in that case, obviously, Jane Austen cannot be in that domain, and the sentence would contain a presupposition failure for that reason.
+
+\ex. 	Which Bront\"e sister wrote `Emma'? --- Jane Austen \sout{wrote Emma}.
+	\a. QUD = \{Charlotte wrote `Emma', Emily wrote `Emma', Anne wrote `Emma'\}
+	\b. $\bigcup$QUD $= \exists x \in \pred{bronteSister}. x$ wrote Emma
+	\b. F-clo(E) = $\exists P. $ the unique $x$ such that $P(x) $ \& $C(x)$ wrote Emma\\
+	where $C$ is the contextual domain restriction.
+	\b. The only way $\bigcup$QUD can mutually entail F-clo(E) is if $C = [\lambda x. x$ is a Bront\"e sister]; but {\it Jane Austen} does not satisfy that C, so $\bigcup$QUD $\not \Leftrightarrow$ F-clo(E), and ellipsis not licensed.
+	
+However, the failure to go through here is predicated on the fact that the Question under Discussion contains a restriction to Bront\"e sisters.
+But Questions under Discussion can rapidly change as a dialogue evolves.
+Does the ability to elide a clause track this change?
+I argue that it does.
+Firstly, clearly an explicit change in the QUD can license a fragment answer, which is not surprising.
+
+\ex. 	A: Which Bront\"e sister wrote `Emma'?\\
+	B: No Bront\"e sister wrote `Emma', you idiot.\\
+	A: Oh! Well who did, then?\\
+	B: Jane Austen.
+	
+But now note also the improvement of a short answer in cases like the below.
+
+\ex. 	A: Which Bront\"e sister wrote `Emma'?\\\label{ex-change-QUD-rigmarole}
+	B: No Bront\"e sister wrote `Emma', you idiot.\\
+	A: Oh! Um, well\ldots [raises eyebrows hopefully]\\
+	B: [sighs] Jane Austen.
+	
+Here, I argue that A's response to B has the function of implicitly changing the QUD, removing the restriction to only Bront\"e sisters (which B has told A is an inaccurate presupposition), and changing the QUD to be something like {\it Who wrote `Emma'?}.
+The following dialogue (suggested to me by Lyn Frazier), in which a third speaker is involved, is also reported to improve the acceptability of the short answer.
+
+\ex. 	[Context: A and B are talking, C is minding her own business in the corner.]\\\label{ex-third-speaker}
+	A: Which Bront\"e sister wrote `Emma'?\\
+	B: No Bront\"e sister wrote `Emma', you idiot.\\
+	C: Jane Austen.
+	
+The judgments here are quite delicate.
+For example, one might expect \Next to be good, but to my ear it seems quite degraded, although I have collected some varying judgments on this point.
+
+\ex. 	A: Which Bront\"e sister wrote `Emma'?\\\label{ex-immediate-QUD-change}
+	B: No Bront\"e sister wrote `Emma', you idiot -- Jane Austen.
+	
+One might expect that the response {\it No Bront\"e sister wrote `Emma'}, which completely answers the immediate QUD, might instantly `change' the QUD to {\it Who wrote `Emma'}; but this does not quite seem to happen, and rather some sort of `extra business', as with A's responses and eyebrow-raising in (\ref{ex-change-QUD-rigmarole}), seems to be necessary.
+I argue, however, that these cases of delicate judgments and inter-speaker variation support the case that the clausal ellipsis condition is based on the Question under Discussion.
+If the Question under Discussion is a fundamentally pragmatic notion, constructed in discourse rather than being part of the `grammar' per se, then we might expect that speakers' reactions to cases like (\ref{ex-change-QUD-rigmarole}, \ref{ex-third-speaker}, \ref{ex-third-speaker})  would differ depending on, for example, the ease with which they `accommodate' changes in the discourse.
+
+I will not try to give a deep theory of the relevant pragmatic factors that might contribute to this here, as that would be well beyond the scope of this dissertation.
+However I will note one possible parallel which has been drawn to my attention.
+Barbara Partee has suggested to me that cases like \Last might be analogous to the famous contrast in \Next, cited in \cite{Hei82} and originally due to Partee:
+
+\ex.	\a. I dropped ten marbles and found all of them, except for one. It is probably under the sofa.
+	\b. I dropped ten marbles and only found nine of them. ?It is probably under the sofa.
+	
+The referent for {\it it} in \Last[b] `should' be obvious -- the missing marble -- and yet there is difficulty in understanding {\it it} as referring to that object.
+If there isn't a directly introduced linguistic referent for the pronoun to refer to, as there is in \Last[a], it seems that the grammar just won't let us use pragmatics `right away' to establish what the salient referent is.
+However, as with the short answer cases, manipulating the context can improve matters:
+
+\ex. 	Mom: What's wrong?\\
+	Child: I dropped ten of my marbles, but I've only been able to find nine of them. Can you help me look?\\
+	Mom: OK, let me see if I can help you find \underline{it}.
+	
+Here, I feel that {\it it}, although it still doesn't have a linguistic referent, can rather more easily be understood as referring to the missing marble.
+Short answers seem to behave similarly to pronouns without explicit antecedents; just like such pronouns, short answers also apparently cannot be used `right away', even if the nature of the changed QUD `should' be obvious, without a certain amount of signaling (perhaps fairly implicit, as in (\ref{ex-change-QUD-rigmarole})) that the discourse's QUD has changed.
+
+
+\end{document}
