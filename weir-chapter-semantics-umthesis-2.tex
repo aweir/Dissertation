@@ -1572,6 +1572,154 @@ I have argued that many facts about what can or cannot be a licit fragment are e
 I have also defended the clausal ellipsis account from challenges based on the problem of `presupposition inheritance' by proposing a new condition on clausal ellipsis, \textsc{QUD-given}ness.
 This condition is independently motivated by the fact that only the QUD, rather than for example any antecedent utterance of the right type, appears to provide the antecedent for an elided clause.
 Combined with the independently needed mechanism of contextual domain restriction, this condition delivers `presupposition inheritance' in fragment answers.
+
+\subsection{Manipulating the QUD}
+
+I have argued that the clausal ellipsis condition should be fundamentally based on the Question under Discussion. Such a condition suggests that clausal ellipsis should be sensitive to manipulations of the Question under Discussion by interlocutors.
+In this section I aim to show that this is a welcome prediction.
+
+One argument I have made above for a QUD-based condition on clausal ellipsis is that short/fragment answers must `directly' answer the question that is posed.
+That is, while the full answer in \Next[a] is acceptable, the short answer in \Next[b] is unacceptable.
+
+\ex. 	(repeated from REF) %TODO Jane Austen ref
+	Which Bront\"e sister wrote `Emma'?
+	\a. \textsc{Jane Austen} wrote `Emma', you fool.
+	\b. \#\textsc{Jane Austen}, you fool.
+	
+I have argued that the reason \Last[b] is infelicitous is because the \textsc{QUD-given}ness condition requires that the focus closure of the elided clause here should mutually entail the union of the QUD.
+In this case, it does not, as shown in \Next below.
+The only way to make the ellipsis in \Last[b] go through would be to have a domain restriction which restricts the domain of \Last[b] only to Bront\"e sisters; but in that case, obviously, Jane Austen cannot be in that domain, and the sentence would contain a presupposition failure for that reason.
+
+\ex. 	Which Bront\"e sister wrote `Emma'? --- Jane Austen \sout{wrote Emma}.
+	\a. QUD = \{Charlotte wrote `Emma', Emily wrote `Emma', Anne wrote `Emma'\}
+	\b. $\bigcup$QUD $= \exists x \in \pred{bronteSister}. x$ wrote Emma
+	\b. F-clo(E) = $\exists P. $ the unique $x$ such that $P(x) $ \& $C(x)$ wrote Emma\\
+	where $C$ is the contextual domain restriction.
+	\b. The only way $\bigcup$QUD can mutually entail F-clo(E) is if $C = [\lambda x. x$ is a Bront\"e sister]; but {\it Jane Austen} does not satisfy that C, so $\bigcup$QUD $\not \Leftrightarrow$ F-clo(E), and ellipsis not licensed.
+	
+However, the failure to go through here is predicated on the fact that the Question under Discussion contains a restriction to Bront\"e sisters.
+But Questions under Discussion can rapidly change as a dialogue evolves.
+Does the ability to elide a clause track this change?
+I argue that it does.
+Firstly, clearly an explicit change in the QUD can license a fragment answer, which is not surprising.
+
+\ex. 	A: Which Bront\"e sister wrote `Emma'?\\
+	B: No Bront\"e sister wrote `Emma', you idiot.\\
+	A: Oh! Well who did, then?\\
+	B: Jane Austen.
+	
+But now note also the improvement of a short answer in cases like the below.
+
+\ex. 	A: Which Bront\"e sister wrote `Emma'?\\\label{ex-change-QUD-rigmarole}
+	B: No Bront\"e sister wrote `Emma', you idiot.\\
+	A: Oh! Um, well\ldots [raises eyebrows hopefully]\\
+	B: [sighs] Jane Austen.
+	
+Here, I argue that A's response to B has the function of implicitly changing the QUD, removing the restriction to only Bront\"e sisters (which B has told A is an inaccurate presupposition), and changing the QUD to be something like {\it Who wrote `Emma'?}.
+The following dialogue (suggested to me by Lyn Frazier), in which a third speaker is involved, is also reported to improve the acceptability of the short answer.
+
+\ex. 	[Context: A and B are talking, C is minding her own business in the corner.]\\\label{ex-third-speaker}
+	A: Which Bront\"e sister wrote `Emma'?\\
+	B: No Bront\"e sister wrote `Emma', you idiot.\\
+	C: Jane Austen.
+	
+The judgments here are quite delicate.
+For example, one might expect \Next to be good, but to my ear it seems quite degraded, although I have collected some varying judgments on this point.
+
+\ex. 	A: Which Bront\"e sister wrote `Emma'?\\\label{ex-immediate-QUD-change}
+	B: No Bront\"e sister wrote `Emma', you idiot -- Jane Austen.
+	
+One might expect that the response {\it No Bront\"e sister wrote `Emma'}, which completely answers the immediate QUD, might instantly `change' the QUD to {\it Who wrote `Emma'}; but this does not quite seem to happen, and rather some sort of `extra business', as with A's responses and eyebrow-raising in (\ref{ex-change-QUD-rigmarole}), seems to be necessary.
+I argue, however, that these cases of delicate judgments and inter-speaker variation support the case that the clausal ellipsis condition is based on the Question under Discussion.
+If the Question under Discussion is a fundamentally pragmatic notion, constructed in discourse rather than being part of the `grammar' per se, then we might expect that speakers' reactions to cases like (\ref{ex-change-QUD-rigmarole}, \ref{ex-third-speaker}, \ref{ex-third-speaker})  would differ depending on, for example, the ease with which they `accommodate' changes in the discourse.
+
+I will not try to give a deep theory of the relevant pragmatic factors that might contribute to this here, as that would be well beyond the scope of this dissertation.
+However I will note one possible parallel which has been drawn to my attention.
+Barbara Partee has suggested to me that cases like \Last might be analogous to the famous contrast in \Next, cited in \cite{Hei82} and originally due to Partee:
+
+\ex.	\a. I dropped ten marbles and found all of them, except for one. It is probably under the sofa.
+	\b. I dropped ten marbles and only found nine of them. ?It is probably under the sofa.
+	
+The referent for {\it it} in \Last[b] `should' be obvious -- the missing marble -- and yet there is difficulty in understanding {\it it} as referring to that object.
+If there isn't a directly introduced linguistic referent for the pronoun to refer to, as there is in \Last[a], it seems that the grammar just won't let us use pragmatics `right away' to establish what the salient referent is.
+However, as with the short answer cases, manipulating the context can improve matters:
+
+\ex. 	Mom: What's wrong?\\
+	Child: I dropped ten of my marbles, but I've only been able to find nine of them. Can you help me look?\\
+	Mom: OK, let me see if I can help you find \underline{it}.
+	
+Here, I feel that {\it it}, although it still doesn't have a linguistic referent, can rather more easily be understood as referring to the missing marble.
+Short answers seem to behave similarly to pronouns without explicit antecedents; just like such pronouns, short answers also apparently cannot be used `right away', even if the nature of the changed QUD `should' be obvious, without a certain amount of signaling (perhaps fairly implicit, as in (\ref{ex-change-QUD-rigmarole})) that the discourse's QUD has changed.
+
+While the methods discussed above of manipulating the QUD seem to be fairly variable and unreliable, there are however certain other methods of manipulating a QUD short of simply asking an explicit question.
+These methods are fully linguistic (that is, they don't rely on any extra-linguistic means like raising eyebrows or the like) and also reliably change the QUD (that is, the judgments are generally reported as sound).
+One such method is to use contrastive topic marking, realized as a rise-fall-rise contour (or B-accent).\footnote{For further discussion of contrastive topics and their relation to the Question under Discussion, see REFS.} %TODO Contrastive topic refs
+Contrastive topic marking can be {\it in situ} as in \Next[a]; or it can co-occur with fronting as in \Next[b]; or the contrastive topic can be introduced by an `as for' adjunct and resumed by a pronoun, as in \Next[c]. (I mark contrastive topic/rise-fall-rise contour/B-accent with $_{CT}$ and focus marking/pitch accent/A-ccent with $_{F}$.)
+
+\ex. 	To whom did he give the books? ---  Well, I don't know about the books, but\ldots
+	\a. \ldots he gave [$_{CT}$ the flowers] [$_{F}$ to Mary ].
+	\b. \ldots [$_{CT}$ the flowers], he gave t [$_{F}$ to Mary].
+	\b. \ldots as for [$_{CT}$ the flowers], he gave [$_{CT}$ them] [$_{F}$ to Mary].
+	
+In all of these cases the contrastive topic accent has the same effect.
+The initial question is {\it To whom did he give the books?}.
+The responder signals that she doesn't know the answer to that question.
+However, she is in a position to (partially) answer a different question, namely {\it what did he give to whom?}.
+The question {\it what did he give to whom} is a `superquestion' of {\it to whom did he give the books}, in \cite{RoQUD}'s terms.\footnote{A question $Q$ is a superquestion of $Q'$ iff a complete answer to $Q$ also provides a complete answer to $Q'$.
+In this case, completely answering {\it What did he give to whom?} would provide an answer to {\it To whom did he give the books?}.}
+Contrastive topics, then, have the ability to `shift' the QUD `upwards' to a superquestion.\footnote{For details of how specifically this is done, see \cite{RoQUD}, CONTRASTIVE TOPIC REFS inc. Constant dissn. %TODO CT refs
+I will not presuppose any specific implementation here, relying just on the fact that contrastive topics do seem to have this ability to manipulate the QUD.}
+Given this, the obvious question for our purposes is to ask if using contrastive topics allows for a change in which clauses can be elided.
+The answer is that it does.
+Consider the below dialogues.
+
+\ex. 	What kind of beer does John like to drink?
+	\a. He likes to drink cabernet sauvignon. He doesn't like beer.
+	\b. \#Cabernet sauvignon. He doesn't like beer.\label{ex-cab-sauv}
+	
+\ex. 	What kind of beer does John like to drink?\\
+	\a. I don't know about beer, but as for [$_{CT}$ wine], he likes to drink cabernet sauvignon.
+	\b. I don't know about beer, but as for [$_{CT}$ wine], cabernet sauvignon.
+	
+In \LLast, the full clausal answer in (a) allows for the `correction' of the presupposition that John has a particular kind of beer that he likes, but the fragment answer in (b) does not allow this possibility.
+This is another instance of `presupposition inheritance' and is consistent with the QUD-based theory of clausal ellipsis; the question is about beer, so an answer containing ellipsis should also be about beer.\footnote{It might be noted that \Next is rather better.
+
+\ex. 	What kind of beer does John like to drink?\\
+	He doesn't like beer. ??Cabernet sauvignon.
+	
+To the extent that \Last is an improvement over \ref{ex-cab-sauv}, we can understand this in pragmatic/discourse terms: putting {\it he doesn't like beer} first allows for a `change' in the QUD, which is not signaled by \ref{ex-cab-sauv}.
+This contrast can be seen as further evidence for a QUD-based condition for clausal ellipsis.}
+Full answers do not have this requirement.
+
+However, if the answer contains a contrastive topic, as in \Last, the fragment answer in (b) is much more felicitous.
+I argue that this is because the use of the contrastive topic is a means of explicitly changing the Question under Discussion.
+As such, the QUD-based account should predict that clausal ellipsis should now be available, and indeed it is.
+The results of calculating the ellipsis condition for the infelicitous \ref{ex-cab-sauv} and felicitous \Last[b] uses of short answers are shown below. 
+
+\ex. 	What kind of beer does John like? --- \#Cabernet sauvignon \sout{John likes}
+	\a. QUD = \{John likes pilsner, John likes stout, John likes IPA, \ldots\}
+	\b. $\bigcup$QUD = $\exists x \in \pred{kindOfBeer}$. John likes $x$
+	\b. F-clo(E) $= \exists P. $ John likes the unique $x$ such that $C(x)$ and $P(x)$, where $C$ is the contextual domain restriction.
+	\b. To ensure mutual entailment between $\bigcup$QUD and F-clo(E), $C$ would have to be the property $[\lambda x. x$ is a kind of beer$]$. However, this could not be the value of $C$ in the above sentence, as $C$ would not be true of cabernet sauvignon. Mutual entailment between $\bigcup$QUD and F-clo(E) is therefore impossible, and ellipsis is not licensed.
+	
+\ex. 	What kind of beer does John like --- I don't know about beer, but as for $[_{CT}$ wine$]$, cabernet sauvignon \sout{John likes}
+	\a. Original QUD = \{John likes pilsner, John likes stout, John likes IPA, \ldots\}
+	\b. New QUD brought about by contrastive topic marking: {\it What kind of wine does John like?}\\
+	= \{John likes cabernet sauvignon, John likes shiraz, John likes pinot grigio\ldots\}
+	\b. $\bigcup$NewQUD = $\exists x. \in \pred{kindOfWine}. $ John likes $x$
+	\b. F-clo(E) $= \exists P. $ John likes the unique $x$ such that $C(x)$ and $P(x)$, where $C$ is the contextual domain restriction.
+	\b. To ensure mutual entailment between $\bigcup$QUD and F-clo(E), $C$ would have to be the property $[\lambda x. x$ is a kind of wine$]$. That's a possible value of $C$ in the above sentence, as $C$ would be true of cabernet sauvignon. Mutual entailment between $\bigcup$QUD and F-clo(E) is therefore possible, and ellipsis is licensed.
+	
+We can examine other explicit means of changing the Question under Discussion, and see that they also have the same effect on the felicity of short answers:
+
+\ex. 	What kind of beer do you like?
+	\a. \#Cabernet sauvignon.
+	\b. I'd rather talk about wine. Cabernet sauvignon.
+	\b. You know I don't like beer. If you actually meant to ask me about wine, then cabernet sauvignon.
+	\b. Pilsner; and as for wine, cabernet sauvignon.
+
+We can see that the QUD-based theory of clausal ellipsis captures the fact that if the QUD is explicitly changed, by means of contrastive topic marking for example, then the possibilities for clausal ellipsis also change.
+This adds to the support for the \textsc{QUD-given}ness condition proposed here.
 Having devoted attention to the semantics of clausal ellipsis and the identity condition which must be met to license it, I now turn to the details of the syntax of clausal ellipsis.
 
 
