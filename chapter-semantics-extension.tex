@@ -126,7 +126,54 @@ Contrastive topics, then, have the ability to `shift' the QUD `upwards' to a sup
 I will not presuppose any specific implementation here, relying just on the fact that contrastive topics do seem to have this ability to manipulate the QUD.}
 Given this, the obvious question for our purposes is to ask if using contrastive topics allows for a change in which clauses can be elided.
 The answer is that it does.
+Consider the below dialogues.
 
-%...but as for wine...
+\ex. 	What kind of beer does John like to drink?
+	\a. He likes to drink cabernet sauvignon. He doesn't like beer.
+	\b. \#Cabernet sauvignon. He doesn't like beer.\label{ex-cab-sauv}
+	
+\ex. 	What kind of beer does John like to drink?\\
+	\a. I don't know about beer, but as for [$_{CT}$ wine], he likes to drink cabernet sauvignon.
+	\b. I don't know about beer, but as for [$_{CT}$ wine], cabernet sauvignon.
+	
+In \LLast, the full clausal answer in (a) allows for the `correction' of the presupposition that John has a particular kind of beer that he likes, but the fragment answer in (b) does not allow this possibility.
+This is another instance of `presupposition inheritance' and is consistent with the QUD-based theory of clausal ellipsis; the question is about beer, so an answer containing ellipsis should also be about beer.\footnote{It might be noted that \Next is rather better.
+
+\ex. 	What kind of beer does John like to drink?\\
+	He doesn't like beer. ??Cabernet sauvignon.
+	
+To the extent that \Last is an improvement over \ref{ex-cab-sauv}, we can understand this in pragmatic/discourse terms: putting {\it he doesn't like beer} first allows for a `change' in the QUD, which is not signaled by \ref{ex-cab-sauv}.
+This contrast can be seen as further evidence for a QUD-based condition for clausal ellipsis.}
+Full answers do not have this requirement.
+
+However, if the answer contains a contrastive topic, as in \Last, the fragment answer in (b) is much more felicitous.
+I argue that this is because the use of the contrastive topic is a means of explicitly changing the Question under Discussion.
+As such, the QUD-based account should predict that clausal ellipsis should now be available, and indeed it is.
+The results of calculating the ellipsis condition for the infelicitous \ref{ex-cab-sauv} and felicitous \Last[b] uses of short answers are shown below. 
+
+\ex. 	What kind of beer does John like? --- \#Cabernet sauvignon \sout{John likes}
+	\a. QUD = \{John likes pilsner, John likes stout, John likes IPA, \ldots\}
+	\b. $\bigcup$QUD = $\exists x \in \pred{kindOfBeer}$. John likes $x$
+	\b. F-clo(E) $= \exists P. $ John likes the unique $x$ such that $C(x)$ and $P(x)$, where $C$ is the contextual domain restriction.
+	\b. To ensure mutual entailment between $\bigcup$QUD and F-clo(E), $C$ would have to be the property $[\lambda x. x$ is a kind of beer$]$. However, this could not be the value of $C$ in the above sentence, as $C$ would not be true of cabernet sauvignon. Mutual entailment between $\bigcup$QUD and F-clo(E) is therefore impossible, and ellipsis is not licensed.
+	
+\ex. 	What kind of beer does John like --- I don't know about beer, but as for $[_{CT}$ wine$]$, cabernet sauvignon \sout{John likes}
+	\a. Original QUD = \{John likes pilsner, John likes stout, John likes IPA, \ldots\}
+	\b. New QUD brought about by contrastive topic marking: {\it What kind of wine does John like?}\\
+	= \{John likes cabernet sauvignon, John likes shiraz, John likes pinot grigio\ldots\}
+	\b. $\bigcup$NewQUD = $\exists x. \in \pred{kindOfWine}. $ John likes $x$
+	\b. F-clo(E) $= \exists P. $ John likes the unique $x$ such that $C(x)$ and $P(x)$, where $C$ is the contextual domain restriction.
+	\b. To ensure mutual entailment between $\bigcup$QUD and F-clo(E), $C$ would have to be the property $[\lambda x. x$ is a kind of wine$]$. That's a possible value of $C$ in the above sentence, as $C$ would be true of cabernet sauvignon. Mutual entailment between $\bigcup$QUD and F-clo(E) is therefore possible, and ellipsis is licensed.
+	
+We can examine other explicit means of changing the Question under Discussion, and see that they also have the same effect on the felicity of short answers:
+
+\ex. 	What kind of beer do you like?
+	\a. \#Cabernet sauvignon.
+	\b. I'd rather talk about wine. Cabernet sauvignon.
+	\b. You know I don't like beer. If you actually meant to ask me about wine, then cabernet sauvignon.
+	\b. Pilsner; and as for wine, cabernet sauvignon.
+
+We can see that the QUD-based theory of clausal ellipsis captures the fact that if the QUD is explicitly changed, by means of contrastive topic marking for example, then the possibilities for clausal ellipsis also change.
+This adds to the support for the \textsc{QUD-given}ness condition proposed here.
 
 \end{document}
